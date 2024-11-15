@@ -5,12 +5,13 @@
   justify-content: center;
   align-items: center;
 
-  height: 523px;
+  //height: 523px;
+  padding: 120px 0;
 
   border-radius: 20px 20px 0 0;
-  color: var(--color-white);
+  color: var(--color-static-white);
 
-  background-color: var(--color-pink);
+  background-color: var(--color-primary);
   background-image: url("./../../images/png/bg-snow.png"), url("./../../images/png/bg-ball.png");
   background-repeat: no-repeat;
   background-position: center;

@@ -3,17 +3,17 @@
   --second-family: "Allura", sans-serif;
   --third-family: "SF Pro", sans-serif;
 
-  --color-white: #fff;
+  --color-primary: #ff4646;
+  --color-primary-10: rgba(255, 70, 70, 0.1);
+  --color-static-white: #fff;
+  --color-static-white-40: rgba(255, 255, 255, 0.4);
+  --color-static-white-20: rgba(255, 255, 255, 0.2);
+  --color-content-bg: #ecf3f8;
   --color-dark: #181c29;
-  --color-pink: #ff4646;
-  --color-pink-10: rgba(255, 70, 70, 0.1);
-
-  // --color-text: var(--color-dark);
-  // --color-text-sec: var(--color-white);
-  // --color-section-bg: var(--color-pink);
-  // --color-section-bg-sec: var(--color-white);
-  // --color-btn-bg: var(--color-dark);
-  // --color-btn-bg-sec: var(--color-white);
+  --color-tag-purple: #4361ff;
+  --color-tag-pink: #ff43f7;
+  --color-tag-green: #06a44f;
+  --color-overlay: rgba(24, 28, 41, 0.8);
 
   --transition-duration: 250ms;
   --transitiion-func: cubic-bezier(0.4, 0, 0.2, 1);

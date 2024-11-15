@@ -15,8 +15,8 @@
     @include main-transition("color, background-color");
 
     @include focused {
-      color: var(--color-pink);
-      background-color: var(--color-pink-10);
+      color: var(--color-primary);
+      background-color: var(--color-primary-10);
     }
   }
 }

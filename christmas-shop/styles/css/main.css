@@ -237,16 +237,23 @@ a {
   --font-family: "Montserrat", sans-serif;
   --second-family: "Allura", sans-serif;
   --third-family: "SF Pro", sans-serif;
-  --color-white: #fff;
+  --color-primary: #ff4646;
+  --color-primary-10: rgba(255, 70, 70, 0.1);
+  --color-static-white: #fff;
+  --color-static-white-40: rgba(255, 255, 255, 0.4);
+  --color-static-white-20: rgba(255, 255, 255, 0.2);
+  --color-content-bg: #ecf3f8;
   --color-dark: #181c29;
-  --color-pink: #ff4646;
-  --color-pink-10: rgba(255, 70, 70, 0.1);
+  --color-tag-purple: #4361ff;
+  --color-tag-pink: #ff43f7;
+  --color-tag-green: #06a44f;
+  --color-overlay: rgba(24, 28, 41, 0.8);
   --transition-duration: 250ms;
   --transitiion-func: cubic-bezier(0.4, 0, 0.2, 1);
   --container-width: 1440px;
 }
 
-.hero, .header__container {
+.about, .hero, .header__container {
   width: var(--container-width);
   padding: 0 82px;
   margin: 0 auto;
@@ -256,12 +263,30 @@ a {
   cursor: url("./../../../../images/pointinghand.svg"), pointer;
 }
 
-.hero__caption {
+.about__caption, .hero__caption {
   font-family: var(--second-family);
   font-size: 24px;
   line-height: 1;
   letter-spacing: 0.05em;
-  color: var(--color-white);
+  color: var(--color-static-white);
+}
+
+.about__title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 152%;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+}
+
+.about__para {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 148%;
+  color: var(--color-dark);
 }
 
 .logo, .site-nav__link {
@@ -290,7 +315,7 @@ a {
   text-transform: uppercase;
   text-align: center;
   border-radius: 20px;
-  color: var(--color-white);
+  color: var(--color-static-white);
   background-color: var(--color-dark);
   -webkit-transition-duration: var(--transition-duration);
           transition-duration: var(--transition-duration);
@@ -301,7 +326,11 @@ a {
 }
 .hero__btn:hover, .hero__btn:focus-visible {
   color: var(--color-dark);
-  background-color: var(--color-white);
+  background-color: var(--color-static-white);
+}
+
+.about {
+  padding: 60px 82px;
 }
 
 .site-nav {
@@ -326,8 +355,8 @@ a {
   transition-property: color, background-color;
 }
 .site-nav__link:hover, .site-nav__link:focus-visible {
-  color: var(--color-pink);
-  background-color: var(--color-pink-10);
+  color: var(--color-primary);
+  background-color: var(--color-primary-10);
 }
 
 .logo {
@@ -345,7 +374,7 @@ a {
 .logo__icon {
   width: 24px;
   height: 24px;
-  fill: var(--color-pink);
+  fill: var(--color-primary);
 }
 
 .header__container {
@@ -363,7 +392,7 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 12px 82px;
-  background-color: var(--color-white);
+  background-color: var(--color-static-white);
   height: 100%;
 }
 
@@ -377,10 +406,10 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 523px;
+  padding: 120px 0;
   border-radius: 20px 20px 0 0;
-  color: var(--color-white);
-  background-color: var(--color-pink);
+  color: var(--color-static-white);
+  background-color: var(--color-primary);
   background-image: url("./../../images/png/bg-snow.png"), url("./../../images/png/bg-ball.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -407,4 +436,47 @@ a {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-align: center;
+}
+
+.about {
+  height: 648px;
+  background-color: var(--color-primary);
+  background-image: url("./../../images/png/bg-snow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.about__container-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 528px;
+  padding-left: 60px;
+  border-radius: 20px;
+  background-color: var(--color-content-bg);
+  overflow: hidden;
+}
+.about__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 426px;
+}
+.about__caption {
+  color: var(--color-primary);
+}
+.about__thumb {
+  border-radius: 20px;
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */

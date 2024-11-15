@@ -1,0 +1,50 @@
+.about {
+  @extend %section;
+  @extend %container;
+
+  height: 648px;
+
+  background-color: var(--color-primary);
+  background-image: url("./../../images/png/bg-snow.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__container-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 528px;
+    padding-left: 60px;
+
+    border-radius: 20px;
+    background-color: var(--color-content-bg);
+    overflow: hidden;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 426px;
+  }
+
+  &__caption {
+    @extend %caption;
+    color: var(--color-primary);
+  }
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__para {
+    @extend %paragraph;
+  }
+
+  &__thumb {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
