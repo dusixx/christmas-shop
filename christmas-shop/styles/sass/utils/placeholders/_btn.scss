@@ -1,0 +1,32 @@
+%btn {
+  @extend %custom-pointer;
+
+  display: block;
+  font-family: inherit;
+  border-style: none;
+}
+
+%btn-primary {
+  @extend %btn;
+
+  padding: 20px 32px;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+
+  border-radius: 20px;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+
+  @include main-transition("color, background-color");
+
+  @include focused {
+    color: var(--color-dark);
+    background-color: var(--color-white);
+  }
+}

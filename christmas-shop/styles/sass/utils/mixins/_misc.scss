@@ -1,0 +1,6 @@
+@mixin focused() {
+  &:hover,
+  &:focus-visible {
+    @content;
+  }
+}

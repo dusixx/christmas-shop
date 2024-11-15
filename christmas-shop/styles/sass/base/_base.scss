@@ -1,0 +1,10 @@
+html {
+  // chrome://flags/#smooth-scrolling
+  scroll-behavior: smooth;
+}
+
+// prettier-ignore
+body {
+    font-family: var(--font-family);
+    color: var(--color-text);
+}

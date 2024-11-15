@@ -1,0 +1,15 @@
+.header {
+  &__container {
+    @extend %container;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 12px 82px;
+
+    background-color: var(--color-white);
+    height: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --second-family: "Allura", sans-serif;
+  --third-family: "SF Pro", sans-serif;
+
+  --color-white: #fff;
+  --color-dark: #181c29;
+  --color-pink: #ff4646;
+  --color-pink-10: rgba(255, 70, 70, 0.1);
+
+  // --color-text: var(--color-dark);
+  // --color-text-sec: var(--color-white);
+  // --color-section-bg: var(--color-pink);
+  // --color-section-bg-sec: var(--color-white);
+  // --color-btn-bg: var(--color-dark);
+  // --color-btn-bg-sec: var(--color-white);
+
+  --transition-duration: 250ms;
+  --transitiion-func: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --container-width: 1440px;
+}

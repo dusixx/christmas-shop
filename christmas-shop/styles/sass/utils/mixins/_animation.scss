@@ -1,0 +1,5 @@
+@mixin main-transition($props: "all") {
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transitiion-func);
+  transition-property: #{$props};
+}

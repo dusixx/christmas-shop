@@ -1,0 +1,20 @@
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &__link {
+    @extend %link;
+
+    display: block;
+    border-radius: 12px;
+    padding: 12px 20px;
+
+    @include main-transition("color, background-color");
+
+    @include focused {
+      color: var(--color-pink);
+      background-color: var(--color-pink-10);
+    }
+  }
+}

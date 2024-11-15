@@ -1,0 +1,36 @@
+// #region vendors
+@import "./vendors/modern-normalize";
+// #endregion vendors
+
+// #region base
+@import "./base/base";
+@import "./base/reset";
+// #endregion base
+
+// #region variables
+@import "./utils/variables";
+// #endregion variables
+
+// #region mixins
+@import "./utils/mixins/misc";
+@import "./utils/mixins/animation";
+// #endregion mixins
+
+// #region placeholders
+@import "./utils/placeholders/container";
+@import "./utils/placeholders/custom-pointer";
+@import "./utils/placeholders/typography";
+@import "./utils/placeholders/link";
+@import "./utils/placeholders/btn";
+@import "./utils/placeholders/section";
+// #endregion placeholders
+
+// #region components
+@import "./components/site-nav";
+@import "./components/logo";
+// #endregion components
+
+// #region layout
+@import "./layout/header";
+@import "./layout/hero";
+// #endregion layout

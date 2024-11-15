@@ -1,0 +1,12 @@
+%link {
+  @extend %custom-pointer;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--color-dark);
+}
