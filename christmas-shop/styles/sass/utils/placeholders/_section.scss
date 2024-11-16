@@ -31,3 +31,16 @@
     $sz: cover
   );
 }
+
+%cta-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: (
+      url("./../../images/png/bg-snow.png"),
+      url("./../../images/png/bg-forest.png"),
+    ),
+    $repeat: no-repeat,
+    $pos: center,
+    $sz: cover
+  );
+}

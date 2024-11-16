@@ -1,0 +1,52 @@
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 344px;
+  height: 72px;
+  padding: 12px;
+
+  background-color: var(--color-static-white-40);
+  border-radius: 20px;
+
+  &__cells {
+    display: flex;
+    align-content: center;
+  }
+
+  &__number {
+    @extend %title;
+  }
+
+  &__unit {
+    @extend %subtitle;
+  }
+}
+
+.timer__cell {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 80px;
+  height: 52px;
+
+  color: var(--color-static-white);
+
+  &:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    top: 33%;
+
+    width: 1px;
+    height: 33%;
+
+    background-color: var(--color-static-white-40);
+  }
+}

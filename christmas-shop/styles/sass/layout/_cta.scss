@@ -1,0 +1,39 @@
+.cta {
+  &__container {
+    @extend %container;
+    @extend %section-padding;
+    @extend %cta-bg;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    height: 668px;
+
+    border-radius: 0 0 20px 20px;
+  }
+
+  &__container-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: 430px;
+  }
+
+  &__title {
+    @extend %title;
+    color: var(--color-static-white);
+  }
+
+  &__btn {
+    @extend %btn-primary;
+  }
+
+  &__caption {
+    @extend %caption;
+  }
+}

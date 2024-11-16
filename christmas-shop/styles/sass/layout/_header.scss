@@ -22,7 +22,7 @@
   }
 
   &__title {
-    @extend %section-title;
+    @extend %title;
     color: var(--color-static-white);
   }
 }

@@ -33,7 +33,9 @@
   }
 
   &__title {
-    @extend %section-title;
+    @extend %title;
+
+    text-align: left;
   }
 
   &__para {
