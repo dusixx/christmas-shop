@@ -19,8 +19,7 @@
 // #endregion mixins
 
 // #region placeholders
-@import "./utils/placeholders/container";
-@import "./utils/placeholders/custom-pointer";
+@import "./utils/placeholders/misc";
 @import "./utils/placeholders/typography";
 @import "./utils/placeholders/link";
 @import "./utils/placeholders/btn";
@@ -45,4 +44,5 @@
 @import "./layout/best-gifts";
 @import "./layout/cta";
 @import "./layout/footer";
+@import "./layout/gifts";
 // #endregion layout

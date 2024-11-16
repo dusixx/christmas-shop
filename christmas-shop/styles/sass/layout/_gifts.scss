@@ -1,0 +1,25 @@
+.gifts {
+  &__container {
+    @extend %container;
+    @extend %section-padding;
+    @extend %gifts-bg;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    border-radius: 20px;
+  }
+
+  &__title {
+    @extend %page-title;
+    width: 426px;
+  }
+
+  &__cards {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}

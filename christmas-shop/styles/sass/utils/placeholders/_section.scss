@@ -1,3 +1,9 @@
+%container {
+  width: var(--section-width);
+  padding: 0 82px;
+  margin: 0 auto;
+}
+
 %section-padding {
   padding: var(--section-padding-ver) var(--section-padding-hor);
 }
@@ -40,7 +46,17 @@
       url("./../../images/png/bg-forest.png"),
     ),
     $repeat: no-repeat,
-    $pos: center,
+    $pos: top,
     $sz: cover
+  );
+}
+
+%gifts-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: url("./../../images/png/bg-garland.png"),
+    $repeat: no-repeat,
+    $pos: top,
+    $sz: contain
   );
 }
