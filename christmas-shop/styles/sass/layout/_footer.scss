@@ -1,0 +1,36 @@
+.footer {
+  &__container {
+    @extend %container;
+    @extend %section-padding;
+
+    height: 496px;
+    background-color: var(--color-static-white);
+  }
+
+  &__container-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  &__copyright {
+    @extend %paragraph;
+  }
+
+  &__made-in {
+    @extend %caption;
+    @extend %link;
+
+    color: var(--color-dark);
+    @include main-transition("color");
+
+    @include focused {
+      color: var(--color-primary);
+    }
+  }
+}

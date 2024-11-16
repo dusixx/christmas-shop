@@ -1,0 +1,51 @@
+$contactsRowGap: 12px;
+
+.contacts {
+  display: flex;
+  gap: 12px;
+
+  height: 204px;
+  width: 100%;
+
+  &__item {
+    flex-basis: calc((100% - $contactsRowGap) / 3);
+    background-color: var(--color-content-bg);
+    border-radius: 20px;
+  }
+}
+
+.contacts__link {
+  @extend %link;
+
+  display: flex;
+  flex-direction: column;
+  gap: $contactsRowGap;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  @include main-transition("color");
+
+  @include focused {
+    color: var(--color-primary);
+  }
+}
+
+.contacts__image {
+  width: 80px;
+  height: 80px;
+}
+
+.contacts__title {
+  @extend %title;
+}
+
+.contacts__caption {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 152%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}

@@ -1,0 +1,5 @@
+.slider-control-disabled {
+  @include disabled {
+    color: var(--color-static-white-40);
+  }
+}

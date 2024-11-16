@@ -4,3 +4,8 @@
     @content;
   }
 }
+
+@mixin disabled() {
+  pointer-events: none;
+  @content;
+}

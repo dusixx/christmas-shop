@@ -30,9 +30,11 @@
 // #region components
 @import "./components/site-nav";
 @import "./components/logo";
-@import "./components/btn-disabled";
+@import "./components/disabled";
 @import "./components/gift-card";
 @import "./components/timer";
+@import "./components/contacts";
+@import "./components/socials";
 // #endregion components
 
 // #region layout
@@ -42,4 +44,5 @@
 @import "./layout/slider";
 @import "./layout/best-gifts";
 @import "./layout/cta";
+@import "./layout/footer";
 // #endregion layout

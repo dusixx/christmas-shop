@@ -31,6 +31,10 @@
     border-radius: 20px;
   }
 
+  &__tag {
+    @extend %subtitle;
+  }
+
   &__title {
     margin-top: 8px;
 
@@ -53,7 +57,7 @@
     color: var(--color-tag-purple);
   }
   .gift-card__thumb {
-    //prettier-ignore
+    // prettier-ignore
     @include bg($img: url("./../../images/png/gift-for-work.png"), 
       $repeat: no-repeat, $pos: center, $sz: cover);
   }
@@ -64,7 +68,7 @@
     color: var(--color-tag-green);
   }
   .gift-card__thumb {
-    //prettier-ignore
+    // prettier-ignore
     @include bg($img: url("./../../images/png/gift-for-health.png"), 
       $repeat: no-repeat, $pos: center, $sz: cover);
   }
@@ -75,7 +79,7 @@
     color: var(--color-tag-pink);
   }
   .gift-card__thumb {
-    //prettier-ignore
+    // prettier-ignore
     @include bg($img: url("./../../images/png/gift-for-harmony.png"), 
       $repeat: no-repeat, $pos: center, $sz: cover);
   }

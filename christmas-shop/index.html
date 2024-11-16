@@ -9,7 +9,7 @@
   <body>
     <header class="header">
       <div class="header__container">
-        <a href="#" class="logo">
+        <a href="./" class="logo">
           <svg class="logo__icon" width="10" height="16">
             <use href="./images/icons.svg#icon-logo"></use>
           </svg>
@@ -17,10 +17,10 @@
         </a>
         <nav class="header__nav">
           <ul class="site-nav">
-            <li><a class="site-nav__link" href="">Gifts</a></li>
-            <li><a class="site-nav__link" href="">About</a></li>
-            <li><a class="site-nav__link" href="">Best</a></li>
-            <li><a class="site-nav__link" href="">Contacts</a></li>
+            <li><a class="site-nav__link site-nav__link--non-interactive" href="">Gifts</a></li>
+            <li><a class="site-nav__link" href="#about">About</a></li>
+            <li><a class="site-nav__link" href="#best-gifts">Best</a></li>
+            <li><a class="site-nav__link" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
       </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="about__container">
           <div class="about__container-inner">
             <div class="about__desc">
@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="slider__controls">
-            <button class="slider__btn btn-disabled">
+            <button class="slider__btn slider-control-disabled">
               <svg class="slider__btn-icon">
                 <use href="./images/icons.svg#icon-arrow-left"></use>
               </svg>
@@ -85,7 +85,7 @@
           </div>
         </div>
       </section>
-      <section class="best-gifts">
+      <section class="best-gifts" id="best-gifts">
         <div class="best-gifts__container">
           <div class="best-gifts__heading">
             <h3 class="best-gifts__caption">Best Gifts</h3>
@@ -163,6 +163,90 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer__container">
+        <address id="contacts">
+          <ul class="contacts">
+            <li class="contacts__item">
+              <a class="contacts__link" href="tel:+375291112233">
+                <img class="contacts__image" src="./images/png/santa-claus.png" alt="Santa Claus" />
+                <h2 class="contacts__title">+375 (29) 111-22-33</h2>
+                <h3 class="contacts__caption">Call Us</h3>
+              </a>
+            </li>
+            <li class="contacts__item">
+              <a
+                class="contacts__link"
+                href="https://maps.app.goo.gl/yBjL6pQ1RNxnEdBUA"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <img class="contacts__image" src="./images/png/christmas-tree.png" alt="Christmas tree" />
+                <h2 class="contacts__title">Magic forest</h2>
+                <h3 class="contacts__caption">meet us</h3>
+              </a>
+            </li>
+            <li class="contacts__item">
+              <a class="contacts__link" href="mailto:gifts@magic.com">
+                <img class="contacts__image" src="./images/png/snake.png" alt="Snake" />
+                <h2 class="contacts__title">gifts@magic.com</h2>
+                <h3 class="contacts__caption">write us</h3>
+              </a>
+            </li>
+          </ul>
+        </address>
+        <div class="footer__container-inner">
+          <ul class="socials">
+            <li>
+              <a
+                class="socials__link"
+                href="https://t.me/AfishaRSSchool"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <svg class="socials__icon">
+                  <use href="./images/icons.svg#icon-telegram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="socials__link"
+                href="https://www.facebook.com/rsschoolEN"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <svg class="socials__icon">
+                  <use href="./images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                class="socials__link"
+                href="https://www.instagram.com/rsschool_en/"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
+                <svg class="socials__icon">
+                  <use href="./images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="socials__link" href="javascript:;">
+                <svg class="socials__icon">
+                  <use href="./images/icons.svg#icon-twitter-x"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <p class="footer__copyright">© Copyright 2025, All Rights Reserved</p>
+          <a class="footer__made-in" href="https://rs.school/" target="_blank" rel="noopener noreferrer nofollow">
+            Made in Rolling Scopes School
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

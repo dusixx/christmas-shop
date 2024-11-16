@@ -1,5 +1,6 @@
 .logo {
   @extend %link;
+  @extend %subtitle;
 
   display: flex;
   justify-content: center;
