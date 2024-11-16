@@ -263,7 +263,7 @@ a {
 }
 
 .slider__btn, .footer__made-in, .socials__link, .contacts__link, .gift-card, .logo, .site-nav__link, .site-nav__link--non-interactive, .cta__btn, .hero__btn {
-  cursor: url("./../../../../images/pointinghand.svg"), pointer;
+  cursor: url("./../../../../images/pointinghand.png"), pointer;
 }
 
 .footer__made-in, .cta__caption, .best-gifts__caption, .slider__caption, .about__caption, .hero__caption, .header__caption {
@@ -285,10 +285,11 @@ a {
   text-align: center;
 }
 
-.timer__unit, .gift-card__tag, .logo, .site-nav__link, .site-nav__link--non-interactive {
+.timer__unit, .gift-card__tag, .logo, .site-nav__link, .site-nav__link--non-interactive, .cta__btn, .hero__btn {
+  font-family: var(--font-family);
   font-weight: 600;
   font-size: 12px;
-  line-height: 1.3;
+  line-height: 1;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -316,12 +317,6 @@ a {
   height: 56px;
   padding-left: 32px;
   padding-right: 32px;
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   color: var(--color-static-white);
   background-color: var(--color-dark);
   -webkit-transition-duration: var(--transition-duration);
