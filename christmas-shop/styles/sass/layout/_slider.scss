@@ -2,16 +2,11 @@
   &__container {
     @extend %container;
     @extend %section-padding;
+    @extend %section-bg;
 
     height: 488px;
     padding-left: 0;
     padding-right: 0;
-
-    background-color: var(--color-primary);
-    background-image: url("./../../images/png/bg-snow.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 
   &__heading {

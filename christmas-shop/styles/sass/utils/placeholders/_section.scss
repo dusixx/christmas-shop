@@ -8,3 +8,26 @@
   gap: 12px;
   text-align: center;
 }
+
+%section-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: url("./../../images/png/bg-snow.png"),
+    $repeat: no-repeat,
+    $pos: center,
+    $sz: cover
+  );
+}
+
+%hero-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: (
+      url("./../../images/png/bg-snow.png"),
+      url("./../../images/png/bg-ball.png"),
+    ),
+    $repeat: no-repeat,
+    $pos: center,
+    $sz: cover
+  );
+}

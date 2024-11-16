@@ -1,0 +1,24 @@
+@use "sass:meta";
+
+@function bgiOverlay($color) {
+  @return linear-gradient($color, $color);
+}
+
+@mixin bg($args...) {
+  $propAliases: (
+    "pos": position,
+    "sz": size,
+    "img": image,
+  );
+
+  @each $argName, $argValue in meta.keywords($args) {
+    $argName: to-lower-case($argName);
+
+    @if (isList($argValue)) {
+      $argValue: join($argValue, (), "comma");
+    }
+
+    $argName: map-get($propAliases, $argName) or $argName;
+    background-#{$argName}: $argValue;
+  }
+}

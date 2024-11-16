@@ -15,6 +15,7 @@
 // #region mixins
 @import "./utils/mixins/misc";
 @import "./utils/mixins/animation";
+@import "./utils/mixins/bg";
 // #endregion mixins
 
 // #region placeholders
@@ -30,6 +31,7 @@
 @import "./components/site-nav";
 @import "./components/logo";
 @import "./components/btn-disabled";
+@import "./components/gift-card";
 // #endregion components
 
 // #region layout
@@ -37,4 +39,5 @@
 @import "./layout/hero";
 @import "./layout/about";
 @import "./layout/slider";
+@import "./layout/best-gifts";
 // #endregion layout

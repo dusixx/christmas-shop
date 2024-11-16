@@ -1,16 +1,10 @@
-.header {
+.best-gifts {
   &__container {
     @extend %container;
+    @extend %section-padding;
+    @extend %section-bg;
 
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-
-    padding: 12px 82px;
-
-    background-color: var(--color-static-white);
-    height: 100%;
+    height: 554px;
   }
 
   &__heading {
@@ -24,5 +18,14 @@
   &__title {
     @extend %section-title;
     color: var(--color-static-white);
+  }
+
+  &__cards {
+    margin-top: 20px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 12px;
   }
 }

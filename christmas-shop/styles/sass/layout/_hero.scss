@@ -1,6 +1,7 @@
 .hero {
   &__container {
     @extend %container;
+    @extend %hero-bg;
 
     display: flex;
     justify-content: center;
@@ -11,12 +12,6 @@
 
     border-radius: 20px 20px 0 0;
     color: var(--color-static-white);
-
-    background-color: var(--color-primary);
-    background-image: url("./../../images/png/bg-snow.png"), url("./../../images/png/bg-ball.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
   }
 
   &__container-inner {
