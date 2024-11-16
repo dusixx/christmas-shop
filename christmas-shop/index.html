@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/css/main.css" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <title>Christmas shop</title>
   </head>
   <body>
@@ -17,7 +18,7 @@
         </a>
         <nav class="header__nav">
           <ul class="site-nav">
-            <li><a class="site-nav__link site-nav__link--non-interactive" href="">Gifts</a></li>
+            <li><a class="site-nav__link site-nav__link--non-interactive" href="./gifts.html">Gifts</a></li>
             <li><a class="site-nav__link" href="#about">About</a></li>
             <li><a class="site-nav__link" href="#best-gifts">Best</a></li>
             <li><a class="site-nav__link" href="#contacts">Contacts</a></li>
@@ -31,7 +32,7 @@
           <div class="hero__container-inner">
             <h3 class="hero__caption">Merry Christmas</h3>
             <h1 class="hero__title">Gift yourself the magic of new possibilities</h1>
-            <button class="hero__btn">Explore Magical Gifts</button>
+            <a class="hero__btn" href="./gifts.html">Explore Magical Gifts</a>
             <h3 class="hero__caption">and Happy New Year</h3>
           </div>
         </div>
@@ -137,7 +138,7 @@
         <div class="cta__container">
           <div class="cta__container-inner">
             <h2 class="cta__title">Ready to start your journey to a better version of yourself?</h2>
-            <button class="hero__btn">Explore Magical Gifts</button>
+            <a class="cta__btn" href="./gifts.html">Explore Magical Gifts</a>
             <h3 class="cta__caption">The New Year is Coming Soon...</h3>
           </div>
           <div class="timer">
@@ -170,8 +171,8 @@
             <li class="contacts__item">
               <a class="contacts__link" href="tel:+375291112233">
                 <img class="contacts__image" src="./images/png/santa-claus.png" alt="Santa Claus" />
-                <h2 class="contacts__title">+375 (29) 111-22-33</h2>
-                <h3 class="contacts__caption">Call Us</h3>
+                <p class="contacts__title">+375 (29) 111-22-33</p>
+                <p class="contacts__caption">Call Us</p>
               </a>
             </li>
             <li class="contacts__item">
@@ -182,15 +183,15 @@
                 rel="noopener noreferrer nofollow"
               >
                 <img class="contacts__image" src="./images/png/christmas-tree.png" alt="Christmas tree" />
-                <h2 class="contacts__title">Magic forest</h2>
-                <h3 class="contacts__caption">meet us</h3>
+                <p class="contacts__title">Magic forest</p>
+                <p class="contacts__caption">meet us</p>
               </a>
             </li>
             <li class="contacts__item">
               <a class="contacts__link" href="mailto:gifts@magic.com">
                 <img class="contacts__image" src="./images/png/snake.png" alt="Snake" />
-                <h2 class="contacts__title">gifts@magic.com</h2>
-                <h3 class="contacts__caption">write us</h3>
+                <p class="contacts__title">gifts@magic.com</p>
+                <p class="contacts__caption">write us</p>
               </a>
             </li>
           </ul>
@@ -203,6 +204,7 @@
                 href="https://t.me/AfishaRSSchool"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
+                aria-label="Telegram link"
               >
                 <svg class="socials__icon">
                   <use href="./images/icons.svg#icon-telegram"></use>
@@ -215,6 +217,7 @@
                 href="https://www.facebook.com/rsschoolEN"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
+                aria-label="Facebook link"
               >
                 <svg class="socials__icon">
                   <use href="./images/icons.svg#icon-facebook"></use>
@@ -227,6 +230,7 @@
                 href="https://www.instagram.com/rsschool_en/"
                 target="_blank"
                 rel="noopener noreferrer nofollow"
+                aria-label="Instagram link"
               >
                 <svg class="socials__icon">
                   <use href="./images/icons.svg#icon-instagram"></use>
@@ -234,7 +238,7 @@
               </a>
             </li>
             <li>
-              <a class="socials__link" href="javascript:;">
+              <a class="socials__link" href="javascript:;" aria-label="X social network link">
                 <svg class="socials__icon">
                   <use href="./images/icons.svg#icon-twitter-x"></use>
                 </svg>

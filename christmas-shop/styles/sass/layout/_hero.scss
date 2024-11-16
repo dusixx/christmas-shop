@@ -24,7 +24,7 @@
   }
 
   &__btn {
-    @extend %btn-primary;
+    @extend %link-btn;
   }
 
   &__caption {

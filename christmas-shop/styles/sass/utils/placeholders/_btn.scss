@@ -18,26 +18,26 @@
   @include main-transition("color, background-color");
 }
 
-%btn-primary {
-  @extend %btn-base;
+// %btn-primary {
+//   @extend %btn-base;
 
-  padding-left: 32px;
-  padding-right: 32px;
+//   padding-left: 32px;
+//   padding-right: 32px;
 
-  font-family: var(--font-family);
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+//   font-family: var(--font-family);
+//   font-weight: 600;
+//   font-size: 12px;
+//   line-height: 1;
+//   letter-spacing: 0.05em;
+//   text-transform: uppercase;
 
-  background-color: var(--color-dark);
+//   background-color: var(--color-dark);
 
-  @include focused {
-    color: var(--color-dark);
-    background-color: var(--color-static-white);
-  }
-}
+//   @include focused {
+//     color: var(--color-dark);
+//     background-color: var(--color-static-white);
+//   }
+// }
 
 %slider-control {
   @extend %btn-base;
