@@ -29,10 +29,12 @@
 // #region components
 @import "./components/site-nav";
 @import "./components/logo";
+@import "./components/btn-disabled";
 // #endregion components
 
 // #region layout
 @import "./layout/header";
 @import "./layout/hero";
 @import "./layout/about";
+@import "./layout/slider";
 // #endregion layout

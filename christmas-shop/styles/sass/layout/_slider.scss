@@ -1,0 +1,79 @@
+.slider {
+  &__container {
+    @extend %container;
+    @extend %section-padding;
+
+    height: 488px;
+    padding-left: 0;
+    padding-right: 0;
+
+    background-color: var(--color-primary);
+    background-image: url("./../../images/png/bg-snow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__heading {
+    @extend %section-heading;
+  }
+
+  &__caption {
+    @extend %caption;
+  }
+
+  &__title {
+    @extend %section-title;
+    color: var(--color-static-white);
+  }
+
+  &__track {
+    position: relative;
+    height: 200px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+
+  &__content {
+    position: absolute;
+    left: 82px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    height: 100%;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 80px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-static-white);
+  }
+
+  &__image {
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 82px;
+  }
+
+  &__btn {
+    @extend %slider-control;
+  }
+
+  &__btn-icon {
+    width: 13px;
+    height: 12px;
+    fill: currentColor;
+  }
+}

@@ -1,15 +1,28 @@
 %btn {
-  @extend %custom-pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  display: block;
   font-family: inherit;
   border-style: none;
 }
 
-%btn-primary {
+%btn-base {
   @extend %btn;
+  @extend %custom-pointer;
 
-  padding: 20px 32px;
+  height: 56px;
+  border-radius: 20px;
+  color: var(--color-static-white);
+
+  @include main-transition("color, background-color");
+}
+
+%btn-primary {
+  @extend %btn-base;
+
+  padding-left: 32px;
+  padding-right: 32px;
 
   font-family: var(--font-family);
   font-weight: 600;
@@ -17,16 +30,26 @@
   line-height: 1;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  text-align: center;
 
-  border-radius: 20px;
-  color: var(--color-static-white);
   background-color: var(--color-dark);
-
-  @include main-transition("color, background-color");
 
   @include focused {
     color: var(--color-dark);
+    background-color: var(--color-static-white);
+  }
+}
+
+%slider-control {
+  @extend %btn-base;
+
+  width: 56px;
+
+  background-color: transparent;
+  color: var(--color-static-white);
+  border: 1px solid currentColor;
+
+  @include focused {
+    color: var(--color-primary);
     background-color: var(--color-static-white);
   }
 }

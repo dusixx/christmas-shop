@@ -1,14 +1,16 @@
 .about {
-  @extend %section;
-  @extend %container;
+  &__container {
+    @extend %container;
+    @extend %section-padding;
 
-  height: 648px;
+    height: 648px;
 
-  background-color: var(--color-primary);
-  background-image: url("./../../images/png/bg-snow.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+    background-color: var(--color-primary);
+    background-image: url("./../../images/png/bg-snow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
   &__container-inner {
     display: flex;
