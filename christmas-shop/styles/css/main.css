@@ -263,7 +263,7 @@ a {
 }
 
 .slider__btn, .footer__made-in, .socials__link, .contacts__link, .gift-card, .logo, .site-nav__link, .site-nav__link--non-interactive, .cta__btn, .hero__btn {
-  cursor: url("./../../../../images/pointinghand.png"), pointer;
+  cursor: url("./../../images/pointinghand.png"), pointer;
 }
 
 .footer__made-in, .cta__caption, .best-gifts__caption, .slider__caption, .about__caption, .hero__caption, .header__caption {
