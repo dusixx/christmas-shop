@@ -440,7 +440,7 @@ a {
 
 .site-nav__link {
   display: block;
-  padding: 14px 20px;
+  padding: 12px 20px;
   height: 40px;
   border-radius: 12px;
   -webkit-transition-duration: var(--transition-duration);
@@ -509,7 +509,7 @@ a {
   border-radius: 20px;
 }
 .gift-card__title {
-  margin-top: 8px;
+  margin-top: 9px;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
@@ -591,9 +591,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 80px;
   height: 52px;
   color: var(--color-static-white);
@@ -847,7 +844,7 @@ a {
 }
 .slider__content {
   position: absolute;
-  left: 82px;
+  left: 84px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
