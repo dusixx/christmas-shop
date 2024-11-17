@@ -1,0 +1,35 @@
+.category {
+  display: flex;
+  gap: 8px;
+
+  &__label {
+    @extend %subtitle;
+    @extend %custom-pointer;
+
+    display: flex;
+    height: 40px;
+
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  &__input {
+    appearance: unset;
+    /* IOS < 15: remove gradient background */
+    background-color: #fff;
+    margin: 0;
+  }
+
+  &__caption {
+    padding: 12px 20px;
+
+    color: var(--color-static-white);
+    @include main-transition("background-color");
+  }
+
+  &__input:checked ~ &__caption,
+  &__input:hover ~ &__caption,
+  &__input:focus-visible ~ &__caption {
+    background-color: var(--color-static-white-20);
+  }
+}

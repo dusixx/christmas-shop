@@ -14,17 +14,13 @@
 
   border-radius: 12px;
 
-  @include main-transition("color, background-color");
-
-  @include focused {
+  @include main-transition-focused("color, background-color") {
     color: var(--color-primary);
     background-color: var(--color-primary-10);
   }
 }
 
 .site-nav__link--non-interactive {
-  @extend .site-nav__link;
-
   @include focused {
     color: unset;
     background-color: unset;

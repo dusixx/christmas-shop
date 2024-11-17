@@ -9,3 +9,16 @@
   pointer-events: none;
   @content;
 }
+
+@mixin smooth-scrolling($flag) {
+  @if ($flag) {
+    html {
+      // chrome://flags/#smooth-scrolling
+      scroll-behavior: smooth;
+    }
+  } @else {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

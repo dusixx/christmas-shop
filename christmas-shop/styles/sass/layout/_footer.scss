@@ -27,9 +27,8 @@
     @extend %link;
 
     color: var(--color-dark);
-    @include main-transition("color");
 
-    @include focused {
+    @include main-transition-focused("color") {
       color: var(--color-primary);
     }
   }

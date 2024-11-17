@@ -17,11 +17,9 @@
 
   color: var(--color-static-white);
   background-color: var(--color-dark);
-
-  @include main-transition("color, background-color");
   border-radius: 20px;
 
-  @include focused {
+  @include main-transition-focused("color, background-color") {
     color: var(--color-dark);
     background-color: var(--color-static-white);
   }

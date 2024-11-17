@@ -179,61 +179,6 @@ summary {
   display: list-item;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-family);
-  color: var(--color-text);
-  background-color: var(--color-static-white);
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-address {
-  font-style: normal;
-}
-
-a {
-  text-decoration: none;
-}
-
-@font-face {
-  font-display: swap;
-  font-family: "Allura";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./../../fonts/allura-v21-latin-400.woff2") format("woff2");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./../../fonts/montserrat-v29-latin-400.woff2") format("woff2");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  src: url("./../../fonts/montserrat-v29-latin-600.woff2") format("woff2");
-}
 :root {
   --font-family: "Montserrat", sans-serif;
   --second-family: "Allura", sans-serif;
@@ -256,7 +201,7 @@ a {
   --section-padding-ver: 60px;
 }
 
-.slider__btn, .footer__made-in, .socials__link, .contacts__link, .gift-card, .logo, .site-nav__link, .site-nav__link--non-interactive, .cta__btn, .hero__btn {
+.category__label, .slider__btn, .footer__made-in, .socials__link, .contacts__link, .gift-card, .logo, .site-nav__link, .cta__btn, .hero__btn {
   cursor: url("./../../images/pointinghand.png"), pointer;
 }
 
@@ -290,7 +235,7 @@ a {
   color: var(--color-static-white);
 }
 
-.timer__unit, .gift-card__tag, .logo, .site-nav__link, .site-nav__link--non-interactive, .cta__btn, .hero__btn {
+.category__label, .timer__unit, .gift-card__tag, .logo, .site-nav__link, .cta__btn, .hero__btn {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 12px;
@@ -305,7 +250,7 @@ a {
   line-height: 148%;
 }
 
-.footer__made-in, .socials__link, .contacts__link, .gift-card, .logo, .site-nav__link, .site-nav__link--non-interactive, .cta__btn, .hero__btn {
+.footer__made-in, .socials__link, .contacts__link, .gift-card, .logo, .site-nav__link, .cta__btn, .hero__btn {
   color: var(--color-dark);
 }
 
@@ -324,13 +269,13 @@ a {
   padding-right: 32px;
   color: var(--color-static-white);
   background-color: var(--color-dark);
+  border-radius: 20px;
   -webkit-transition-duration: var(--transition-duration);
           transition-duration: var(--transition-duration);
   -webkit-transition-timing-function: var(--transitiion-func);
           transition-timing-function: var(--transitiion-func);
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
-  border-radius: 20px;
 }
 .cta__btn:hover, .hero__btn:hover, .cta__btn:focus-visible, .hero__btn:focus-visible {
   color: var(--color-dark);
@@ -428,6 +373,61 @@ a {
   background-size: contain;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-static-white);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Allura";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./../../fonts/allura-v21-latin-400.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./../../fonts/montserrat-v29-latin-400.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./../../fonts/montserrat-v29-latin-600.woff2") format("woff2");
+}
 .site-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -438,7 +438,7 @@ a {
   gap: 8px;
 }
 
-.site-nav__link, .site-nav__link--non-interactive {
+.site-nav__link {
   display: block;
   padding: 14px 20px;
   height: 40px;
@@ -450,7 +450,7 @@ a {
   -webkit-transition-property: color, background-color;
   transition-property: color, background-color;
 }
-.site-nav__link:hover, .site-nav__link--non-interactive:hover, .site-nav__link:focus-visible, .site-nav__link--non-interactive:focus-visible {
+.site-nav__link:hover, .site-nav__link:focus-visible {
   color: var(--color-primary);
   background-color: var(--color-primary-10);
 }
@@ -477,11 +477,6 @@ a {
   width: 24px;
   height: 24px;
   fill: var(--color-primary);
-}
-
-.slider-control-disabled {
-  pointer-events: none;
-  color: var(--color-static-white-40);
 }
 
 .gift-card {
@@ -709,6 +704,42 @@ a {
   fill: currentColor;
 }
 
+.category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+.category__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.category__input {
+  -webkit-appearance: unset;
+     -moz-appearance: unset;
+          appearance: unset;
+  /* IOS < 15: remove gradient background */
+  background-color: #fff;
+  margin: 0;
+}
+.category__caption {
+  padding: 12px 20px;
+  color: var(--color-static-white);
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+  -webkit-transition-timing-function: var(--transitiion-func);
+          transition-timing-function: var(--transitiion-func);
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+}
+.category__input:checked ~ .category__caption, .category__input:hover ~ .category__caption, .category__input:focus-visible ~ .category__caption {
+  background-color: var(--color-static-white-20);
+}
+
 .header__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -855,6 +886,10 @@ a {
   width: 13px;
   height: 12px;
   fill: currentColor;
+}
+.slider__btn--disabled {
+  pointer-events: none;
+  color: var(--color-static-white-40);
 }
 
 .best-gifts__container {

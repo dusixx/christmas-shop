@@ -1,7 +1,4 @@
-html {
-  // chrome://flags/#smooth-scrolling
-  scroll-behavior: smooth;
-}
+@include smooth-scrolling($smoothScrolling);
 
 // prettier-ignore
 body {

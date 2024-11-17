@@ -30,7 +30,32 @@
       <section class="gifts">
         <div class="gifts__container">
           <h1 class="gifts__title">Achieve health, harmony, and inner strength</h1>
-          <div class="category-tabs"></div>
+          <ul class="category" role="group">
+            <li>
+              <label class="category__label">
+                <input class="category__input" type="radio" name="category" value="all" checked />
+                <span class="category__caption">all</span>
+              </label>
+            </li>
+            <li>
+              <label class="category__label">
+                <input class="category__input" type="radio" name="category" value="for_work" />
+                <span class="category__caption">for work</span>
+              </label>
+            </li>
+            <li>
+              <label class="category__label">
+                <input class="category__input" type="radio" name="category" value="for_health" />
+                <span class="category__caption">for health</span>
+              </label>
+            </li>
+            <li>
+              <label class="category__label">
+                <input class="category__input" type="radio" name="category" value="for_harmony" />
+                <span class="category__caption">for harmony</span>
+              </label>
+            </li>
+          </ul>
           <ul class="gifts__cards">
             <li>
               <a class="gift-card gift-card--for-work" href="">

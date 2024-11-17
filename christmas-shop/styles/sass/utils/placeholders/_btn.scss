@@ -18,7 +18,7 @@
   @include main-transition("color, background-color");
 }
 
-%slider-control {
+%btn-slider-control {
   @extend %btn-base;
 
   width: 56px;

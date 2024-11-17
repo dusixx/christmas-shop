@@ -25,9 +25,7 @@ $contactsRowGap: 12px;
 
   height: 100%;
 
-  @include main-transition("color");
-
-  @include focused {
+  @include main-transition-focused("color") {
     color: var(--color-primary);
   }
 }

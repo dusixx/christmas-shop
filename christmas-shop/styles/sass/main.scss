@@ -2,12 +2,6 @@
 @import "./vendors/modern-normalize";
 // #endregion vendors
 
-// #region base
-@import "./base/base";
-@import "./base/reset";
-@import "./base/fonts";
-// #endregion base
-
 // #region variables
 @import "./utils/variables";
 // #endregion variables
@@ -26,14 +20,20 @@
 @import "./utils/placeholders/section";
 // #endregion placeholders
 
+// #region base
+@import "./base/base";
+@import "./base/reset";
+@import "./base/fonts";
+// #endregion base
+
 // #region components
 @import "./components/site-nav";
 @import "./components/logo";
-@import "./components/disabled";
 @import "./components/gift-card";
 @import "./components/timer";
 @import "./components/contacts";
 @import "./components/socials";
+@import "./components/category";
 // #endregion components
 
 // #region layout

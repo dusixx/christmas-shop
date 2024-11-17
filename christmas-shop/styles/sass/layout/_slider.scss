@@ -63,12 +63,18 @@
   }
 
   &__btn {
-    @extend %slider-control;
+    @extend %btn-slider-control;
   }
 
   &__btn-icon {
     width: 13px;
     height: 12px;
     fill: currentColor;
+  }
+
+  &__btn--disabled {
+    @include disabled {
+      color: var(--color-static-white-40);
+    }
   }
 }
