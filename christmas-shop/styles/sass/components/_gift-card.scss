@@ -58,7 +58,7 @@
   }
   .gift-card__thumb {
     // prettier-ignore
-    @include bg($img: url("./../../images/png/gift-for-work.png"), 
+    @include bg($img: url("./../../images/gift-card/gift-for-work.png"), 
       $repeat: no-repeat, $pos: center, $sz: cover);
   }
 }
@@ -69,7 +69,7 @@
   }
   .gift-card__thumb {
     // prettier-ignore
-    @include bg($img: url("./../../images/png/gift-for-health.png"), 
+    @include bg($img: url("./../../images/gift-card/gift-for-health.png"), 
       $repeat: no-repeat, $pos: center, $sz: cover);
   }
 }
@@ -80,7 +80,7 @@
   }
   .gift-card__thumb {
     // prettier-ignore
-    @include bg($img: url("./../../images/png/gift-for-harmony.png"), 
+    @include bg($img: url("./../../images/gift-card/gift-for-harmony.png"), 
       $repeat: no-repeat, $pos: center, $sz: cover);
   }
 }

@@ -18,7 +18,7 @@
 %section-bg {
   @include bg(
     $color: var(--color-primary),
-    $img: url("./../../images/png/bg-snow.png"),
+    $img: url("./../../images/bg/bg-snow.png"),
     $repeat: no-repeat,
     $pos: center,
     $sz: cover
@@ -29,8 +29,8 @@
   @include bg(
     $color: var(--color-primary),
     $img: (
-      url("./../../images/png/bg-snow.png"),
-      url("./../../images/png/bg-ball.png"),
+      url("./../../images/bg/bg-snow.png"),
+      url("./../../images/bg/bg-ball.png"),
     ),
     $repeat: no-repeat,
     $pos: center,
@@ -42,8 +42,8 @@
   @include bg(
     $color: var(--color-primary),
     $img: (
-      url("./../../images/png/bg-snow.png"),
-      url("./../../images/png/bg-forest.png"),
+      url("./../../images/bg/bg-snow.png"),
+      url("./../../images/bg/bg-forest.png"),
     ),
     $repeat: no-repeat,
     $pos: top,
@@ -54,7 +54,7 @@
 %gifts-bg {
   @include bg(
     $color: var(--color-primary),
-    $img: url("./../../images/png/bg-garland.png"),
+    $img: url("./../../images/bg/bg-garland.png"),
     $repeat: no-repeat,
     $pos: top,
     $sz: contain

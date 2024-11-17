@@ -343,7 +343,7 @@ summary {
 
 .best-gifts__container, .slider__container, .about__container {
   background-color: var(--color-primary);
-  background-image: url("./../../images/png/bg-snow.png");
+  background-image: url("./../../images/bg/bg-snow.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -351,7 +351,7 @@ summary {
 
 .hero__container {
   background-color: var(--color-primary);
-  background-image: url("./../../images/png/bg-snow.png"), url("./../../images/png/bg-ball.png");
+  background-image: url("./../../images/bg/bg-snow.png"), url("./../../images/bg/bg-ball.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -359,7 +359,7 @@ summary {
 
 .cta__container {
   background-color: var(--color-primary);
-  background-image: url("./../../images/png/bg-snow.png"), url("./../../images/png/bg-forest.png");
+  background-image: url("./../../images/bg/bg-snow.png"), url("./../../images/bg/bg-forest.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -367,7 +367,7 @@ summary {
 
 .gifts__container {
   background-color: var(--color-primary);
-  background-image: url("./../../images/png/bg-garland.png");
+  background-image: url("./../../images/bg/bg-garland.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
@@ -530,7 +530,7 @@ a {
   color: var(--color-tag-purple);
 }
 .gift-card--for-work .gift-card__thumb {
-  background-image: url("./../../images/png/gift-for-work.png");
+  background-image: url("./../../images/gift-card/gift-for-work.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -540,7 +540,7 @@ a {
   color: var(--color-tag-green);
 }
 .gift-card--for-health .gift-card__thumb {
-  background-image: url("./../../images/png/gift-for-health.png");
+  background-image: url("./../../images/gift-card/gift-for-health.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -550,7 +550,7 @@ a {
   color: var(--color-tag-pink);
 }
 .gift-card--for-harmony .gift-card__thumb {
-  background-image: url("./../../images/png/gift-for-harmony.png");
+  background-image: url("./../../images/gift-card/gift-for-harmony.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
