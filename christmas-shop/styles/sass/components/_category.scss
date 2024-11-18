@@ -4,6 +4,13 @@
 
   &__item {
     display: flex;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    &:focus-within {
+      outline: auto;
+    }
   }
 
   &__label {
@@ -15,7 +22,6 @@
     padding: 12px 20px;
 
     color: var(--color-static-white);
-    border-radius: 12px;
 
     @include main-transition("background-color");
   }

@@ -21,7 +21,7 @@
   }
 }
 
-.site-nav__link--active {
+.site-nav__link--current {
   @include non-interactive {
     color: var(--color-primary);
     background-color: var(--color-primary-10);
