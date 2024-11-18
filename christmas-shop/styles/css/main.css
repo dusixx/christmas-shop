@@ -461,6 +461,10 @@ a {
 
 .site-nav__link--active {
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: var(--color-primary);
   background-color: var(--color-primary-10);
 }
@@ -745,6 +749,10 @@ a {
 }
 .category__input:checked ~ .category__label {
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: default;
 }
 
@@ -897,6 +905,10 @@ a {
 }
 .slider__btn--disabled {
   pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: var(--color-static-white-40);
 }
 
