@@ -723,7 +723,7 @@ a {
   border-radius: 12px;
   overflow: hidden;
 }
-.category__item:focus-within {
+.category__item:has(:focus-visible) {
   outline: auto;
 }
 .category__label {

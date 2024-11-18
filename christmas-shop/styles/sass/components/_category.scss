@@ -8,7 +8,8 @@
     border-radius: 12px;
     overflow: hidden;
 
-    &:focus-within {
+    // show outline only if input was focused with Tab
+    &:has(:focus-visible) {
       outline: auto;
     }
   }
