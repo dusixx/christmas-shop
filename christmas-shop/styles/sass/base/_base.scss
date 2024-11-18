@@ -1,8 +1,7 @@
 @include smooth-scrolling($smoothScrolling);
 
-// prettier-ignore
 body {
-    font-family: var(--font-family);
-    color: var(--color-text);
-    background-color: var(--color-static-white);
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-static-white);
 }

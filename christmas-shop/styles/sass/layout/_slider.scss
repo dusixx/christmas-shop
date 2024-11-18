@@ -73,7 +73,7 @@
   }
 
   &__btn--disabled {
-    @include disabled {
+    @include non-interactive {
       color: var(--color-static-white-40);
     }
   }

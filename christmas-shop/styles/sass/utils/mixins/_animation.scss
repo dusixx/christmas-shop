@@ -4,9 +4,9 @@
   transition-property: #{$props};
 }
 
-@mixin main-transition-focused($props: "all") {
-  @include main-transition($props);
-  @include focused {
-    @content;
-  }
-}
+// @mixin main-transition-focused($props: "all") {
+//   @include main-transition($props);
+//   @include focused {
+//     @content;
+//   }
+// }

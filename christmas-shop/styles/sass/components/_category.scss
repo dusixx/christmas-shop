@@ -2,15 +2,22 @@
   display: flex;
   gap: 8px;
 
+  &__item {
+    display: flex;
+  }
+
   &__label {
     @extend %subtitle;
     @extend %custom-pointer;
 
     display: flex;
     height: 40px;
+    padding: 12px 20px;
 
+    color: var(--color-static-white);
     border-radius: 12px;
-    overflow: hidden;
+
+    @include main-transition("background-color");
   }
 
   &__input {
@@ -20,16 +27,15 @@
     margin: 0;
   }
 
-  &__caption {
-    padding: 12px 20px;
-
-    color: var(--color-static-white);
-    @include main-transition("background-color");
+  &__input:checked ~ &__label,
+  &__input:hover ~ &__label,
+  &__input:focus-visible ~ &__label {
+    background-color: var(--color-static-white-20);
   }
 
-  &__input:checked ~ &__caption,
-  &__input:hover ~ &__caption,
-  &__input:focus-visible ~ &__caption {
-    background-color: var(--color-static-white-20);
+  &__input:checked ~ &__label {
+    @include non-interactive {
+      cursor: default;
+    }
   }
 }

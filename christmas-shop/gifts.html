@@ -18,7 +18,7 @@
         </a>
         <nav class="header__nav">
           <ul class="site-nav">
-            <li><a class="site-nav__link site-nav__link--non-interactive" href="./gifts.html">Gifts</a></li>
+            <li><a class="site-nav__link site-nav__link--active" href="./gifts.html">Gifts</a></li>
             <li><a class="site-nav__link" href="./index.html#about">About</a></li>
             <li><a class="site-nav__link" href="./index.html#best-gifts">Best</a></li>
             <li><a class="site-nav__link" href="#contacts">Contacts</a></li>
@@ -31,29 +31,21 @@
         <div class="gifts__container">
           <h1 class="gifts__title">Achieve health, harmony, and inner strength</h1>
           <ul class="category" role="group">
-            <li>
-              <label class="category__label">
-                <input class="category__input" type="radio" name="category" value="all" checked />
-                <span class="category__caption">all</span>
-              </label>
+            <li class="category__item">
+              <input class="category__input" type="radio" name="category" value="all" id="radio-all" checked />
+              <label for="radio-all" class="category__label">all</label>
             </li>
-            <li>
-              <label class="category__label">
-                <input class="category__input" type="radio" name="category" value="for_work" />
-                <span class="category__caption">for work</span>
-              </label>
+            <li class="category__item">
+              <input class="category__input" type="radio" name="category" value="for_work" id="radio-for-work" />
+              <label for="radio-for-work" class="category__label">for work</label>
             </li>
-            <li>
-              <label class="category__label">
-                <input class="category__input" type="radio" name="category" value="for_health" />
-                <span class="category__caption">for health</span>
-              </label>
+            <li class="category__item">
+              <input class="category__input" type="radio" name="category" value="for_health" id="radio-for-health" />
+              <label for="radio-for-health" class="category__label">for health</label>
             </li>
-            <li>
-              <label class="category__label">
-                <input class="category__input" type="radio" name="category" value="for_harmony" />
-                <span class="category__caption">for harmony</span>
-              </label>
+            <li class="category__item">
+              <input class="category__input" type="radio" name="category" value="for_harmony" id="radio-for-harmony" />
+              <label for="radio-for-harmony" class="category__label">for harmony</label>
             </li>
           </ul>
           <ul class="gifts__cards">

@@ -1,6 +1,9 @@
 %link {
   @extend %custom-pointer;
   color: var(--color-dark);
+
+  // to avoid selection on dblclick
+  user-select: none;
 }
 
 %link-btn {
@@ -19,7 +22,9 @@
   background-color: var(--color-dark);
   border-radius: 20px;
 
-  @include main-transition-focused("color, background-color") {
+  @include main-transition("color, background-color");
+
+  @include focused {
     color: var(--color-dark);
     background-color: var(--color-static-white);
   }

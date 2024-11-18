@@ -1,32 +1,26 @@
-// #region vendors
 @import "./vendors/modern-normalize";
-// #endregion vendors
 
-// #region variables
+// vars
 @import "./utils/variables";
-// #endregion variables
 
-// #region mixins
+// mixins
 @import "./utils/mixins/misc";
 @import "./utils/mixins/animation";
 @import "./utils/mixins/bg";
-// #endregion mixins
 
-// #region placeholders
+// placeholders
 @import "./utils/placeholders/misc";
 @import "./utils/placeholders/typography";
 @import "./utils/placeholders/link";
 @import "./utils/placeholders/btn";
 @import "./utils/placeholders/section";
-// #endregion placeholders
 
-// #region base
+// base
 @import "./base/base";
 @import "./base/reset";
 @import "./base/fonts";
-// #endregion base
 
-// #region components
+// components
 @import "./components/site-nav";
 @import "./components/logo";
 @import "./components/gift-card";
@@ -34,9 +28,8 @@
 @import "./components/contacts";
 @import "./components/socials";
 @import "./components/category";
-// #endregion components
 
-// #region layout
+// layout
 @import "./layout/header";
 @import "./layout/hero";
 @import "./layout/about";
@@ -45,4 +38,3 @@
 @import "./layout/cta";
 @import "./layout/footer";
 @import "./layout/gifts";
-// #endregion layout

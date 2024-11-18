@@ -22,10 +22,11 @@ $contactsRowGap: 12px;
   gap: $contactsRowGap;
   align-items: center;
   justify-content: center;
-
   height: 100%;
 
-  @include main-transition-focused("color") {
+  @include main-transition("color");
+
+  @include focused {
     color: var(--color-primary);
   }
 }

@@ -13,16 +13,17 @@
   height: 40px;
 
   border-radius: 12px;
+  @include main-transition("color, background-color");
 
-  @include main-transition-focused("color, background-color") {
+  @include focused {
     color: var(--color-primary);
     background-color: var(--color-primary-10);
   }
 }
 
-.site-nav__link--non-interactive {
-  @include focused {
-    color: unset;
-    background-color: unset;
+.site-nav__link--active {
+  @include non-interactive {
+    color: var(--color-primary);
+    background-color: var(--color-primary-10);
   }
 }

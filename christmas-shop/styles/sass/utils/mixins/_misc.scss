@@ -5,7 +5,7 @@
   }
 }
 
-@mixin disabled() {
+@mixin non-interactive() {
   pointer-events: none;
   @content;
 }

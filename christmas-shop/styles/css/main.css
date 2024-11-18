@@ -252,6 +252,10 @@ summary {
 
 .footer__made-in, .socials__link, .contacts__link, .gift-card, .logo, .site-nav__link, .cta__btn, .hero__btn {
   color: var(--color-dark);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .cta__btn, .hero__btn {
@@ -455,9 +459,10 @@ a {
   background-color: var(--color-primary-10);
 }
 
-.site-nav__link--non-interactive:hover, .site-nav__link--non-interactive:focus-visible {
-  color: unset;
-  background-color: unset;
+.site-nav__link--active {
+  pointer-events: none;
+  color: var(--color-primary);
+  background-color: var(--color-primary-10);
 }
 
 .logo {
@@ -707,13 +712,25 @@ a {
   display: flex;
   gap: 8px;
 }
+.category__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .category__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 40px;
+  padding: 12px 20px;
+  color: var(--color-static-white);
   border-radius: 12px;
-  overflow: hidden;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+  -webkit-transition-timing-function: var(--transitiion-func);
+          transition-timing-function: var(--transitiion-func);
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
 }
 .category__input {
   -webkit-appearance: unset;
@@ -723,18 +740,12 @@ a {
   background-color: #fff;
   margin: 0;
 }
-.category__caption {
-  padding: 12px 20px;
-  color: var(--color-static-white);
-  -webkit-transition-duration: var(--transition-duration);
-          transition-duration: var(--transition-duration);
-  -webkit-transition-timing-function: var(--transitiion-func);
-          transition-timing-function: var(--transitiion-func);
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
-}
-.category__input:checked ~ .category__caption, .category__input:hover ~ .category__caption, .category__input:focus-visible ~ .category__caption {
+.category__input:checked ~ .category__label, .category__input:hover ~ .category__label, .category__input:focus-visible ~ .category__label {
   background-color: var(--color-static-white-20);
+}
+.category__input:checked ~ .category__label {
+  pointer-events: none;
+  cursor: default;
 }
 
 .header__container {
