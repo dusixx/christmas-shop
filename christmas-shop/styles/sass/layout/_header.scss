@@ -1,28 +1,16 @@
 .header {
   &__container {
-    @extend %container;
+    @extend .container;
 
     display: flex;
     align-items: center;
-    flex-direction: row;
     justify-content: space-between;
+    // fit content by height
+    align-items: stretch;
 
-    padding: 12px 82px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     background-color: var(--color-static-white);
-    height: 100%;
-  }
-
-  &__heading {
-    @extend %section-heading;
-  }
-
-  &__caption {
-    @extend %caption;
-  }
-
-  &__title {
-    @extend %title;
-    color: var(--color-static-white);
   }
 }

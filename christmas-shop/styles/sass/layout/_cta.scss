@@ -1,7 +1,6 @@
 .cta {
   &__container {
-    @extend %container;
-    @extend %section-padding;
+    @extend .container;
     @extend %cta-bg;
 
     display: flex;
@@ -10,7 +9,8 @@
     align-items: center;
     gap: 8px;
 
-    height: 668px;
+    padding-top: var(--section-padding-ver);
+    padding-bottom: var(--section-padding-ver);
 
     border-radius: 0 0 20px 20px;
   }
@@ -19,9 +19,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 19px;
 
-    width: 430px;
+    max-width: 430px;
+    padding: 120px 0px;
   }
 
   &__title {
@@ -34,6 +35,14 @@
   }
 
   &__caption {
-    @extend %caption;
+    @extend %caption-curly;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__container-timer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
 }

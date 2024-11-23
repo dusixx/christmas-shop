@@ -1,10 +1,10 @@
 .best-gifts {
   &__container {
-    @extend %container;
-    @extend %section-padding;
+    @extend .container;
     @extend %section-bg;
 
-    height: 554px;
+    padding-top: var(--section-padding-ver);
+    padding-bottom: var(--section-padding-ver);
   }
 
   &__heading {
@@ -12,7 +12,7 @@
   }
 
   &__caption {
-    @extend %caption;
+    @extend %caption-curly;
   }
 
   &__title {
@@ -26,6 +26,16 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
+
+    @media screen and (width >= $bp-desktop) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+    width: 310px;
   }
 }

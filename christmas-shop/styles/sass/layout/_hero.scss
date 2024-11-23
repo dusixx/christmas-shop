@@ -1,14 +1,13 @@
 .hero {
   &__container {
-    @extend %container;
+    @extend .container;
     @extend %hero-bg;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    height: 523px;
-    //padding: 120px 0;
+    padding: 120px 0;
 
     border-radius: 20px 20px 0 0;
     color: var(--color-static-white);
@@ -23,15 +22,16 @@
     width: 430px;
   }
 
+  &__title {
+    @extend %page-title;
+  }
+
   &__btn {
     @extend %link-btn;
   }
 
   &__caption {
-    @extend %caption;
-  }
-
-  &__title {
-    @extend %page-title;
+    @extend %caption-curly;
+    text-align: center;
   }
 }

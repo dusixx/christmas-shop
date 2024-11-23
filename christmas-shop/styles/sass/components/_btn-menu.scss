@@ -1,0 +1,34 @@
+.btn-menu {
+  @extend %btn;
+
+  // position: relative;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 10px;
+
+  background-color: transparent;
+
+  @media screen and (width > $bp-tablet) {
+    display: none;
+  }
+
+  &__line {
+    // position: absolute;
+    display: block;
+    height: 1px;
+    width: 20px;
+
+    background-color: var(--color-dark);
+  }
+}
+
+// .btn-menu--close {
+//   &:hover {
+//     .btn-menu__line:first-child {
+//       transform: rotate(45deg);
+//     }
+//     .btn-menu__line:last-child {
+//       transform: rotate(-45deg);
+//     }
+//   }
+// }

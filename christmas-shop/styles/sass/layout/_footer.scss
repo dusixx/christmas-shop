@@ -1,9 +1,10 @@
 .footer {
   &__container {
-    @extend %container;
-    @extend %section-padding;
+    @extend .container;
 
-    height: 496px;
+    padding-top: var(--section-padding-ver);
+    padding-bottom: var(--section-padding-ver);
+
     background-color: var(--color-static-white);
   }
 
@@ -20,11 +21,14 @@
 
   &__copyright {
     @extend %paragraph;
+    text-align: center;
   }
 
   &__made-in {
-    @extend %caption;
+    @extend %caption-curly;
     @extend %link;
+
+    text-align: center;
 
     color: var(--color-dark);
     @include main-transition("color");

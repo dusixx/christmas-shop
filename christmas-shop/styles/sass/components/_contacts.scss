@@ -1,16 +1,20 @@
-$contactsRowGap: 12px;
+$bp-for-cards-rearrange: 1060px;
 
 .contacts {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-
-  height: 204px;
   width: 100%;
 
   &__item {
-    flex-basis: calc((100% - $contactsRowGap) / 3);
+    flex: 1;
+    min-height: 204px;
     background-color: var(--color-content-bg);
     border-radius: 20px;
+
+    @media screen and (width <= $bp-for-cards-rearrange) {
+      flex-basis: 100%;
+    }
   }
 }
 
@@ -19,7 +23,7 @@ $contactsRowGap: 12px;
 
   display: flex;
   flex-direction: column;
-  gap: $contactsRowGap;
+  gap: 12px;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -38,6 +42,13 @@ $contactsRowGap: 12px;
 
 .contacts__title {
   @extend %title;
+
+  white-space: nowrap;
+
+  @media screen and (width <= $bp-for-cards-rearrange) {
+    white-space: unset;
+    word-break: break-all;
+  }
 }
 
 .contacts__caption {
