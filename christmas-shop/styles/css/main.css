@@ -863,12 +863,8 @@ a {
 }
 
 .burger-btn {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 8px;
-  padding: 0 10px;
+  position: relative;
+  width: 40px;
   background-color: transparent;
 }
 @media screen and (width > 768px) {
@@ -877,9 +873,33 @@ a {
   }
 }
 .burger-btn__line {
+  position: absolute;
   height: 1px;
   width: 20px;
   background-color: var(--color-dark);
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+  -webkit-transition-timing-function: var(--transitiion-func);
+          transition-timing-function: var(--transitiion-func);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+.burger-btn__line:first-child {
+  top: 16px;
+}
+.burger-btn__line:last-child {
+  top: 24px;
+}
+
+.burger-btn--active:active .burger-btn__line:first-child {
+  -webkit-transform: translateY(4px) rotate(45deg);
+          transform: translateY(4px) rotate(45deg);
+}
+.burger-btn--active:active .burger-btn__line:last-child {
+  -webkit-transform: translateY(-4px) rotate(-45deg);
+          transform: translateY(-4px) rotate(-45deg);
 }
 
 .header__container {
