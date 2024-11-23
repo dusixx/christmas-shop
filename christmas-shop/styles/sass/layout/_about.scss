@@ -1,40 +1,54 @@
+$bp-for-block-rearrange: 656px;
+
 .about {
   &__container {
-    @extend %container;
-    @extend %section-padding;
+    @extend .container;
     @extend %section-bg;
 
-    height: 648px;
+    padding-top: var(--section-padding-ver);
+    padding-bottom: var(--section-padding-ver);
   }
 
   &__container-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    height: 528px;
-    padding-left: 60px;
+    flex-direction: column;
 
     border-radius: 20px;
     background-color: var(--color-content-bg);
     overflow: hidden;
+
+    @media screen and (width > $bp-for-block-rearrange) {
+      flex-direction: row;
+    }
   }
 
   &__desc {
     display: flex;
+    align-items: center;
+    padding: 60px 20px;
+
+    @media screen and (width > $bp-for-block-rearrange) {
+      flex-basis: 50%;
+      padding: 0 60px;
+    }
+  }
+
+  &__text {
+    display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 426px;
+    max-width: 426px;
   }
 
   &__caption {
-    @extend %caption;
+    @extend %caption-curly;
     color: var(--color-primary);
   }
 
   &__title {
     @extend %title;
-
     text-align: left;
   }
 
@@ -43,7 +57,20 @@
   }
 
   &__thumb {
+    height: 528px;
     border-radius: 20px;
-    overflow: hidden;
+    width: 100%;
+
+    @media screen and (width > $bp-for-block-rearrange) {
+      flex-basis: 50%;
+    }
+
+    // prettier-ignore
+    @include bg(
+      $img: url("./../../images/about/santa.png"), 
+      $repeat: no-repeat, 
+      $pos: center,
+      $sz: cover
+    );
   }
 }

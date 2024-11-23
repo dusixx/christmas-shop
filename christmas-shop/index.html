@@ -14,7 +14,7 @@
           <svg class="logo__icon" width="10" height="16">
             <use href="./images/icons.svg#icon-logo"></use>
           </svg>
-          <span class="logo__text">the gifts</span>
+          <p class="logo__text">the gifts</p>
         </a>
         <nav class="header__nav">
           <ul class="site-nav">
@@ -24,6 +24,10 @@
             <li><a class="site-nav__link" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
+        <button class="btn-menu btn-menu--close">
+          <span class="btn-menu__line"></span>
+          <span class="btn-menu__line"></span>
+        </button>
       </div>
     </header>
     <main>
@@ -41,16 +45,16 @@
         <div class="about__container">
           <div class="about__container-inner">
             <div class="about__desc">
-              <h3 class="about__caption">About</h3>
-              <h2 class="about__title">Unleash your inner superhero!</h2>
-              <p class="about__para">
-                This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique
-                gifts that will help you improve your life.
-              </p>
+              <div class="about__text">
+                <h3 class="about__caption">About</h3>
+                <h2 class="about__title">Unleash your inner superhero!</h2>
+                <p class="about__para">
+                  This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique
+                  gifts that will help you improve your life.
+                </p>
+              </div>
             </div>
-            <div class="about__thumb">
-              <img src="./images/hero/santa.png" alt="Santa and the Snowman" />
-            </div>
+            <div class="about__thumb"></div>
           </div>
         </div>
       </section>
@@ -94,8 +98,8 @@
           </div>
           <div class="best-gifts__cards">
             <ul class="best-gifts__list">
-              <li>
-                <a class="gift-card gift-card--for-work" href="javascript:;">
+              <li class="best-gifts__item">
+                <a class="gift-card gift-card--for-work" href="#null">
                   <div class="gift-card__thumb"></div>
                   <div class="gift-card__desc">
                     <h4 class="gift-card__tag">For work</h4>
@@ -103,7 +107,7 @@
                   </div>
                 </a>
               </li>
-              <li>
+              <li class="best-gifts__item">
                 <a class="gift-card gift-card--for-health" href="javascript:;">
                   <div class="gift-card__thumb"></div>
                   <div class="gift-card__desc">
@@ -112,7 +116,7 @@
                   </div>
                 </a>
               </li>
-              <li>
+              <li class="best-gifts__item">
                 <a class="gift-card gift-card--for-work" href="javascript:;">
                   <div class="gift-card__thumb"></div>
                   <div class="gift-card__desc">
@@ -121,7 +125,7 @@
                   </div>
                 </a>
               </li>
-              <li>
+              <li class="best-gifts__item">
                 <a class="gift-card gift-card--for-harmony" href="javascript:;">
                   <div class="gift-card__thumb"></div>
                   <div class="gift-card__desc">
@@ -139,27 +143,29 @@
           <div class="cta__container-inner">
             <h2 class="cta__title">Ready to start your journey to a better version of yourself?</h2>
             <a class="cta__btn" href="./gifts.html">Explore Magical Gifts</a>
-            <h3 class="cta__caption">The New Year is Coming Soon...</h3>
-          </div>
-          <div class="timer">
-            <ul class="timer__cells">
-              <li class="timer__cell">
-                <h2 class="timer__number">47</h2>
-                <h4 class="timer__unit">days</h4>
-              </li>
-              <li class="timer__cell">
-                <h2 class="timer__number">5</h2>
-                <h4 class="timer__unit">hours</h4>
-              </li>
-              <li class="timer__cell">
-                <h2 class="timer__number">34</h2>
-                <h4 class="timer__unit">minutes</h4>
-              </li>
-              <li class="timer__cell">
-                <h2 class="timer__number">12</h2>
-                <h4 class="timer__unit">seconds</h4>
-              </li>
-            </ul>
+            <div class="cta__container-timer">
+              <h3 class="cta__caption">The New Year is Coming Soon...</h3>
+              <div class="timer">
+                <ul class="timer__cells">
+                  <li class="timer__cell">
+                    <h2 class="timer__number">47</h2>
+                    <h4 class="timer__unit">days</h4>
+                  </li>
+                  <li class="timer__cell">
+                    <h2 class="timer__number">5</h2>
+                    <h4 class="timer__unit">hours</h4>
+                  </li>
+                  <li class="timer__cell">
+                    <h2 class="timer__number">34</h2>
+                    <h4 class="timer__unit">minutes</h4>
+                  </li>
+                  <li class="timer__cell">
+                    <h2 class="timer__number">12</h2>
+                    <h4 class="timer__unit">seconds</h4>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>

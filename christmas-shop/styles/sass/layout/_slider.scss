@@ -1,12 +1,10 @@
 .slider {
   &__container {
-    @extend %container;
-    @extend %section-padding;
+    @extend .container;
     @extend %section-bg;
 
     height: 488px;
-    padding-left: 0;
-    padding-right: 0;
+    padding: var(--section-padding-ver) 0;
   }
 
   &__heading {
@@ -14,7 +12,7 @@
   }
 
   &__caption {
-    @extend %caption;
+    @extend %caption-curly;
   }
 
   &__title {
@@ -31,7 +29,11 @@
 
   &__content {
     position: absolute;
-    left: 84px;
+    left: 8px;
+
+    @media screen and (width > $bp-tablet) {
+      left: 84px;
+    }
 
     display: flex;
     align-items: center;
@@ -58,8 +60,13 @@
     gap: 20px;
     align-items: center;
     justify-content: flex-end;
+
     margin-top: 20px;
-    margin-right: 82px;
+    margin-right: 8px;
+
+    @media screen and (width > $bp-tablet) {
+      margin-right: min(5.7vw, 82px);
+    }
   }
 
   &__btn {

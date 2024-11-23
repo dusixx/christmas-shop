@@ -1,7 +1,11 @@
 .site-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: none;
+
+  @media screen and (width > $bp-tablet) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 }
 
 .site-nav__link {
@@ -10,7 +14,6 @@
 
   display: block;
   padding: 12px 20px;
-  height: 40px;
 
   border-radius: 12px;
   @include main-transition("color, background-color");

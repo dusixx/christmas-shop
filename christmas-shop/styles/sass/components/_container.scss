@@ -1,0 +1,10 @@
+.container {
+  max-width: var(--section-max-width);
+
+  padding: 0 8px;
+  margin: 0 auto;
+
+  @media screen and (width > $bp-tablet) {
+    padding: 0 min(5.7vw, 82px);
+  }
+}

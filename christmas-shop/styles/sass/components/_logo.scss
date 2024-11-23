@@ -10,8 +10,13 @@
   padding: 8px 20px;
 
   &__icon {
+    flex-shrink: 0;
     width: 24px;
     height: 24px;
     fill: var(--color-primary);
+  }
+
+  &__text {
+    white-space: nowrap;
   }
 }

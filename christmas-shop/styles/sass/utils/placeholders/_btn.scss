@@ -1,15 +1,17 @@
 %btn {
+  @extend %custom-pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
+  text-align: center;
   font-family: inherit;
   border-style: none;
 }
 
 %btn-base {
   @extend %btn;
-  @extend %custom-pointer;
 
   height: 56px;
   border-radius: 20px;

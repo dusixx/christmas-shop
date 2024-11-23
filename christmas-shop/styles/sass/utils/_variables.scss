@@ -18,10 +18,17 @@
   --transition-duration: 250ms;
   --transitiion-func: cubic-bezier(0.4, 0, 0.2, 1);
 
-  --section-width: 1440px;
+  --section-max-width: 1440px;
   --section-padding-hor: 82px;
   --section-padding-ver: 60px;
 }
 
 // SASS vars
+
 $smoothScrolling: true;
+
+// breakpoints
+$bp-desktop: 1440px;
+$bp-tablet: 768px;
+$bp-mobile: 380px;
+$bp-mobile-s: 320px;

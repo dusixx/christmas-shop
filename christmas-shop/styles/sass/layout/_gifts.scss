@@ -1,7 +1,6 @@
 .gifts {
   &__container {
-    @extend %container;
-    @extend %section-padding;
+    @extend .container;
     @extend %gifts-bg;
 
     display: flex;
@@ -9,6 +8,7 @@
     align-items: center;
     gap: 20px;
 
+    padding: var(--section-padding-ver) var(--section-padding-hor);
     border-radius: 20px;
   }
 
