@@ -1,7 +1,7 @@
 .gift-card {
   @extend %link;
 
-  flex: 1;
+  //flex: 1;
 
   display: flex;
   flex-direction: column;
@@ -36,22 +36,14 @@
   }
 
   &__title {
-    margin-top: 9px;
+    @extend %gift-card-title;
 
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    max-height: 50px;
+    margin-top: 9px;
 
     overflow: hidden;
     text-overflow: ellipsis;
-    max-height: 50px;
 
     @include main-transition("color");
-
-    @media screen and (width < $bp-mobile-s) {
-      word-break: break-all;
-    }
   }
 }

@@ -1,13 +1,14 @@
 .category {
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media screen and (width >= $bp-tablet) {
+    gap: 8px;
+  }
 
   &__item {
     display: flex;
-
-    border-radius: 12px;
-    overflow: hidden;
-
     // show outline only if input was focused with Tab
     &:has(:focus-visible) {
       outline: auto;
@@ -19,11 +20,22 @@
     @extend %custom-pointer;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
+
     height: 40px;
-    padding: 12px 20px;
+    padding: 0 8px;
+
+    text-align: center;
+    white-space: nowrap;
+
+    border-radius: 12px;
+
+    @media screen and (width >= $bp-tablet) {
+      padding: 0 20px;
+    }
 
     color: var(--color-static-white);
-
     @include main-transition("background-color");
   }
 

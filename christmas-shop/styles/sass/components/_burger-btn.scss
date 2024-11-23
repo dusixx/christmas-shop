@@ -1,4 +1,4 @@
-.btn-menu {
+.burger-btn {
   @extend %btn;
 
   // position: relative;
@@ -14,7 +14,6 @@
 
   &__line {
     // position: absolute;
-    display: block;
     height: 1px;
     width: 20px;
 
