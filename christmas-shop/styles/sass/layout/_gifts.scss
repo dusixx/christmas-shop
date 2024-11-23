@@ -8,18 +8,25 @@
     align-items: center;
     gap: 20px;
 
-    padding: var(--section-padding-ver) var(--section-padding-hor);
+    padding-top: var(--section-padding-ver);
+    padding-bottom: var(--section-padding-ver);
+
     border-radius: 20px;
   }
 
   &__title {
     @extend %page-title;
-    width: 426px;
+    max-width: 426px;
   }
 
   &__cards {
     display: flex;
-    gap: 12px;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__item {
+    flex-basis: 310px;
   }
 }

@@ -29,13 +29,9 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-
-    @media screen and (width >= $bp-desktop) {
-      flex-wrap: nowrap;
-    }
   }
 
   &__item {
-    width: 310px;
+    flex-basis: 310px;
   }
 }
