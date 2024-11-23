@@ -1,10 +1,8 @@
 .burger-btn {
   @extend %btn;
 
-  // position: relative;
-  flex-direction: column;
-  gap: 8px;
-  padding: 0 10px;
+  position: relative;
+  width: 40px;
 
   background-color: transparent;
 
@@ -13,21 +11,30 @@
   }
 
   &__line {
-    // position: absolute;
+    position: absolute;
+
     height: 1px;
     width: 20px;
 
     background-color: var(--color-dark);
+    @include main-transition("transform");
+
+    &:first-child {
+      top: 16px;
+    }
+    &:last-child {
+      top: 24px;
+    }
   }
 }
 
-// .btn-menu--close {
-//   &:hover {
-//     .btn-menu__line:first-child {
-//       transform: rotate(45deg);
-//     }
-//     .btn-menu__line:last-child {
-//       transform: rotate(-45deg);
-//     }
-//   }
-// }
+.burger-btn--active {
+  &:active {
+    .burger-btn__line:first-child {
+      transform: translateY(4px) rotate(45deg);
+    }
+    .burger-btn__line:last-child {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+  }
+}

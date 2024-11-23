@@ -1,12 +1,10 @@
-@mixin main-transition($props: "all") {
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transitiion-func);
+// prettier-ignore
+@mixin main-transition(
+    $props: "all", 
+    $dur: var(--transition-duration), 
+    $func: var(--transitiion-func)) 
+{
+  transition-duration: $dur;
+  transition-timing-function: $func;
   transition-property: #{$props};
 }
-
-// @mixin main-transition-focused($props: "all") {
-//   @include main-transition($props);
-//   @include focused {
-//     @content;
-//   }
-// }
