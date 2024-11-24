@@ -6,7 +6,7 @@
 
   background-color: transparent;
 
-  @media screen and (width > $bp-tablet) {
+  @media (width > $bp-tablet) {
     display: none;
   }
 

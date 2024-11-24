@@ -29,9 +29,23 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+
+    @media (width <= 1220px) {
+      padding: 0 resp(768px, 0px, 1220px, 200px);
+    }
   }
 
   &__item {
-    flex-basis: 310px;
+    max-width: 310px;
+    min-width: 260px;
+
+    flex-basis: calc-item-width(4, 12px);
+
+    @media (width <= 1220px) {
+      flex-basis: calc-item-width(2, 12px);
+    }
+    @media (width <= 565px) {
+      flex-basis: 310px;
+    }
   }
 }

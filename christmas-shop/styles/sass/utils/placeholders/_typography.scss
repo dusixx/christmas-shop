@@ -1,5 +1,5 @@
-%break-word {
-  @media screen and (width < $bp-mobile-s) {
+%break-words {
+  @media (width < $bp-mobile-s) {
     word-break: break-all;
   }
 }
@@ -15,7 +15,7 @@
 }
 
 %title {
-  @extend %break-word;
+  @extend %break-words;
 
   font-family: var(--font-family);
   font-weight: 600;
@@ -27,7 +27,7 @@
 }
 
 %page-title {
-  @extend %break-word;
+  @extend %break-words;
 
   font-family: var(--font-family);
   font-weight: 600;
@@ -41,13 +41,18 @@
 }
 
 %gift-card-title {
-  @extend %break-word;
+  @extend %break-words;
 
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+%contacts-caption {
+  @extend %gift-card-title;
+  text-align: center;
 }
 
 %subtitle {

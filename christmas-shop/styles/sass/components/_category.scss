@@ -2,10 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: resp($bp-mobile, 0px, $bp-desktop, 8px);
 
-  @media screen and (width >= $bp-tablet) {
-    gap: 8px;
-  }
+  user-select: none;
 
   &__item {
     display: flex;
@@ -24,16 +23,12 @@
     align-items: center;
 
     height: 40px;
-    padding: 0 8px;
+    padding: 0 resp($bp-mobile, 8px, $bp-desktop, 20px);
 
     text-align: center;
     white-space: nowrap;
 
     border-radius: 12px;
-
-    @media screen and (width >= $bp-tablet) {
-      padding: 0 20px;
-    }
 
     color: var(--color-static-white);
     @include main-transition("background-color");
