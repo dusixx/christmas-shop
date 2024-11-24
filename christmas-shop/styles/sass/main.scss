@@ -1,7 +1,7 @@
 @import "./vendors/modern-normalize";
 
-// vars
-@import "./utils/variables";
+@import "./utils/vars";
+@import "./utils/funcs";
 
 // mixins
 @import "./utils/mixins/misc";

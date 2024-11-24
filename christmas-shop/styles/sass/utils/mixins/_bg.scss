@@ -1,9 +1,5 @@
 @use "sass:meta";
 
-@function bgiOverlay($color) {
-  @return linear-gradient($color, $color);
-}
-
 @mixin bg($args...) {
   $propAliases: (
     "pos": position,

@@ -1,10 +1,10 @@
 .site-nav {
   display: none;
+  align-items: center;
+  gap: 8px;
 
-  @media screen and (width > $bp-tablet) {
+  @media (width > $bp-tablet) {
     display: flex;
-    align-items: center;
-    gap: 8px;
   }
 }
 

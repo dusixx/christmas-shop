@@ -12,7 +12,7 @@ $bp-for-cards-rearrange: 1060px;
     background-color: var(--color-content-bg);
     border-radius: 20px;
 
-    @media screen and (width <= $bp-for-cards-rearrange) {
+    @media (width <= $bp-for-cards-rearrange) {
       flex-basis: 100%;
     }
   }
@@ -23,9 +23,9 @@ $bp-for-cards-rearrange: 1060px;
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   height: 100%;
 
   @include main-transition("color");
@@ -45,17 +45,12 @@ $bp-for-cards-rearrange: 1060px;
 
   white-space: nowrap;
 
-  @media screen and (width <= $bp-for-cards-rearrange) {
+  @media (width <= $bp-for-cards-rearrange) {
     white-space: unset;
     word-break: break-all;
   }
 }
 
 .contacts__caption {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 152%;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
+  @extend %contacts-caption;
 }

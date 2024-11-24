@@ -29,11 +29,7 @@
 
   &__content {
     position: absolute;
-    left: 8px;
-
-    @media screen and (width > $bp-tablet) {
-      left: 84px;
-    }
+    left: resp($bp-tablet, 8px, $bp-desktop, 84px);
 
     display: flex;
     align-items: center;
@@ -62,11 +58,7 @@
     justify-content: flex-end;
 
     margin-top: 20px;
-    margin-right: 8px;
-
-    @media screen and (width > $bp-tablet) {
-      margin-right: min(5.7vw, 82px);
-    }
+    margin-right: resp($bp-tablet, 8px, $bp-desktop, 82px);
   }
 
   &__btn {

@@ -2,10 +2,6 @@
   max-width: var(--section-max-width);
   min-width: 190px;
 
-  padding: 0 8px;
   margin: 0 auto;
-
-  @media screen and (width > $bp-tablet) {
-    padding: 0 min(5.7vw, 82px);
-  }
+  padding: 0 resp($bp-tablet, 8px, $bp-desktop, 82px);
 }
