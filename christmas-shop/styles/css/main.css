@@ -859,6 +859,7 @@ a {
 }
 .burger-btn__slice {
   position: absolute;
+  display: block;
   height: 1px;
   width: 20px;
   background-color: var(--color-dark);
