@@ -15,7 +15,7 @@
 }
 
 %title {
-  @extend %break-words;
+  //@extend %break-words;
 
   font-family: var(--font-family);
   font-weight: 600;
@@ -28,7 +28,7 @@
 }
 
 %page-title {
-  @extend %break-words;
+  //@extend %break-words;
 
   font-family: var(--font-family);
   font-weight: 600;
@@ -42,7 +42,7 @@
 }
 
 %gift-card-title {
-  @extend %break-words;
+  //@extend %break-words;
 
   font-weight: 600;
   font-size: 16px;

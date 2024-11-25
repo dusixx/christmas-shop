@@ -217,12 +217,6 @@ summary {
   text-align: center;
 }
 
-@media (width <= 320px) {
-  .gift-card__title, .contacts__caption, .gifts__title, .hero__title, .cta__title, .best-gifts__title, .slider__title, .about__title, .contacts__title, .timer__number {
-    word-break: break-all;
-  }
-}
-
 .footer__made-in, .cta__caption, .best-gifts__caption, .slider__caption, .about__caption, .hero__caption {
   font-weight: 400;
   font-family: var(--second-family);
@@ -842,7 +836,7 @@ a {
 
 .container, .gifts__container, .footer__container, .cta__container, .best-gifts__container, .slider__container, .about__container, .hero__container, .header__container {
   max-width: var(--section-max-width);
-  min-width: 190px;
+  min-width: 330px;
   margin: 0 auto;
   padding: 0 clamp(8px, 8px + 74 * (100vw - 768px) / 672, 82px);
 }
@@ -1082,8 +1076,7 @@ a {
 }
 
 .best-gifts__container {
-  padding-top: var(--section-padding-ver);
-  padding-bottom: var(--section-padding-ver);
+  padding: var(--section-padding-ver) 8px;
 }
 .best-gifts__title {
   color: var(--color-static-white);
@@ -1102,28 +1095,15 @@ a {
           justify-content: center;
   gap: 12px;
 }
-@media (width <= 1220px) {
+@media (width <= 1310px) {
   .best-gifts__list {
-    padding: 0 clamp(0px, 0px + 200 * (100vw - 768px) / 452, 200px);
+    padding: 0 clamp(0px, 0px + 200 * (100vw - 768px) / 542, 200px);
   }
 }
 .best-gifts__item {
-  max-width: 310px;
-  min-width: 260px;
-  -ms-flex-preferred-size: calc((100% - 36px) / 4);
-      flex-basis: calc((100% - 36px) / 4);
-}
-@media (width <= 1220px) {
-  .best-gifts__item {
-    -ms-flex-preferred-size: calc((100% - 12px) / 2);
-        flex-basis: calc((100% - 12px) / 2);
-  }
-}
-@media (width <= 565px) {
-  .best-gifts__item {
-    -ms-flex-preferred-size: 310px;
-        flex-basis: 310px;
-  }
+  width: 310px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .cta__container {
@@ -1235,8 +1215,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
-  padding-top: var(--section-padding-ver);
-  padding-bottom: var(--section-padding-ver);
+  padding: var(--section-padding-ver) 8px;
   border-radius: 20px;
 }
 .gifts__title {
@@ -1254,26 +1233,7 @@ a {
   gap: 12px;
 }
 .gifts__item {
-  max-width: 310px;
-  min-width: 260px;
-  -ms-flex-preferred-size: calc((100% - 36px) / 4);
-      flex-basis: calc((100% - 36px) / 4);
-}
-@media (width <= 1210px) {
-  .gifts__item {
-    -ms-flex-preferred-size: calc((100% - 24px) / 3);
-        flex-basis: calc((100% - 24px) / 3);
-  }
-}
-@media (width <= 860px) {
-  .gifts__item {
-    -ms-flex-preferred-size: calc((100% - 12px) / 2);
-        flex-basis: calc((100% - 12px) / 2);
-  }
-}
-@media (width <= 570px) {
-  .gifts__item {
-    -ms-flex-preferred-size: 310px;
-        flex-basis: 310px;
-  }
+  width: 310px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }/*# sourceMappingURL=main.css.map */
