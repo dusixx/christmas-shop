@@ -28,7 +28,7 @@ $bp-for-cards-rearrange: 1060px;
   gap: 12px;
   height: 100%;
 
-  @include main-transition("color");
+  @include transition("color");
 
   @include focused {
     color: var(--color-primary);

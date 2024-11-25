@@ -1,15 +1,12 @@
 .gift-card {
   @extend %link;
 
-  //flex: 1;
-
   display: flex;
   flex-direction: column;
   height: 342px;
 
   background: var(--color-content-bg);
   border-radius: 20px;
-
   overflow: hidden;
 
   @include focused {
@@ -44,6 +41,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @include main-transition("color");
+    @include transition("color");
   }
 }

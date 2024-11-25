@@ -10,14 +10,14 @@
     display: none;
   }
 
-  &__line {
+  &__slice {
     position: absolute;
 
     height: 1px;
     width: 20px;
 
     background-color: var(--color-dark);
-    @include main-transition("transform");
+    @include transition("transform");
 
     &:first-child {
       top: 16px;
@@ -30,10 +30,10 @@
 
 .burger-btn--active {
   &:active {
-    .burger-btn__line:first-child {
+    .burger-btn__slice:first-child {
       transform: translateY(4px) rotate(45deg);
     }
-    .burger-btn__line:last-child {
+    .burger-btn__slice:last-child {
       transform: translateY(-4px) rotate(-45deg);
     }
   }

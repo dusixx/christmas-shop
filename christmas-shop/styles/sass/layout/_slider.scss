@@ -29,7 +29,7 @@
 
   &__content {
     position: absolute;
-    left: resp($bp-tablet, 8px, $bp-desktop, 84px);
+    left: smooth-out($bp-tablet, 8px, $bp-desktop, 84px);
 
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@
     justify-content: flex-end;
 
     margin-top: 20px;
-    margin-right: resp($bp-tablet, 8px, $bp-desktop, 82px);
+    margin-right: smooth-out($bp-tablet, 8px, $bp-desktop, 82px);
   }
 
   &__btn {

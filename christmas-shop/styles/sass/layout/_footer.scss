@@ -29,9 +29,9 @@
     @extend %link;
 
     text-align: center;
-
     color: var(--color-dark);
-    @include main-transition("color");
+
+    @include transition("color");
 
     @include focused {
       color: var(--color-primary);

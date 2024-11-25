@@ -16,7 +16,7 @@
   padding: 12px 20px;
 
   border-radius: 12px;
-  @include main-transition("color, background-color");
+  @include transition("color, background-color");
 
   @include focused {
     color: var(--color-primary);

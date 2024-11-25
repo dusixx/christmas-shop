@@ -17,7 +17,7 @@
   border-radius: 20px;
   color: var(--color-static-white);
 
-  @include main-transition("color, background-color");
+  @include transition("color, background-color");
 }
 
 %btn-slider-control {

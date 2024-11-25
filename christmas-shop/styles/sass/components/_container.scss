@@ -3,5 +3,5 @@
   min-width: 190px;
 
   margin: 0 auto;
-  padding: 0 resp($bp-tablet, 8px, $bp-desktop, 82px);
+  padding: 0 smooth-out($bp-tablet, 8px, $bp-desktop, 82px);
 }

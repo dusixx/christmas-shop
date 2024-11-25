@@ -23,7 +23,7 @@
   background-color: var(--color-dark);
   border-radius: 20px;
 
-  @include main-transition("color, background-color");
+  @include transition("color, background-color");
 
   @include focused {
     color: var(--color-dark);

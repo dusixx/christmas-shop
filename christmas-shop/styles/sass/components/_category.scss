@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: resp($bp-mobile, 0px, $bp-desktop, 8px);
+  gap: smooth-out($bp-mobile, 0px, $bp-desktop, 8px);
 
   user-select: none;
 
@@ -23,15 +23,15 @@
     align-items: center;
 
     height: 40px;
-    padding: 0 resp($bp-mobile, 8px, $bp-desktop, 20px);
+    padding: 0 smooth-out($bp-mobile, 8px, $bp-desktop, 20px);
 
     text-align: center;
     white-space: nowrap;
 
+    color: var(--color-static-white);
     border-radius: 12px;
 
-    color: var(--color-static-white);
-    @include main-transition("background-color");
+    @include transition("background-color");
   }
 
   &__input {
