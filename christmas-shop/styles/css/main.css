@@ -217,7 +217,7 @@ summary {
   text-align: center;
 }
 
-@media (width < 320px) {
+@media (width <= 320px) {
   .gift-card__title, .contacts__caption, .gifts__title, .hero__title, .cta__title, .best-gifts__title, .slider__title, .about__title, .contacts__title, .timer__number {
     word-break: break-all;
   }
@@ -811,8 +811,8 @@ a {
   padding: 0 clamp(8px, 8px + 12 * (100vw - 380px) / 1060, 20px);
   text-align: center;
   white-space: nowrap;
-  border-radius: 12px;
   color: var(--color-static-white);
+  border-radius: 12px;
   -webkit-transition-duration: var(--transition-duration);
           transition-duration: var(--transition-duration);
   -webkit-transition-timing-function: var(--transitiion-func);
@@ -857,7 +857,7 @@ a {
     display: none;
   }
 }
-.burger-btn__line {
+.burger-btn__slice {
   position: absolute;
   height: 1px;
   width: 20px;
@@ -871,18 +871,18 @@ a {
   transition-property: transform;
   transition-property: transform, -webkit-transform;
 }
-.burger-btn__line:first-child {
+.burger-btn__slice:first-child {
   top: 16px;
 }
-.burger-btn__line:last-child {
+.burger-btn__slice:last-child {
   top: 24px;
 }
 
-.burger-btn--active:active .burger-btn__line:first-child {
+.burger-btn--active:active .burger-btn__slice:first-child {
   -webkit-transform: translateY(4px) rotate(45deg);
           transform: translateY(4px) rotate(45deg);
 }
-.burger-btn--active:active .burger-btn__line:last-child {
+.burger-btn--active:active .burger-btn__slice:last-child {
   -webkit-transform: translateY(-4px) rotate(-45deg);
           transform: translateY(-4px) rotate(-45deg);
 }

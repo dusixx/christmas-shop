@@ -1,5 +1,5 @@
 // prettier-ignore
-@mixin main-transition(
+@mixin transition(
     $props: "all", 
     $dur: var(--transition-duration), 
     $func: var(--transitiion-func)) 
