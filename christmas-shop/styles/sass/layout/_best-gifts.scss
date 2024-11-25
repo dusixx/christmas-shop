@@ -3,8 +3,7 @@
     @extend .container;
     @extend %section-bg;
 
-    padding-top: var(--section-padding-ver);
-    padding-bottom: var(--section-padding-ver);
+    padding: var(--section-padding-ver) 8px;
   }
 
   &__heading {
@@ -30,22 +29,13 @@
     justify-content: center;
     gap: 12px;
 
-    @media (width <= 1220px) {
-      padding: 0 smooth-out($bp-tablet, 0px, 1220px, 200px);
+    @media (width <= 1310px) {
+      padding: 0 smooth-out($bp-tablet, 0px, 1310px, 200px);
     }
   }
 
   &__item {
-    max-width: 310px;
-    min-width: 260px;
-
-    flex-basis: calc-item-width(4, 12px);
-
-    @media (width <= 1220px) {
-      flex-basis: calc-item-width(2, 12px);
-    }
-    @media (width <= 565px) {
-      flex-basis: 310px;
-    }
+    width: 310px;
+    flex-shrink: 0;
   }
 }
