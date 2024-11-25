@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: smooth-out($bp-mobile, 0px, $bp-desktop, 8px);
+  gap: smooth-out($bp-mobile, 0px, $bp-tablet, 8px);
 
   user-select: none;
 
@@ -23,7 +23,7 @@
     align-items: center;
 
     height: 40px;
-    padding: 0 smooth-out($bp-mobile, 8px, $bp-desktop, 20px);
+    padding: 0 smooth-out($bp-mobile, 8px, $bp-tablet, 20px);
 
     text-align: center;
     white-space: nowrap;

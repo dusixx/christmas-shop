@@ -783,7 +783,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: clamp(0px, 0px + 8 * (100vw - 380px) / 1060, 8px);
+  gap: clamp(0px, 0px + 8 * (100vw - 380px) / 388, 8px);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -808,7 +808,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   height: 40px;
-  padding: 0 clamp(8px, 8px + 12 * (100vw - 380px) / 1060, 20px);
+  padding: 0 clamp(8px, 8px + 12 * (100vw - 380px) / 388, 20px);
   text-align: center;
   white-space: nowrap;
   color: var(--color-static-white);
