@@ -1,11 +1,8 @@
-.site-nav {
-  display: none;
+.site-nav__items {
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-
-  @media (width > $bp-tablet) {
-    display: flex;
-  }
 }
 
 .site-nav__link {

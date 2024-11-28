@@ -13,4 +13,10 @@
 
     background-color: var(--color-static-white);
   }
+
+  & .site-nav {
+    @media (width <= $bp-tablet) {
+      display: none;
+    }
+  }
 }

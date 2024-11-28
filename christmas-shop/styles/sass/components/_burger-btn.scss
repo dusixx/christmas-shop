@@ -30,12 +30,10 @@
 }
 
 .burger-btn--active {
-  &:active {
-    .burger-btn__slice:first-child {
-      transform: translateY(4px) rotate(45deg);
-    }
-    .burger-btn__slice:last-child {
-      transform: translateY(-4px) rotate(-45deg);
-    }
+  .burger-btn__slice:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+  .burger-btn__slice:last-child {
+    transform: translateY(-4px) rotate(-45deg);
   }
 }

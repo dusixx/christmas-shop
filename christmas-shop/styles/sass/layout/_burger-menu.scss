@@ -1,0 +1,37 @@
+.burger-menu {
+  @extend .container;
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--color-static-white);
+
+  @include transition("transform, opacity, visibility");
+
+  @include hidden(true);
+  transform: translateX(100%);
+
+  &--active {
+    @include hidden(false);
+    transform: translateX(0);
+  }
+}
+
+.burger-menu .site-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__items {
+    flex-direction: column;
+  }
+
+  &__link {
+    @extend %title;
+  }
+}

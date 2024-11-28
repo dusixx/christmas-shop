@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/css/main.css" />
+    <link rel="stylesheet" crossorigin href="./styles/css/main.css" />
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <script type="module" crossorigin src="./js/index.js"></script>
     <title>Christmas shop</title>
   </head>
   <body>
@@ -16,15 +17,15 @@
           </svg>
           <p class="logo__text">the gifts</p>
         </a>
-        <nav class="header__nav">
-          <ul class="site-nav">
+        <nav class="site-nav">
+          <ul class="site-nav__items">
             <li><a class="site-nav__link" href="./gifts.html">Gifts</a></li>
             <li><a class="site-nav__link" href="#about">About</a></li>
             <li><a class="site-nav__link" href="#best-gifts">Best</a></li>
             <li><a class="site-nav__link" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
-        <button class="burger-btn" type="button">
+        <button class="burger-btn" type="button" aria-label="Burger menu button">
           <span class="burger-btn__slice"></span>
           <span class="burger-btn__slice"></span>
         </button>
@@ -143,25 +144,25 @@
           <div class="cta__inner-container">
             <h2 class="cta__title">Ready to start your journey to a better version of yourself?</h2>
             <a class="cta__btn" href="./gifts.html">Explore Magical Gifts</a>
-            <div class="cta__container-timer">
+            <div class="cta__timer-container">
               <h3 class="cta__caption">The New Year is Coming Soon...</h3>
               <div class="timer">
                 <ul class="timer__cells">
                   <li class="timer__cell">
-                    <h2 class="timer__number">47</h2>
-                    <h4 class="timer__unit">days</h4>
+                    <span class="timer__number">47</span>
+                    <span class="timer__unit">days</span>
                   </li>
                   <li class="timer__cell">
-                    <h2 class="timer__number">5</h2>
-                    <h4 class="timer__unit">hours</h4>
+                    <span class="timer__number">5</span>
+                    <span class="timer__unit">hours</span>
                   </li>
                   <li class="timer__cell">
-                    <h2 class="timer__number">34</h2>
-                    <h4 class="timer__unit">minutes</h4>
+                    <span class="timer__number">34</span>
+                    <span class="timer__unit">minutes</span>
                   </li>
                   <li class="timer__cell">
-                    <h2 class="timer__number">12</h2>
-                    <h4 class="timer__unit">seconds</h4>
+                    <span class="timer__number">12</span>
+                    <span class="timer__unit">seconds</span>
                   </li>
                 </ul>
               </div>
@@ -258,5 +259,16 @@
         </div>
       </div>
     </footer>
+    <!--Burger menu-->
+    <aside class="burger-menu">
+      <nav class="site-nav">
+        <ul class="site-nav__items">
+          <li><a class="site-nav__link" href="./gifts.html">Gifts</a></li>
+          <li><a class="site-nav__link" href="#about">About</a></li>
+          <li><a class="site-nav__link" href="#best-gifts">Best</a></li>
+          <li><a class="site-nav__link" href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </aside>
   </body>
 </html>
