@@ -1,5 +1,6 @@
-import { gifts } from "./gifts-data.js";
 import { getRandomElements, makeId } from "./helpers.js";
+import { gifts } from "./gifts-data.js";
+import { refs } from "./refs.js";
 
 const className = {
   giftsList: "gifts-list",
@@ -8,10 +9,18 @@ const className = {
 
 export class GiftList {
   #items = [];
-  #markup = "";
+  #filtered = [];
+  #container;
+
+  constructor(container = refs.giftsListContainer) {
+    if (container?.tagName.toLowerCase() !== "div") {
+      throw TypeError("div container expected");
+    }
+    this.#container = container;
+  }
 
   #makeMarkup() {
-    const markup = this.#items
+    const markup = this.#filtered
       .map(({ category, name }) => {
         const cardClassMod = `${className.giftCard}--${makeId(category)}`;
         return `
@@ -31,22 +40,30 @@ export class GiftList {
   }
 
   random(count) {
-    this.#items = getRandomElements(gifts, count);
+    this.#filtered = this.#items = getRandomElements(gifts, count);
     return this;
   }
 
   select(start, end) {
-    this.#items = gifts.slice(start, end);
+    this.#filtered = this.#items = gifts.slice(start, end);
     return this;
   }
 
   filter(category) {
-    this.#items.filter(itm => makeId(itm.category) === makeId(category));
+    this.#filtered =
+      category.toLocaleLowerCase() === "all"
+        ? this.#items
+        : this.#items.filter(itm => makeId(itm.category) === makeId(category));
+
     return this;
   }
 
+  render() {
+    this.#container.innerHTML = this.markup;
+  }
+
   get items() {
-    return [...this.#items];
+    return [...this.#filtered];
   }
 
   get markup() {
