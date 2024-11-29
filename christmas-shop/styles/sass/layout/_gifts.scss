@@ -17,16 +17,4 @@
     @extend %page-title;
     max-width: 426px;
   }
-
-  &__cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  &__item {
-    width: 310px;
-    flex-shrink: 0;
-  }
 }

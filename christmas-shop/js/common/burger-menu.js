@@ -8,12 +8,11 @@ const toggleBodyVScroll = () => {
   return body.classList.toggle("scroll-off");
 };
 
-const calcMenuTop = () => {
-  return (burgerMenu.style.top = getComputedStyle(header).height);
-};
-
 const showMenu = () => {
+  // calc menu top
+  burgerMenu.style.top = getComputedStyle(header).height;
   burgerBtn.classList.toggle("burger-btn--active");
+
   return burgerMenu.classList.toggle("burger-menu--active");
 };
 
@@ -26,18 +25,17 @@ const handleMatchMedia = e => {
 };
 
 const toggleMenu = () => {
-  calcMenuTop();
   toggleBodyVScroll();
+  const wasShown = showMenu();
 
-  // was shown
-  if (showMenu()) {
+  if (wasShown) {
     document.addEventListener("keydown", handleEscKeydown, { once: true });
     matchMediaTablet.addEventListener("change", handleMatchMedia, { once: true });
     menuItem.forEach(itm => itm.addEventListener("click", toggleMenu, { once: true }));
-    return true;
   } else {
     matchMediaTablet.removeEventListener("change", handleMatchMedia);
   }
+  return wasShown;
 };
 
 burgerBtn.addEventListener("click", toggleMenu);

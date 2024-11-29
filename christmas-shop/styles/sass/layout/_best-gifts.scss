@@ -18,24 +18,12 @@
     @extend %title;
     color: var(--color-static-white);
   }
+}
 
-  &__cards {
-    margin-top: 20px;
-  }
+.best-gifts .gifts-list {
+  margin-top: 20px;
 
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-
-    @media (width <= 1310px) {
-      padding: 0 smooth-out($bp-tablet, 0px, 1310px, 200px);
-    }
-  }
-
-  &__item {
-    width: 310px;
-    flex-shrink: 0;
+  @media (width <= 1310px) {
+    padding: 0 smooth-out($bp-tablet, 0px, 1310px, 200px);
   }
 }
