@@ -1,4 +1,4 @@
-export const gifts = [
+export const giftsData = [
   {
     name: "Bug Magnet",
     description: "Able to find bugs in code like they were placed there on purpose.",
@@ -85,7 +85,8 @@ export const gifts = [
 
   {
     name: "Layout Master",
-    description: "Creates perfect layouts on the first try, like they can read the designer's mind.",
+    description:
+      "Creates perfect layouts on the first try, like they can read the designer's mind.",
     category: "For Work",
     superpowers: {
       live: "+500",

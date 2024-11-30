@@ -1,23 +1,16 @@
 .gift-card {
-  @extend %link;
-
   display: flex;
   flex-direction: column;
-  height: 342px;
+
+  min-height: 342px;
 
   background: var(--color-content-bg);
   border-radius: 20px;
   overflow: hidden;
 
-  @include focused {
-    .gift-card__title {
-      color: var(--color-primary);
-    }
-  }
-
   &__thumb {
     background-color: transparent;
-    height: 230px;
+    min-height: 230px;
   }
 
   &__desc {
@@ -28,6 +21,12 @@
     border-radius: 20px;
   }
 
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   &__tag {
     @extend %subtitle;
   }
@@ -36,11 +35,29 @@
     @extend %gift-card-title;
 
     max-height: 50px;
-    margin-top: 9px;
 
     overflow: hidden;
     text-overflow: ellipsis;
 
     @include transition("color");
   }
+
+  &__description {
+    @extend %paragraph;
+  }
+}
+
+.gift-card--interactive {
+  @extend %link;
+
+  @include focused {
+    .gift-card__title {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.gift-card--detailed {
+  min-height: 514px;
+  max-width: 400px;
 }

@@ -1,16 +1,16 @@
 import { wasKeyDown } from "./helpers.js";
 import { refs } from "./refs.js";
+import { Scroll } from "./scroll-lock.js";
 
-const { header, body, burgerMenu, menuItem, burgerBtn } = refs;
+const { header, body, burgerMenu, menuItem, burgerBtn, siteNav } = refs;
 const matchMediaTablet = matchMedia(`(width > 768px)`);
 
-const toggleBodyVScroll = () => {
-  return body.classList.toggle("scroll-off");
-};
+//burgerMenu.innerHTML = `<nav class="site-nav">${siteNav.innerHTML}</nav>`;
+//const menuItem = burgerMenu?.querySelectorAll(".site-nav__link");
 
-const showMenu = () => {
+const _toggleMenu = () => {
   // calc menu top
-  burgerMenu.style.top = getComputedStyle(header).height;
+  burgerMenu.style.paddingBottom = burgerMenu.style.top = getComputedStyle(header).height;
   burgerBtn.classList.toggle("burger-btn--active");
 
   return burgerMenu.classList.toggle("burger-menu--active");
@@ -21,21 +21,22 @@ const handleEscKeydown = e => {
 };
 
 const handleMatchMedia = e => {
-  return e.matches && toggleMenu();
+  if (e.matches) toggleMenu();
 };
 
-const toggleMenu = () => {
-  toggleBodyVScroll();
-  const wasShown = showMenu();
+const toggleMenu = force => {
+  Scroll.toggleLock();
+  const wasShown = _toggleMenu();
 
   if (wasShown) {
     document.addEventListener("keydown", handleEscKeydown, { once: true });
     matchMediaTablet.addEventListener("change", handleMatchMedia, { once: true });
-    menuItem.forEach(itm => itm.addEventListener("click", toggleMenu, { once: true }));
   } else {
     matchMediaTablet.removeEventListener("change", handleMatchMedia);
+    document.removeEventListener("keydown", handleEscKeydown);
   }
   return wasShown;
 };
 
 burgerBtn.addEventListener("click", toggleMenu);
+menuItem.forEach(itm => itm.addEventListener("click", toggleMenu));

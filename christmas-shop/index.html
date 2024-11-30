@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" crossorigin href="./styles/css/main.css" />
     <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
-    <script type="module" crossorigin src="./js/home/index.js"></script>
+    <script type="module" crossorigin src="./js/home-page.js"></script>
     <title>Christmas shop</title>
   </head>
   <body>
     <header class="header">
       <div class="header__container">
         <a href="./" class="logo">
-          <svg class="logo__icon" width="10" height="16">
-            <use href="./images/icons.svg#icon-logo"></use>
+          <svg class="logo__icon">
+            <use href="./images/icons.svg#icon-snowflake"></use>
           </svg>
           <p class="logo__text">the gifts</p>
         </a>
@@ -50,8 +50,8 @@
                 <h3 class="about__caption">About</h3>
                 <h2 class="about__title">Unleash your inner superhero!</h2>
                 <p class="about__para">
-                  This New Year marks the beginning of your journey to inner harmony and new strengths. We offer unique
-                  gifts that will help you improve your life.
+                  This New Year marks the beginning of your journey to inner harmony and new
+                  strengths. We offer unique gifts that will help you improve your life.
                 </p>
               </div>
             </div>
@@ -70,11 +70,23 @@
               <span class="slider__text">Live</span>
               <img class="slider__image" src="./images/slider/snowman.png" alt="Snowman" />
               <span class="slider__text">create</span>
-              <img class="slider__image" src="./images/slider/christmas-trees.png" alt="Christmas trees" />
+              <img
+                class="slider__image"
+                src="./images/slider/christmas-trees.png"
+                alt="Christmas trees"
+              />
               <span class="slider__text">Love</span>
-              <img class="slider__image" src="./images//slider/christmas-tree-ball.png" alt="Christmas tree ball" />
+              <img
+                class="slider__image"
+                src="./images//slider/christmas-tree-ball.png"
+                alt="Christmas tree ball"
+              />
               <span class="slider__text">dream</span>
-              <img class="slider__image" src="./images/slider/fairytale-house.png" alt="Fairytale house" />
+              <img
+                class="slider__image"
+                src="./images/slider/fairytale-house.png"
+                alt="Fairytale house"
+              />
             </div>
           </div>
           <div class="slider__controls">
@@ -97,7 +109,7 @@
             <h3 class="best-gifts__caption">Best Gifts</h3>
             <h2 class="best-gifts__title">especially for you</h2>
           </div>
-          <div class="gifts-list__container"></div>
+          <div class="gifts-container"></div>
         </div>
       </section>
       <section class="cta">
@@ -138,7 +150,11 @@
           <ul class="contacts">
             <li class="contacts__item">
               <a class="contacts__link" href="tel:+375291112233">
-                <img class="contacts__image" src="./images/footer/santa-claus.png" alt="Santa Claus" />
+                <img
+                  class="contacts__image"
+                  src="./images/footer/santa-claus.png"
+                  alt="Santa Claus"
+                />
                 <p class="contacts__title">+375 (29) 111-22-33</p>
                 <p class="contacts__caption">Call Us</p>
               </a>
@@ -150,7 +166,11 @@
                 target="_blank"
                 rel="noopener noreferrer nofollow"
               >
-                <img class="contacts__image" src="./images/footer/christmas-tree.png" alt="Christmas tree" />
+                <img
+                  class="contacts__image"
+                  src="./images/footer/christmas-tree.png"
+                  alt="Christmas tree"
+                />
                 <p class="contacts__title">Magic forest</p>
                 <p class="contacts__caption">meet us</p>
               </a>
@@ -214,7 +234,12 @@
             </li>
           </ul>
           <p class="footer__copyright">© Copyright 2025, All Rights Reserved</p>
-          <a class="footer__made-in" href="https://rs.school/" target="_blank" rel="noopener noreferrer nofollow">
+          <a
+            class="footer__made-in"
+            href="https://rs.school/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+          >
             Made in Rolling Scopes School
           </a>
         </div>
@@ -231,5 +256,16 @@
         </ul>
       </nav>
     </aside>
+    <!--Modal-->
+    <div class="backdrop">
+      <div class="modal">
+        <button class="modal__close-btn" type="button">
+          <svg class="modal__icon">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="modal__content"></div>
+      </div>
+    </div>
   </body>
 </html>
