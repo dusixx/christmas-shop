@@ -1,4 +1,4 @@
-import { elementExpected, isFunc } from "./helpers.js";
+import { elementExpected } from "./helpers.js";
 
 const cls = {
   category: "category",
@@ -6,10 +6,16 @@ const cls = {
 };
 
 export class CategoryTabs {
+  static #instance;
   #ref;
   #onChange;
 
-  constructor() {
+  constructor(opts) {
+    if (CategoryTabs.#instance) {
+      return CategoryTabs.#instance;
+    }
+    CategoryTabs.#instance = this;
+
     this.#ref = document.querySelector(`.${cls.category}`);
     elementExpected(this.#ref, "ul");
 
@@ -18,9 +24,11 @@ export class CategoryTabs {
 
     radioBtns.forEach(itm =>
       itm.addEventListener("change", ({ target: { value } }) => {
-        if (isFunc(this.#onChange)) this.#onChange(value);
+        this.#onChange?.(value);
       }),
     );
+
+    this.onChange = opts?.onChange;
   }
 
   get ref() {

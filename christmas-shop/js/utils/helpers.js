@@ -41,9 +41,7 @@ export const rndInt = (min, max) => {
 };
 
 export const getRandomElements = (arr, count = arr?.length) => {
-  if (!isArray(arr)) {
-    throw TypeError("Array expected");
-  }
+  elementExpected(arr, "array");
   const a = [...arr];
 
   return Array.from(

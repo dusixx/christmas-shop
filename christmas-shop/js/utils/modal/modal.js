@@ -12,11 +12,17 @@ const root = document.documentElement;
 const topOffset = "10%";
 
 export class Modal {
+  static #instance;
   #ref;
   #contentRef;
   #content;
 
   constructor() {
+    if (Modal.#instance) {
+      return Modal.#instance;
+    }
+    Modal.#instance = this;
+
     this.#ref = backdrop.ref.querySelector(`.${cls.modal}`);
     elementExpected(this.ref, "div");
 
@@ -29,7 +35,7 @@ export class Modal {
     closeBtn.addEventListener("click", () => backdrop.toggle());
   }
 
-  #fitModalByHeight(topOffset) {
+  #fitByHeight(topOffset) {
     const mediaMatcher = matchMedia(`(height <= ${this.height}px)`);
     const handleMatchMedia = e => {
       this.#ref.style.top = e?.matches ? topOffset : null;
@@ -45,7 +51,7 @@ export class Modal {
 
   set content(markup) {
     this.#contentRef.innerHTML = this.#content = markup;
-    this.#fitModalByHeight(topOffset);
+    this.#fitByHeight(topOffset);
   }
 
   get height() {

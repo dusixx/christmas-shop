@@ -1,5 +1,4 @@
-import { elementExpected, isFunc, wasKeyDown } from "../helpers.js";
-import { Scroll } from "../scroll-lock.js";
+import { Scroll, elementExpected, wasKeyDown } from "../index.js";
 
 const cls = {
   backdrop: "backdrop",
@@ -7,19 +6,29 @@ const cls = {
 };
 
 export class Backdrop {
+  static #instance;
   #ref;
   #onHide;
   #onShow;
+  #opts;
 
-  constructor() {
+  constructor(opts = { hideOnEscape: true, hideOnClick: true }) {
+    if (Backdrop.#instance) {
+      return Backdrop.#instance;
+    }
+    Backdrop.#instance = this;
+
+    this.#opts = opts;
     this.#ref = document.querySelector(`.${cls.backdrop}`);
     elementExpected(this.ref, "div");
 
-    this.#ref.addEventListener("click", e => {
-      // catch the click directly on the backdrop
-      if (e.target !== e.currentTarget) return;
-      this.toggle(e);
-    });
+    if (opts?.hideOnClick) {
+      this.#ref.addEventListener("click", e => {
+        // catch the click directly on the backdrop
+        if (e.target !== e.currentTarget) return;
+        this.toggle(e);
+      });
+    }
   }
 
   #handleEscKeydown = e => {
@@ -33,11 +42,13 @@ export class Backdrop {
     const wasShown = this.ref.classList.toggle(cls.backdropActive);
 
     if (wasShown) {
-      document.addEventListener("keydown", this.#handleEscKeydown, { once: true });
-      if (isFunc(this.#onShow)) this.#onShow();
+      if (this.#opts?.hideOnEscape) {
+        document.addEventListener("keydown", this.#handleEscKeydown, { once: true });
+      }
+      this.#onShow?.();
     } else {
       document.removeEventListener("keydown", this.#handleEscKeydown);
-      if (isFunc(this.#onHide)) this.#onHide();
+      this.#onHide?.();
     }
     return wasShown;
   }

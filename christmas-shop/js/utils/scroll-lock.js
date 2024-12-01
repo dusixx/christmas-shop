@@ -48,7 +48,7 @@ export class Scroll {
   static unlock() {
     if (!this.#locked) return;
 
-    // restore body style
+    // restore root style
     root.style.cssText = this.#rootCSS;
     // avoid auto scrolling up and back
     root.style.scrollBehavior = "auto";

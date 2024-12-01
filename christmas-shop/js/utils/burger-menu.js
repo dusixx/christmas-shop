@@ -1,42 +1,89 @@
-import { wasKeyDown } from "./helpers.js";
-import { refs } from "./refs.js";
-import { Scroll } from "./scroll-lock.js";
+import { Scroll, elementExpected, wasKeyDown } from "./index.js";
 
-const { header, body, burgerMenu, menuItem, burgerBtn, siteNav } = refs;
+export const cls = {
+  header: "header",
+  siteNav: "site-nav",
+  siteNavLink: "site-nav__link",
+  burgerMenu: "burger-menu",
+  burgerBtn: "burger-btn",
+  burgerMenuActive: "burger-menu--active",
+  burgerBtnActive: "burger-btn--active",
+};
+
+export const refs = {
+  header: document.querySelector(`.${cls.header}`),
+  siteNav: document.querySelector(`.${cls.siteNav}`),
+  burgerBtn: document.querySelector(`.${cls.burgerBtn}`),
+  burgerMenu: document.querySelector(`.${cls.burgerMenu}`),
+};
+
+const { header, siteNav, burgerBtn, burgerMenu } = refs;
 const matchMediaTablet = matchMedia(`(width > 768px)`);
 
-//burgerMenu.innerHTML = `<nav class="site-nav">${siteNav.innerHTML}</nav>`;
-//const menuItem = burgerMenu?.querySelectorAll(".site-nav__link");
+export class BurgerMenu {
+  static #instance;
+  #opts;
 
-const _toggleMenu = () => {
-  // calc menu top
-  burgerMenu.style.paddingBottom = burgerMenu.style.top = getComputedStyle(header).height;
-  burgerBtn.classList.toggle("burger-btn--active");
+  constructor(opts) {
+    if (BurgerMenu.#instance) {
+      return BurgerMenu.#instance;
+    }
+    BurgerMenu.#instance = this;
 
-  return burgerMenu.classList.toggle("burger-menu--active");
-};
+    elementExpected(siteNav, "nav");
+    elementExpected(burgerMenu, "aside");
 
-const handleEscKeydown = e => {
-  return wasKeyDown("Escape", e) && toggleMenu();
-};
+    // grab site-nav markup
+    burgerMenu.innerHTML = `<nav class="site-nav">${siteNav.innerHTML}</nav>`;
+    const menuItem = burgerMenu.querySelectorAll(`.${cls.siteNavLink}`);
 
-const handleMatchMedia = e => {
-  if (e.matches) toggleMenu();
-};
+    elementExpected(menuItem, "NodeList");
+    menuItem.forEach(itm => itm.addEventListener("click", () => this.toggle()));
 
-const toggleMenu = force => {
-  Scroll.toggleLock();
-  const wasShown = _toggleMenu();
-
-  if (wasShown) {
-    document.addEventListener("keydown", handleEscKeydown, { once: true });
-    matchMediaTablet.addEventListener("change", handleMatchMedia, { once: true });
-  } else {
-    matchMediaTablet.removeEventListener("change", handleMatchMedia);
-    document.removeEventListener("keydown", handleEscKeydown);
+    this.#opts = opts;
+    this.toggler = opts?.toggler;
   }
-  return wasShown;
-};
 
-burgerBtn.addEventListener("click", toggleMenu);
-menuItem.forEach(itm => itm.addEventListener("click", toggleMenu));
+  set toggler(obj) {
+    try {
+      obj.addEventListener("click", () => this.toggle());
+    } catch {}
+  }
+
+  #toggleMenu = () => {
+    // calc menu top
+    burgerMenu.style.paddingBottom = burgerMenu.style.top = getComputedStyle(header).height;
+    burgerBtn.classList.toggle(cls.burgerBtnActive);
+    return burgerMenu.classList.toggle(cls.burgerMenuActive);
+  };
+
+  #handleEscKeydown = e => {
+    if (wasKeyDown("Escape", e)) this.toggle();
+  };
+
+  #handleMatchMedia = e => {
+    if (e.matches) this.toggle();
+  };
+
+  toggle() {
+    Scroll.toggleLock();
+    const wasShown = this.#toggleMenu();
+
+    if (wasShown) {
+      if (this.#opts?.hideOnEscape) {
+        document.addEventListener("keydown", this.#handleEscKeydown, { once: true });
+      }
+      // hide at screen width > 768px
+      matchMediaTablet.addEventListener("change", this.#handleMatchMedia, { once: true });
+    } else {
+      matchMediaTablet.removeEventListener("change", this.#handleMatchMedia);
+      document.removeEventListener("keydown", this.#handleEscKeydown);
+    }
+    return wasShown;
+  }
+}
+
+new BurgerMenu({
+  toggler: burgerBtn,
+  hideOnEscape: true,
+});

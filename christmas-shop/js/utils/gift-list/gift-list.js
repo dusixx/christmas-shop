@@ -1,19 +1,30 @@
 import { giftsData } from "./gifts-data.js";
-import { cls, makeGiftList } from "./markup.js";
-import { getRandomElements, makeId, elementExpected, isFunc } from "../helpers.js";
+import { cls as classNames, makeGiftList } from "./markup.js";
+import { getRandomElements, makeId, elementExpected, isFunc } from "../index.js";
 
-const containerSelector = ".gifts-container";
+const cls = {
+  ...classNames,
+  giftsContainer: "gifts-container",
+};
 
 export class GiftList {
+  static #instance;
   #items = [];
   #filtered = [];
   #container;
   #onClick;
   #ref;
 
-  constructor() {
-    this.#container = document.querySelector(containerSelector);
+  constructor(opts) {
+    if (GiftList.#instance) {
+      return GiftList.#instance;
+    }
+    GiftList.#instance = this;
+
+    this.#container = document.querySelector(`.${cls.giftsContainer}`);
     elementExpected(this.#container, "div");
+
+    this.onClick = opts?.onClick;
   }
 
   // arrow to avoid error when calling as event handler without binding
@@ -21,15 +32,11 @@ export class GiftList {
     if (!isFunc(this.#onClick)) return;
 
     const targetCard = target.closest(`.${cls.giftCard}`);
-    elementExpected(targetCard, "article");
+    if (!targetCard) return;
 
     const cardData = this.find(targetCard.id);
     this.#onClick(cardData, targetCard);
   };
-
-  #makeMarkup() {
-    return makeGiftList(this.#filtered);
-  }
 
   set onClick(handler) {
     this.#onClick = handler;
@@ -37,11 +44,6 @@ export class GiftList {
 
   random(count) {
     this.#filtered = this.#items = getRandomElements(giftsData, count);
-    return this;
-  }
-
-  select(start, end) {
-    this.#filtered = this.#items = giftsData.slice(start, end);
     return this;
   }
 
@@ -59,12 +61,14 @@ export class GiftList {
   }
 
   render() {
-    this.#container.innerHTML = this.markup;
+    this.#container.innerHTML = makeGiftList(this.#filtered);
 
     this.#ref = this.#container.querySelector(`.${cls.giftList}`);
     elementExpected(this.ref, "ul");
 
     this.ref.addEventListener("click", this.#handleGiftListClick);
+
+    return this;
   }
 
   get items() {
@@ -73,10 +77,6 @@ export class GiftList {
 
   get filtered() {
     return [...this.#filtered];
-  }
-
-  get markup() {
-    return this.#makeMarkup();
   }
 
   get ref() {

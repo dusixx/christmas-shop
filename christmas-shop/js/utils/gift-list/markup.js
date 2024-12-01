@@ -1,4 +1,4 @@
-import { makeId, joinClasses, isArray } from "../helpers.js";
+import { makeId, joinClasses, isArray, elementExpected } from "../index.js";
 
 export const cls = {
   giftList: "gift-list",
@@ -78,14 +78,13 @@ export const makeGiftCard = (
     </article>`;
 };
 
-export const makeGiftCardWithDeatils = cardData => {
+export const makeGiftCardWithDetails = cardData => {
   return makeGiftCard(cardData, false, cls.giftCardDetailed);
 };
 
 export const makeGiftList = items => {
-  if (!isArray(items)) {
-    throw TypeError("Array expected");
-  }
+  elementExpected(items, "array");
+
   const markup = items
     .map(
       ({ name, category }) =>
