@@ -82,3 +82,30 @@ export function throttle(target, tio) {
   }
   return throttled;
 }
+
+export const msToDDHHMMSS = ms => {
+  const secs = ms / 1000;
+  return {
+    ss: `${Math.floor(secs % 60)}`.padStart(2, 0),
+    mm: `${Math.floor((secs / 60) % 60)}`.padStart(2, 0),
+    hh: `${Math.floor((secs / 3600) % 24)}`.padStart(2, 0),
+    dd: `${Math.floor(secs / 3600 / 24)}`.padStart(2, 0),
+  };
+};
+
+export const getUTCDate = date => {
+  const dt = new Date(date);
+  elementExpected(dt, "date");
+
+  return new Date(
+    Date.UTC(
+      dt.getFullYear(),
+      dt.getMonth(),
+      dt.getDate(),
+      dt.getHours(),
+      dt.getMinutes(),
+      dt.getSeconds(),
+      dt.getMilliseconds(),
+    ),
+  );
+};

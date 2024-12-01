@@ -697,9 +697,14 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 72px;
-  padding: 12px;
+  padding: 12px 12px;
   background-color: var(--color-static-white-40);
   border-radius: 20px;
+}
+@media (width < 380px) {
+  .timer {
+    padding: 12px 0;
+  }
 }
 .timer__cells {
   display: -webkit-box;

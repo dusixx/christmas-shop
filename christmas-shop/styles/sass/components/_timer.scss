@@ -4,7 +4,11 @@
   justify-content: center;
 
   min-height: 72px;
-  padding: 12px;
+  padding: 12px 12px;
+
+  @media (width < $bp-mobile) {
+    padding: 12px 0;
+  }
 
   background-color: var(--color-static-white-40);
   border-radius: 20px;

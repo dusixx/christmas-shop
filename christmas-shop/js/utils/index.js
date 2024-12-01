@@ -5,4 +5,4 @@ export * from "./category-tabs.js";
 export * from "./gift-list/index.js";
 export * from "./modal/modal.js";
 export * from "./backtop.js";
-export * from "./timer.js";
+export * from "./timer/timer.js";
