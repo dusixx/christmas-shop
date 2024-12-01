@@ -62,6 +62,10 @@ export class Scroll {
     this.#locked = false;
   }
 
+  static get isLocked() {
+    return this.#locked;
+  }
+
   static toggleLock(force) {
     const flag = force == null ? this.#locked : !force;
     return flag ? this.unlock() : this.lock();

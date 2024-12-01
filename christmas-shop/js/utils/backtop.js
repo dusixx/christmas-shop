@@ -1,4 +1,5 @@
-import { elementExpected } from "./helpers.js";
+import { elementExpected, throttle } from "./helpers.js";
+import { Scroll } from "./scroll-lock.js";
 
 const cls = {
   backtop: "backtop",
@@ -6,33 +7,44 @@ const cls = {
 };
 
 export class Backtop {
+  static #instance;
   #ref;
   #threshold;
-  #enabled;
+  #pollingTimeout;
+  #handlePageScroll;
 
   constructor(opts) {
+    if (Backtop.#instance) {
+      return Backtop.#instance;
+    }
+    Backtop.#instance = this;
+
     this.#ref = document.querySelector(`.${cls.backtop}`);
     elementExpected(this.ref, "a");
 
+    this.pollingTimeout = opts?.pollingTimeout;
     this.threshold = opts?.threshold;
-    this.enabled = opts?.enabled;
   }
 
-  #handlePageScroll = e => {
-    this.ref.classList.toggle(cls.backtopActive, pageYOffset > this.threshold);
-  };
+  set pollingTimeout(value) {
+    this.#pollingTimeout = value;
 
-  set enabled(flag) {
-    this.#enabled = flag;
-    if (flag) {
-      document.addEventListener("scroll", this.#handlePageScroll);
-    } else {
-      document.removeEventListener("scroll", this.#handlePageScroll);
-    }
+    document.removeEventListener("scroll", this.#handlePageScroll);
+
+    // disable scroll polling and thus the backtop too
+    if (value < 0) return;
+
+    this.#handlePageScroll = throttle(() => {
+      // do not hide if scrolling is locked
+      if (Scroll.isLocked) return;
+      this.ref.classList.toggle(cls.backtopActive, scrollY >= this.threshold);
+    }, value);
+
+    document.addEventListener("scroll", this.#handlePageScroll);
   }
 
-  get enabled() {
-    return this.#enabled;
+  get pollingTimeout() {
+    return this.#pollingTimeout;
   }
 
   set threshold(v) {

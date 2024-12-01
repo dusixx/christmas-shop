@@ -31,11 +31,11 @@ export class CategoryTabs {
     this.onChange = opts?.onChange;
   }
 
-  get ref() {
-    return this.#ref;
-  }
-
   set onChange(handler) {
     this.#onChange = handler;
+  }
+
+  get ref() {
+    return this.#ref;
   }
 }

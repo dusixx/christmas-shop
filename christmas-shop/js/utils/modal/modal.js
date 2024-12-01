@@ -49,6 +49,11 @@ export class Modal {
     };
   }
 
+  show({ content } = {}) {
+    this.content = content ?? this.content;
+    backdrop.toggle();
+  }
+
   set content(markup) {
     this.#contentRef.innerHTML = this.#content = markup;
     this.#fitByHeight(topOffset);
@@ -60,10 +65,5 @@ export class Modal {
 
   get ref() {
     return this.#ref;
-  }
-
-  show({ content } = {}) {
-    this.content = content ?? this.content;
-    backdrop.toggle();
   }
 }

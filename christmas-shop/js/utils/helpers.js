@@ -56,3 +56,29 @@ export const joinClasses = (...args) => {
     .filter(v => v)
     .join(" ");
 };
+
+export function throttle(target, tio) {
+  elementExpected(target, "function");
+
+  let timerId;
+  let lastArgs;
+  let lastCtx;
+
+  function throttled(...args) {
+    if (timerId) {
+      lastArgs = args;
+      lastCtx = this;
+      return;
+    }
+    target.apply(this, args);
+
+    timerId = setTimeout(() => {
+      timerId = 0;
+      if (lastArgs) {
+        throttled.apply(lastCtx, lastArgs);
+        lastArgs = lastCtx = null;
+      }
+    }, tio);
+  }
+  return throttled;
+}

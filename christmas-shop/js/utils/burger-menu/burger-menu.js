@@ -1,27 +1,12 @@
-import { Scroll, elementExpected, wasKeyDown } from "./index.js";
-
-export const cls = {
-  header: "header",
-  siteNav: "site-nav",
-  siteNavLink: "site-nav__link",
-  burgerMenu: "burger-menu",
-  burgerBtn: "burger-btn",
-  burgerMenuActive: "burger-menu--active",
-  burgerBtnActive: "burger-btn--active",
-};
-
-export const refs = {
-  header: document.querySelector(`.${cls.header}`),
-  siteNav: document.querySelector(`.${cls.siteNav}`),
-  burgerBtn: document.querySelector(`.${cls.burgerBtn}`),
-  burgerMenu: document.querySelector(`.${cls.burgerMenu}`),
-};
+import { Scroll, elementExpected, wasKeyDown } from "../index.js";
+import { refs, cls } from "./refs.js";
 
 const { header, siteNav, burgerBtn, burgerMenu } = refs;
 const matchMediaTablet = matchMedia(`(width > 768px)`);
 
 export class BurgerMenu {
   static #instance;
+  #toggler;
   #opts;
 
   constructor(opts) {
@@ -36,8 +21,9 @@ export class BurgerMenu {
     // grab site-nav markup
     burgerMenu.innerHTML = `<nav class="site-nav">${siteNav.innerHTML}</nav>`;
     const menuItem = burgerMenu.querySelectorAll(`.${cls.siteNavLink}`);
-
     elementExpected(menuItem, "NodeList");
+
+    // close menu on item click
     menuItem.forEach(itm => itm.addEventListener("click", () => this.toggle()));
 
     this.#opts = opts;
@@ -45,24 +31,27 @@ export class BurgerMenu {
   }
 
   set toggler(obj) {
-    try {
-      obj.addEventListener("click", () => this.toggle());
-    } catch {}
+    obj?.addEventListener?.("click", this.#handleTogglerClick);
+
+    if (obj == null || obj instanceof EventTarget) {
+      this.#toggler?.removeEventListener?.("click", this.#handleTogglerClick);
+      this.#toggler = obj;
+    }
   }
 
-  #toggleMenu = () => {
-    // calc menu top
+  #handleTogglerClick = () => this.toggle();
+  #handleEscKeydown = e => wasKeyDown("Escape", e) && this.toggle();
+  #handleMatchMedia = e => e.matches && this.toggle();
+
+  #calcBurgerMenuIndets = () => {
     burgerMenu.style.paddingBottom = burgerMenu.style.top = getComputedStyle(header).height;
+  };
+
+  #toggleMenu = () => {
+    this.#calcBurgerMenuIndets();
     burgerBtn.classList.toggle(cls.burgerBtnActive);
+
     return burgerMenu.classList.toggle(cls.burgerMenuActive);
-  };
-
-  #handleEscKeydown = e => {
-    if (wasKeyDown("Escape", e)) this.toggle();
-  };
-
-  #handleMatchMedia = e => {
-    if (e.matches) this.toggle();
   };
 
   toggle() {

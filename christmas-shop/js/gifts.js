@@ -12,7 +12,7 @@ const giftList = new GiftList({
 
 new Backtop({
   threshold: 300,
-  enabled: true,
+  pollingTimeout: 150,
 });
 
 new CategoryTabs({
