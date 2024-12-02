@@ -1,5 +1,6 @@
 export const cls = {
   slider: "slider",
+  sliderTrack: "slider__track",
   sliderContent: "slider__content",
   sliderControls: "slider__controls",
   sliderBtn: "slider__btn",
@@ -13,4 +14,5 @@ export const refs = {
   sliderBtnLeft: slider?.querySelector(`.${cls.sliderBtn}[data-slider-left]`),
   sliderContent: slider?.querySelector(`.${cls.sliderContent}`),
   sliderControls: slider?.querySelector(`.${cls.sliderControls}`),
+  sliderTrack: slider?.querySelector(`.${cls.sliderTrack}`),
 };

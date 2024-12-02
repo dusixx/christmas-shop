@@ -2,6 +2,7 @@ import { elementExpected, throttle } from "../helpers.js";
 import { refs, cls } from "./refs.js";
 
 const {
+  sliderTrack: track,
   sliderContent: content,
   sliderControls: controls,
   sliderBtnLeft: btnLeft,
@@ -13,22 +14,25 @@ let extremePosition;
 let currentPosition;
 
 export class Slider {
-  static scrollWidth;
+  static scrollWidth = 1989;
 
   static init({ pollingTimeout = 250 } = {}) {
     elementExpected(content, "div");
     elementExpected(controls, "div");
+    elementExpected(track, "div");
     elementExpected(btnLeft, "button");
     elementExpected(btnRight, "button");
 
-    this.scrollWidth = content.scrollWidth;
+    // this.scrollWidth = content.scrollWidth;
     this.update();
 
-    addEventListener("resize", throttle(this.update.bind(this), pollingTimeout));
+    window.addEventListener("resize", throttle(this.update.bind(this), pollingTimeout));
 
     controls.addEventListener("click", e => {
       const btn = e.target.closest(`.${cls.sliderBtn}`);
       if (!btn) return;
+
+      this.#calcParams();
 
       if (btn === btnRight) {
         currentPosition -= 1;
@@ -48,14 +52,17 @@ export class Slider {
     btnLeft.disabled = true;
   }
 
+  static #calcParams() {
+    const contentIndent = parseFloat(getComputedStyle(content).left);
+    const visibleArea = parseFloat(getComputedStyle(track).width);
+    const distance = this.scrollWidth - visibleArea + contentIndent * 2;
+
+    extremePosition = visibleArea > 768 ? 3 : 6;
+    stepLength = distance / extremePosition;
+  }
+
   static update() {
     this.reset();
-
-    const contentIndent = getComputedStyle(content).left;
-    const visibleArea = screen.availWidth >= 1440 ? 1440 : screen.availWidth;
-    const distance = this.scrollWidth - visibleArea + parseFloat(contentIndent) * 2;
-
-    extremePosition = screen.availWidth > 768 ? 3 : 6;
-    stepLength = distance / extremePosition;
+    this.#calcParams();
   }
 }
