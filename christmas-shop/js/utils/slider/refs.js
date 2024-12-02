@@ -9,8 +9,8 @@ const slider = document.querySelector(`.${cls.slider}`);
 
 export const refs = {
   slider,
-  sliderBtnRight: slider?.querySelector(`.${cls.sliderBtn}[control-right]`),
-  sliderBtnLeft: slider?.querySelector(`.${cls.sliderBtn}[control-left]`),
+  sliderBtnRight: slider?.querySelector(`.${cls.sliderBtn}[data-slider-right]`),
+  sliderBtnLeft: slider?.querySelector(`.${cls.sliderBtn}[data-slider-left]`),
   sliderContent: slider?.querySelector(`.${cls.sliderContent}`),
   sliderControls: slider?.querySelector(`.${cls.sliderControls}`),
 };

@@ -86,10 +86,10 @@ export function throttle(target, tio) {
 export const msToDDHHMMSS = ms => {
   const secs = ms / 1000;
   return {
-    ss: `${Math.floor(secs % 60)}`.padStart(2, 0),
-    mm: `${Math.floor((secs / 60) % 60)}`.padStart(2, 0),
-    hh: `${Math.floor((secs / 3600) % 24)}`.padStart(2, 0),
-    dd: `${Math.floor(secs / 3600 / 24)}`.padStart(2, 0),
+    ss: Math.floor(secs % 60),
+    mm: Math.floor((secs / 60) % 60),
+    hh: Math.floor((secs / 3600) % 24),
+    dd: Math.floor(secs / 3600 / 24),
   };
 };
 

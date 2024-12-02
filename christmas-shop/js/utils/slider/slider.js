@@ -15,7 +15,7 @@ let currentPosition;
 export class Slider {
   static scrollWidth;
 
-  static init({ pollingTimeout = 150 } = {}) {
+  static init({ pollingTimeout = 250 } = {}) {
     elementExpected(content, "div");
     elementExpected(controls, "div");
     elementExpected(btnLeft, "button");

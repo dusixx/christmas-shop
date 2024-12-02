@@ -18,9 +18,10 @@ export class Backdrop {
     }
     Backdrop.#instance = this;
 
-    this.#opts = opts;
     this.#ref = document.querySelector(`.${cls.backdrop}`);
     elementExpected(this.ref, "div");
+
+    this.#opts = opts;
 
     if (opts?.hideOnClick) {
       this.#ref.addEventListener("click", e => {
