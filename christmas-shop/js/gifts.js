@@ -1,10 +1,10 @@
-import { Modal, CategoryTabs, GiftList, makeGiftCardWithDetails, Backtop } from "./utils/index.js";
+import { Modal, CategoryTabs, GiftList, makeDetailedGiftCard, Backtop } from "./utils/index.js";
 
 const modal = new Modal();
 
 const giftList = new GiftList({
   onClick(cardData) {
-    modal.show({ content: makeGiftCardWithDetails(cardData) });
+    modal.show({ content: makeDetailedGiftCard(cardData) });
   },
 })
   .random()

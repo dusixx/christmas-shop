@@ -225,6 +225,10 @@ summary {
   line-height: 1;
   letter-spacing: 0.05em;
   color: var(--color-static-white);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .burger-menu .site-nav__link, .cta__title, .best-gifts__title, .slider__title, .about__title, .contacts__title, .timer__number {
@@ -491,6 +495,7 @@ a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: auto;
   color: var(--color-primary);
   background-color: var(--color-primary-10);
 }
@@ -931,6 +936,7 @@ a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: auto;
   cursor: default;
 }
 
@@ -1198,6 +1204,14 @@ a {
           align-items: center;
   gap: 20px;
   height: 100%;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: var(--transitiion-func);
+          transition-timing-function: var(--transitiion-func);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
 }
 .slider__text {
   font-weight: 600;
@@ -1230,11 +1244,13 @@ a {
   fill: currentColor;
 }
 .slider__btn:disabled {
+  background-color: transparent;
   pointer-events: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  cursor: auto;
   color: var(--color-static-white-40);
 }
 

@@ -78,7 +78,7 @@ export const makeGiftCard = (
     </article>`;
 };
 
-export const makeGiftCardWithDetails = cardData => {
+export const makeDetailedGiftCard = cardData => {
   return makeGiftCard(cardData, false, cls.giftCardDetailed);
 };
 

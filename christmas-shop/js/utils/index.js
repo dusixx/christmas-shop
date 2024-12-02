@@ -6,3 +6,4 @@ export * from "./gift-list/index.js";
 export * from "./modal/modal.js";
 export * from "./backtop.js";
 export * from "./timer/timer.js";
+export * from "./slider/slider.js";
