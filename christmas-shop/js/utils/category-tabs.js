@@ -6,16 +6,10 @@ const cls = {
 };
 
 export class CategoryTabs {
-  static #instance;
-  #ref;
-  #onChange;
+  static #ref;
+  static #onChange;
 
-  constructor(opts) {
-    if (CategoryTabs.#instance) {
-      return CategoryTabs.#instance;
-    }
-    CategoryTabs.#instance = this;
-
+  static init(opts) {
     this.#ref = document.querySelector(`.${cls.category}`);
     elementExpected(this.#ref, "ul");
 
@@ -31,11 +25,11 @@ export class CategoryTabs {
     this.onChange = opts?.onChange;
   }
 
-  set onChange(handler) {
+  static set onChange(handler) {
     this.#onChange = handler;
   }
 
-  get ref() {
+  static get ref() {
     return this.#ref;
   }
 }

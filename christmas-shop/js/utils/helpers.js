@@ -1,39 +1,23 @@
 const root = document.documentElement;
+const toStr = Object.prototype.toString;
 const lower = v => v?.toLocaleLowerCase();
 
 export const isArray = v => Array.isArray(v);
 export const isFunc = v => typeof v === "function";
 export const isStr = v => typeof v === "string";
+export const isTagEqual = (el, tag) => lower(el?.tagName) === lower(tag);
+
+export const getTypeName = v => toStr.call(v).slice(8, -1);
+export const makeId = name => lower(`${name}`.trim().replace(/\s+/g, "-"));
 
 export const wasKeyDown = (key, e) => {
   return e.key === key && !e.ctrlKey && !e.altKey && !e.shiftKey;
-};
-
-export const cssVar = {
-  get(name) {
-    return getComputedStyle(root).getPropertyValue(name);
-  },
-  set(name, val) {
-    return root.style.setProperty(name, val);
-  },
-};
-
-export const getTypeName = v => {
-  return Object.prototype.toString.call(v).slice(8, -1);
-};
-
-export const isTagEqual = (el, tag) => {
-  return lower(el?.tagName) === lower(tag);
 };
 
 export const elementExpected = (el, tag) => {
   if (!isTagEqual(el, tag) && lower(getTypeName(el)) !== lower(tag)) {
     throw TypeError(`'${tag}' element expected`);
   }
-};
-
-export const makeId = name => {
-  return lower(`${name}`.trim().replace(/\s+/g, "-"));
 };
 
 export const rndInt = (min, max) => {
@@ -83,7 +67,7 @@ export function throttle(target, tio) {
   return throttled;
 }
 
-export const msToDDHHMMSS = ms => {
+export const msToDHMS = ms => {
   const secs = ms / 1000;
   return {
     ss: Math.floor(secs % 60),
@@ -91,21 +75,4 @@ export const msToDDHHMMSS = ms => {
     hh: Math.floor((secs / 3600) % 24),
     dd: Math.floor(secs / 3600 / 24),
   };
-};
-
-export const getUTCDate = date => {
-  const dt = new Date(date);
-  elementExpected(dt, "date");
-
-  return new Date(
-    Date.UTC(
-      dt.getFullYear(),
-      dt.getMonth(),
-      dt.getDate(),
-      dt.getHours(),
-      dt.getMinutes(),
-      dt.getSeconds(),
-      dt.getMilliseconds(),
-    ),
-  );
 };

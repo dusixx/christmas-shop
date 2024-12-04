@@ -1,4 +1,4 @@
-import { elementExpected, isArray, msToDDHHMMSS } from "../helpers.js";
+import { elementExpected, isArray, msToDHMS } from "../helpers.js";
 import { Countdown } from "./countdown.js";
 
 const cls = {
@@ -7,18 +7,12 @@ const cls = {
 };
 
 export class Timer {
-  static #instance;
-  #numRef = {};
-  #timeLeft;
-  #timerId;
-  #ref;
+  static #numRef = {};
+  static #timeLeft;
+  static #timerId;
+  static #ref;
 
-  constructor(opts) {
-    if (Timer.#instance) {
-      return Timer.#instance;
-    }
-    Timer.#instance = this;
-
+  static init(opts) {
     this.#ref = document.querySelector(`.${cls.timer}`);
     elementExpected(this.ref, "div");
 
@@ -32,26 +26,28 @@ export class Timer {
     if (opts?.futureDate) {
       this.setFutureDate(opts?.futureDate);
     }
-    Countdown.onTick = this.#render;
+    Countdown.onTick = this.#render.bind(this);
+
+    return this;
   }
 
-  #render = timeLeft => {
-    Object.entries(msToDDHHMMSS(timeLeft)).forEach(([key, value]) => {
+  static #render(timeLeft) {
+    Object.entries(msToDHMS(timeLeft)).forEach(([key, value]) => {
       this.numRef[key].innerText = value;
     });
-  };
+  }
 
-  start() {
+  static start() {
     Countdown.start();
     return this;
   }
 
-  stop() {
+  static stop() {
     Countdown.stop();
     return this;
   }
 
-  setFutureDate(...args) {
+  static setFutureDate(...args) {
     Countdown.setFutureDate(...args);
     // update timer values immediately
     this.#render(Countdown.timeLeft);
@@ -59,11 +55,11 @@ export class Timer {
     return this;
   }
 
-  get numRef() {
+  static get numRef() {
     return this.#numRef;
   }
 
-  get ref() {
+  static get ref() {
     return this.#ref;
   }
 }

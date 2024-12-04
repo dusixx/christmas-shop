@@ -1,6 +1,7 @@
 export const cls = {
   header: "header",
   siteNav: "site-nav",
+  siteNavItem: "site-nav__item",
   siteNavLink: "site-nav__link",
   burgerMenu: "burger-menu",
   burgerBtn: "burger-btn",

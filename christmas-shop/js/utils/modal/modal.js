@@ -9,7 +9,7 @@ const cls = {
 
 const backdrop = new Backdrop();
 const root = document.documentElement;
-const topOffset = "10%";
+const topOffset = "1px";
 
 export class Modal {
   static #instance;

@@ -20,11 +20,15 @@ export class BurgerMenu {
 
     // grab site-nav markup
     burgerMenu.innerHTML = `<nav class="site-nav">${siteNav.innerHTML}</nav>`;
-    const menuItem = burgerMenu.querySelectorAll(`.${cls.siteNavLink}`);
+    const menuItem = burgerMenu.querySelectorAll(`.${cls.siteNavItem}`);
     elementExpected(menuItem, "NodeList");
 
     // close menu on item click
-    menuItem.forEach(itm => itm.addEventListener("click", () => this.toggle()));
+    menuItem.forEach(itm =>
+      itm.addEventListener("click", () => {
+        this.toggle();
+      }),
+    );
 
     this.#opts = opts;
     this.toggler = opts?.toggler;
@@ -55,7 +59,7 @@ export class BurgerMenu {
   };
 
   toggle() {
-    Scroll.toggleLock();
+    Scroll.toggleLock({ toTop: true });
     const wasShown = this.#toggleMenu();
 
     if (wasShown) {

@@ -2,7 +2,7 @@ import { Modal, CategoryTabs, GiftList, makeDetailedGiftCard, Backtop } from "./
 
 const modal = new Modal();
 
-const giftList = new GiftList({
+GiftList.init({
   onClick(cardData) {
     modal.show({ content: makeDetailedGiftCard(cardData) });
   },
@@ -10,13 +10,13 @@ const giftList = new GiftList({
   .random()
   .render();
 
-new Backtop({
+Backtop.init({
   threshold: 300,
   pollingTimeout: 150,
 });
 
-new CategoryTabs({
+CategoryTabs.init({
   onChange(value) {
-    giftList.filter(value).render();
+    GiftList.filter(value).render();
   },
 });

@@ -1,5 +1,4 @@
 import { elementExpected, throttle } from "./helpers.js";
-import { Scroll } from "./scroll-lock.js";
 
 const cls = {
   backtop: "backtop",
@@ -7,18 +6,12 @@ const cls = {
 };
 
 export class Backtop {
-  static #instance;
-  #ref;
-  #threshold;
-  #pollingTimeout;
-  #handlePageScroll;
+  static #ref;
+  static #threshold;
+  static #pollingTimeout;
+  static #handlePageScroll;
 
-  constructor(opts) {
-    if (Backtop.#instance) {
-      return Backtop.#instance;
-    }
-    Backtop.#instance = this;
-
+  static init(opts) {
     this.#ref = document.querySelector(`.${cls.backtop}`);
     elementExpected(this.ref, "a");
 
@@ -26,7 +19,7 @@ export class Backtop {
     this.threshold = opts?.threshold;
   }
 
-  set pollingTimeout(value) {
+  static set pollingTimeout(value) {
     this.#pollingTimeout = value;
 
     document.removeEventListener("scroll", this.#handlePageScroll);
@@ -35,27 +28,25 @@ export class Backtop {
     if (value < 0) return;
 
     this.#handlePageScroll = throttle(() => {
-      // do not hide if scrolling is locked
-      if (Scroll.isLocked) return;
       this.ref.classList.toggle(cls.backtopActive, scrollY >= this.threshold);
     }, value);
 
     document.addEventListener("scroll", this.#handlePageScroll);
   }
 
-  get pollingTimeout() {
+  static get pollingTimeout() {
     return this.#pollingTimeout;
   }
 
-  set threshold(v) {
+  static set threshold(v) {
     this.#threshold = v;
   }
 
-  get threshold() {
+  static get threshold() {
     return this.#threshold;
   }
 
-  get ref() {
+  static get ref() {
     return this.#ref;
   }
 }

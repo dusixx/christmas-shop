@@ -23,10 +23,9 @@ export class Slider {
     elementExpected(btnLeft, "button");
     elementExpected(btnRight, "button");
 
-    // this.scrollWidth = content.scrollWidth;
     this.update();
 
-    window.addEventListener("resize", throttle(this.update.bind(this), pollingTimeout));
+    addEventListener("resize", throttle(this.update.bind(this), pollingTimeout));
 
     controls.addEventListener("click", e => {
       const btn = e.target.closest(`.${cls.sliderBtn}`);

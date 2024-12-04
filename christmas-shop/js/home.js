@@ -2,7 +2,7 @@ import { Modal, GiftList, makeDetailedGiftCard, Timer, Slider } from "./utils/in
 
 const modal = new Modal();
 
-new GiftList({
+GiftList.init({
   onClick(cardData) {
     modal.show({ content: makeDetailedGiftCard(cardData) });
   },
@@ -14,6 +14,6 @@ Slider.init({
   pollingTimeout: 150,
 });
 
-new Timer({
+Timer.init({
   futureDate: "01-01-2025 UTC+0",
 }).start();
