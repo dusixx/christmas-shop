@@ -1,7 +1,6 @@
-import { BurgerMenu, Modal, GiftList } from "./common.js";
+import { BurgerMenu, Modal, GiftList, makeDetailedGiftCard } from "./common.js";
 import { Slider } from "./components/slider/slider.js";
 import { Timer } from "./components/timer.js";
-import { makeDetailedGiftCard } from "./components/gift-list/markup.js";
 
 const modal = new Modal();
 
