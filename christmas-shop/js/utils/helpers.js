@@ -1,6 +1,6 @@
 const root = document.documentElement;
 const toStr = Object.prototype.toString;
-const lower = v => v?.toLocaleLowerCase();
+const lower = v => v?.toLocaleLowerCase?.() ?? v;
 
 export const isFunc = v => typeof v === "function";
 export const isStr = v => typeof v === "string";

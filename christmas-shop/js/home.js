@@ -2,7 +2,10 @@ import { BurgerMenu, Modal, GiftList, makeDetailedGiftCard } from "./common.js";
 import { Slider } from "./components/slider/slider.js";
 import { Timer } from "./components/timer.js";
 
-const modal = new Modal();
+const modal = new Modal({
+  hideOnEscape: true,
+  hideOnBackdropClick: true,
+});
 
 new GiftList({
   onClick(cardData) {

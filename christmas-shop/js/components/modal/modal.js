@@ -10,13 +10,16 @@ export class Modal {
   #content;
   #backdrop;
 
-  constructor() {
+  constructor({ hideOnBackdropClick: hideOnClick, hideOnEscape } = {}) {
     if (Modal.#instance) {
       return Modal.#instance;
     }
     Modal.#instance = this;
 
-    this.#backdrop = new Backdrop();
+    this.#backdrop = new Backdrop({
+      hideOnEscape,
+      hideOnClick,
+    });
     this.#ref = refs.modal;
     this.#contentRef = refs.modalContent;
 

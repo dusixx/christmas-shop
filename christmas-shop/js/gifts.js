@@ -2,7 +2,10 @@ import { BurgerMenu, Modal, GiftList, makeDetailedGiftCard } from "./common.js";
 import { CategoryTabs } from "./components/category-tabs.js";
 import { Backtop } from "./components/backtop.js";
 
-const modal = new Modal();
+const modal = new Modal({
+  hideOnEscape: true,
+  hideOnBackdropClick: true,
+});
 
 const giftList = new GiftList({
   onClick(cardData) {

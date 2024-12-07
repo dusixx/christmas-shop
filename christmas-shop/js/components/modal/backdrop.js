@@ -8,17 +8,18 @@ export class Backdrop {
   #onHide;
   #onShow;
   #opts;
+  #hideOnEscape;
 
-  constructor(opts = { hideOnEscape: true, hideOnClick: true }) {
+  constructor({ hideOnEscape, hideOnClick } = {}) {
     if (Backdrop.#instance) {
       return Backdrop.#instance;
     }
     Backdrop.#instance = this;
 
     this.#ref = refs.backdrop;
-    this.#opts = opts;
+    this.#hideOnEscape = hideOnEscape;
 
-    if (opts?.hideOnClick) {
+    if (hideOnClick) {
       this.#ref.addEventListener("click", e => {
         // catch the click directly on the backdrop
         if (e.target !== e.currentTarget) return;
@@ -38,7 +39,7 @@ export class Backdrop {
     const wasShown = this.ref.classList.toggle(cls.backdropActive);
 
     if (wasShown) {
-      if (this.#opts?.hideOnEscape) {
+      if (this.#hideOnEscape) {
         document.addEventListener("keydown", this.#handleEscKeydown, { once: true });
       }
       this.#onShow?.();
