@@ -1,4 +1,6 @@
-import { BurgerMenu, Modal, GiftList, CategoryTabs, Backtop } from "./components/index.js";
+import { BurgerMenu, Modal, GiftList } from "./common.js";
+import { CategoryTabs } from "./components/category-tabs.js";
+import { Backtop } from "./components/backtop.js";
 import { makeDetailedGiftCard } from "./components/gift-list/markup.js";
 
 const modal = new Modal();

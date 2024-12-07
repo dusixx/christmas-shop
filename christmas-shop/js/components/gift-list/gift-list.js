@@ -1,6 +1,6 @@
 import { giftsData } from "../../../data/gifts-data.js";
 import { cls as classNames, makeGiftList } from "./markup.js";
-import { getRandomElements, makeId, elementExpected, isFunc } from "../../utils/helpers.js";
+import { getRandomElements, makeId, isFunc } from "../../utils/helpers.js";
 
 const cls = {
   ...classNames,

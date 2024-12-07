@@ -1,5 +1,5 @@
 import { elementExpected, wasKeyDown } from "../../utils/helpers.js";
-import { Scroll } from "../scroll-lock.js";
+import { Scroll } from "../../utils/scroll-lock.js";
 import { refs, cls } from "./refs.js";
 
 const { header, siteNav, burgerBtn, burgerMenu } = refs;
