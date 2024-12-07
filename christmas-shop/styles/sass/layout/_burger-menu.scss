@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
 
-  @include transition("transform, opacity, visibility");
+  @include transition("transform, visibility", $dur: 450ms);
   @include hidden(true);
 
   background-color: var(--color-static-white);

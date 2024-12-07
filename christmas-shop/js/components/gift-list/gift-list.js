@@ -1,6 +1,6 @@
-import { giftsData } from "./gifts-data.js";
+import { giftsData } from "../../../data/gifts-data.js";
 import { cls as classNames, makeGiftList } from "./markup.js";
-import { getRandomElements, makeId, elementExpected, isFunc } from "../index.js";
+import { getRandomElements, makeId, elementExpected, isFunc } from "../../utils/helpers.js";
 
 const cls = {
   ...classNames,
@@ -8,22 +8,24 @@ const cls = {
 };
 
 export class GiftList {
-  static #items = [];
-  static #filtered = [];
-  static #container;
-  static #onClick;
-  static #ref;
+  static #instance;
+  #items = [];
+  #filtered = [];
+  #container;
+  #onClick;
+  #ref;
 
-  static init(opts) {
+  constructor(opts) {
+    if (GiftList.#instance) {
+      return GiftList.#instance;
+    }
+    GiftList.#instance = this;
+
     this.#container = document.querySelector(`.${cls.giftsContainer}`);
-    elementExpected(this.#container, "div");
-
     this.onClick = opts?.onClick;
-
-    return this;
   }
 
-  static #handleGiftListClick({ target }) {
+  #handleGiftListClick({ target }) {
     if (!isFunc(this.#onClick)) return;
 
     const targetCard = target.closest(`.${cls.giftCard}`);
@@ -33,16 +35,16 @@ export class GiftList {
     this.#onClick(cardData, targetCard);
   }
 
-  static set onClick(handler) {
+  set onClick(handler) {
     this.#onClick = handler;
   }
 
-  static random(count) {
+  random(count) {
     this.#filtered = this.#items = getRandomElements(giftsData, count);
     return this;
   }
 
-  static filter(category) {
+  filter(category) {
     this.#filtered =
       makeId(category) === "all"
         ? this.#items
@@ -51,30 +53,27 @@ export class GiftList {
     return this;
   }
 
-  static find(id) {
+  find(id) {
     return this.#filtered.find(({ name }) => makeId(name) === id);
   }
 
-  static render() {
+  render() {
     this.#container.innerHTML = makeGiftList(this.#filtered);
-
     this.#ref = this.#container.querySelector(`.${cls.giftList}`);
-    elementExpected(this.ref, "ul");
-
-    this.ref.addEventListener("click", this.#handleGiftListClick.bind(this));
+    this.#ref.addEventListener("click", this.#handleGiftListClick.bind(this));
 
     return this;
   }
 
-  static get items() {
+  get items() {
     return [...this.#items];
   }
 
-  static get filtered() {
+  get filtered() {
     return [...this.#filtered];
   }
 
-  static get ref() {
+  get ref() {
     return this.#ref;
   }
 }

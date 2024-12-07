@@ -1,9 +1,6 @@
-import { Scroll, elementExpected, wasKeyDown } from "../index.js";
-
-const cls = {
-  backdrop: "backdrop",
-  backdropActive: "backdrop--active",
-};
+import { elementExpected, wasKeyDown } from "../../utils/helpers.js";
+import { Scroll } from "../scroll-lock.js";
+import { refs, cls } from "./refs.js";
 
 export class Backdrop {
   static #instance;
@@ -18,9 +15,7 @@ export class Backdrop {
     }
     Backdrop.#instance = this;
 
-    this.#ref = document.querySelector(`.${cls.backdrop}`);
-    elementExpected(this.ref, "div");
-
+    this.#ref = refs.backdrop;
     this.#opts = opts;
 
     if (opts?.hideOnClick) {

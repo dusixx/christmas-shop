@@ -1,4 +1,4 @@
-import { elementExpected } from "./helpers.js";
+import { elementExpected } from "../utils/helpers.js";
 
 const cls = {
   category: "category",
@@ -6,13 +6,17 @@ const cls = {
 };
 
 export class CategoryTabs {
-  static #ref;
-  static #onChange;
+  static #instance;
+  #ref;
+  #onChange;
 
-  static init(opts) {
+  constructor(opts) {
+    if (CategoryTabs.#instance) {
+      return CategoryTabs.#instance;
+    }
+    CategoryTabs.#instance = this;
+
     this.#ref = document.querySelector(`.${cls.category}`);
-    elementExpected(this.#ref, "ul");
-
     const radioBtns = this.ref.querySelectorAll(`.${cls.categoryInput}`);
     elementExpected(radioBtns, "NodeList");
 
@@ -25,11 +29,11 @@ export class CategoryTabs {
     this.onChange = opts?.onChange;
   }
 
-  static set onChange(handler) {
+  set onChange(handler) {
     this.#onChange = handler;
   }
 
-  static get ref() {
+  get ref() {
     return this.#ref;
   }
 }

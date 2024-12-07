@@ -10,30 +10,32 @@
     display: none;
   }
 
-  &__slice {
-    position: absolute;
+  &::before,
+  &::after {
+    content: "";
 
+    position: absolute;
     display: block;
     height: 1px;
     width: 20px;
 
     background-color: var(--color-dark);
     @include transition("transform");
+  }
 
-    &:first-child {
-      top: 16px;
-    }
-    &:last-child {
-      top: 24px;
-    }
+  &::before {
+    top: 16px;
+  }
+  &::after {
+    top: 24px;
   }
 }
 
 .burger-btn--active {
-  .burger-btn__slice:first-child {
+  &::before {
     transform: translateY(4px) rotate(45deg);
   }
-  .burger-btn__slice:last-child {
+  &::after {
     transform: translateY(-4px) rotate(-45deg);
   }
 }

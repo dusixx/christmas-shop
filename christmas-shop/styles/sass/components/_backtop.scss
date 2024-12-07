@@ -19,10 +19,11 @@
   border-radius: 50%;
 
   @include hidden(true) {
+    opacity: 0;
     transform: translateY(100%);
   }
 
-  @include transition("opacity, visibility, transform");
+  @include transition("visibility, transform, opacity");
 
   &__icon {
     width: 16px;
@@ -35,11 +36,13 @@
 
 .backtop--active {
   @include hidden(false) {
+    opacity: 1;
     transform: translateY(0);
   }
 
   @media (width > $bp-tablet) {
     @include hidden(true) {
+      opacity: 0;
       transform: translateY(100%);
     }
   }

@@ -1,8 +1,9 @@
-import { Modal, CategoryTabs, GiftList, makeDetailedGiftCard, Backtop } from "./utils/index.js";
+import { BurgerMenu, Modal, GiftList, CategoryTabs, Backtop } from "./components/index.js";
+import { makeDetailedGiftCard } from "./components/gift-list/markup.js";
 
 const modal = new Modal();
 
-GiftList.init({
+const giftList = new GiftList({
   onClick(cardData) {
     modal.show({ content: makeDetailedGiftCard(cardData) });
   },
@@ -10,13 +11,13 @@ GiftList.init({
   .random()
   .render();
 
-Backtop.init({
+new Backtop({
   threshold: 300,
   pollingTimeout: 150,
 });
 
-CategoryTabs.init({
+new CategoryTabs({
   onChange(value) {
-    GiftList.filter(value).render();
+    giftList.filter(value).render();
   },
 });

@@ -1,4 +1,5 @@
-import { Scroll, elementExpected, wasKeyDown } from "../index.js";
+import { elementExpected, wasKeyDown } from "../../utils/helpers.js";
+import { Scroll } from "../scroll-lock.js";
 import { refs, cls } from "./refs.js";
 
 const { header, siteNav, burgerBtn, burgerMenu } = refs;
@@ -15,11 +16,8 @@ export class BurgerMenu {
     }
     BurgerMenu.#instance = this;
 
-    elementExpected(siteNav, "nav");
-    elementExpected(burgerMenu, "aside");
-
     // grab site-nav markup
-    burgerMenu.innerHTML = `<nav class="site-nav">${siteNav.innerHTML}</nav>`;
+    burgerMenu.innerHTML = siteNav.outerHTML;
     const menuItem = burgerMenu.querySelectorAll(`.${cls.siteNavItem}`);
     elementExpected(menuItem, "NodeList");
 
@@ -54,7 +52,6 @@ export class BurgerMenu {
   #toggleMenu = () => {
     this.#calcBurgerMenuIndets();
     burgerBtn.classList.toggle(cls.burgerBtnActive);
-
     return burgerMenu.classList.toggle(cls.burgerMenuActive);
   };
 

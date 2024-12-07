@@ -1,27 +1,21 @@
-import { elementExpected, throttle } from "../helpers.js";
+import { elementExpected, throttle } from "../../utils/helpers.js";
 import { refs, cls } from "./refs.js";
 
-const {
-  sliderTrack: track,
-  sliderContent: content,
-  sliderControls: controls,
-  sliderBtnLeft: btnLeft,
-  sliderBtnRight: btnRight,
-} = refs;
+const { track, content, controls, btnLeft, btnRight } = refs;
 
 let stepLength;
 let extremePosition;
 let currentPosition;
 
 export class Slider {
-  static scrollWidth = 1989;
+  static #instance;
+  scrollWidth = 1989;
 
-  static init({ pollingTimeout = 250 } = {}) {
-    elementExpected(content, "div");
-    elementExpected(controls, "div");
-    elementExpected(track, "div");
-    elementExpected(btnLeft, "button");
-    elementExpected(btnRight, "button");
+  constructor({ pollingTimeout = 250 } = {}) {
+    if (Slider.#instance) {
+      return Slider.#instance;
+    }
+    Slider.#instance = this;
 
     this.update();
 
@@ -33,25 +27,14 @@ export class Slider {
 
       this.#calcParams();
 
-      if (btn === btnRight) {
-        currentPosition -= 1;
-      } else {
-        currentPosition += 1;
-      }
+      currentPosition += btn === btnRight ? -1 : 1;
       btnRight.disabled = Math.abs(currentPosition) === extremePosition;
       btnLeft.disabled = currentPosition === 0;
       content.style.transform = `translateX(${stepLength * currentPosition}px)`;
     });
   }
 
-  static reset() {
-    currentPosition = 0;
-    content.style.transform = null;
-    btnRight.disabled = false;
-    btnLeft.disabled = true;
-  }
-
-  static #calcParams() {
+  #calcParams() {
     const contentIndent = parseFloat(getComputedStyle(content).left);
     const visibleArea = parseFloat(getComputedStyle(track).width);
     const distance = this.scrollWidth - visibleArea + contentIndent * 2;
@@ -60,7 +43,14 @@ export class Slider {
     stepLength = distance / extremePosition;
   }
 
-  static update() {
+  reset() {
+    currentPosition = 0;
+    content.style.transform = null;
+    btnRight.disabled = false;
+    btnLeft.disabled = true;
+  }
+
+  update() {
     this.reset();
     this.#calcParams();
   }

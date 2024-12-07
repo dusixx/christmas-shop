@@ -2,11 +2,9 @@ const root = document.documentElement;
 const toStr = Object.prototype.toString;
 const lower = v => v?.toLocaleLowerCase();
 
-export const isArray = v => Array.isArray(v);
 export const isFunc = v => typeof v === "function";
 export const isStr = v => typeof v === "string";
 export const isTagEqual = (el, tag) => lower(el?.tagName) === lower(tag);
-
 export const getTypeName = v => toStr.call(v).slice(8, -1);
 export const makeId = name => lower(`${name}`.trim().replace(/\s+/g, "-"));
 
@@ -70,9 +68,9 @@ export function throttle(target, tio) {
 export const msToDHMS = ms => {
   const secs = ms / 1000;
   return {
-    ss: Math.floor(secs % 60),
-    mm: Math.floor((secs / 60) % 60),
-    hh: Math.floor((secs / 3600) % 24),
-    dd: Math.floor(secs / 3600 / 24),
+    secs: Math.floor(secs % 60),
+    mins: Math.floor((secs / 60) % 60),
+    hours: Math.floor((secs / 3600) % 24),
+    days: Math.floor(secs / 3600 / 24),
   };
 };

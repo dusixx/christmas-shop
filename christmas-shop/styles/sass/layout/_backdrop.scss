@@ -13,11 +13,15 @@
   background-color: var(--color-overlay);
   overflow: scroll;
 
-  @include hidden(true);
+  @include hidden(true) {
+    opacity: 0;
+  }
   @include transition("opacity, visibility");
 
   &--active {
-    @include hidden(false);
+    @include hidden(false) {
+      opacity: 1;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-import { elementExpected, throttle } from "./helpers.js";
+import { elementExpected, throttle } from "../utils/helpers.js";
 
 const cls = {
   backtop: "backtop",
@@ -6,20 +6,24 @@ const cls = {
 };
 
 export class Backtop {
-  static #ref;
-  static #threshold;
-  static #pollingTimeout;
-  static #handlePageScroll;
+  static #instance;
+  #ref;
+  #threshold;
+  #pollingTimeout;
+  #handlePageScroll;
 
-  static init(opts) {
+  constructor(opts) {
+    if (Backtop.#instance) {
+      return Backtop.#instance;
+    }
+    Backtop.#instance = this;
+
     this.#ref = document.querySelector(`.${cls.backtop}`);
-    elementExpected(this.ref, "a");
-
     this.pollingTimeout = opts?.pollingTimeout;
     this.threshold = opts?.threshold;
   }
 
-  static set pollingTimeout(value) {
+  set pollingTimeout(value) {
     this.#pollingTimeout = value;
 
     document.removeEventListener("scroll", this.#handlePageScroll);
@@ -34,19 +38,19 @@ export class Backtop {
     document.addEventListener("scroll", this.#handlePageScroll);
   }
 
-  static get pollingTimeout() {
+  get pollingTimeout() {
     return this.#pollingTimeout;
   }
 
-  static set threshold(v) {
+  set threshold(v) {
     this.#threshold = v;
   }
 
-  static get threshold() {
+  get threshold() {
     return this.#threshold;
   }
 
-  static get ref() {
+  get ref() {
     return this.#ref;
   }
 }

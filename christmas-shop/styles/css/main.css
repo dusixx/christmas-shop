@@ -957,7 +957,8 @@ a {
     display: none;
   }
 }
-.burger-btn__slice {
+.burger-btn::before, .burger-btn::after {
+  content: "";
   position: absolute;
   display: block;
   height: 1px;
@@ -972,18 +973,18 @@ a {
   transition-property: transform;
   transition-property: transform, -webkit-transform;
 }
-.burger-btn__slice:first-child {
+.burger-btn::before {
   top: 16px;
 }
-.burger-btn__slice:last-child {
+.burger-btn::after {
   top: 24px;
 }
 
-.burger-btn--active .burger-btn__slice:first-child {
+.burger-btn--active::before {
   -webkit-transform: translateY(4px) rotate(45deg);
           transform: translateY(4px) rotate(45deg);
 }
-.burger-btn--active .burger-btn__slice:last-child {
+.burger-btn--active::after {
   -webkit-transform: translateY(-4px) rotate(-45deg);
           transform: translateY(-4px) rotate(-45deg);
 }
@@ -1007,19 +1008,19 @@ a {
   background-color: var(--color-static-white);
   border: 1px solid var(--color-primary);
   border-radius: 50%;
-  opacity: 0;
   pointer-events: none;
   visibility: hidden;
+  opacity: 0;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition-duration: var(--transition-duration);
           transition-duration: var(--transition-duration);
   -webkit-transition-timing-function: var(--transitiion-func);
           transition-timing-function: var(--transitiion-func);
-  -webkit-transition-property: opacity, visibility, -webkit-transform;
-  transition-property: opacity, visibility, -webkit-transform;
-  transition-property: opacity, visibility, transform;
-  transition-property: opacity, visibility, transform, -webkit-transform;
+  -webkit-transition-property: visibility, opacity, -webkit-transform;
+  transition-property: visibility, opacity, -webkit-transform;
+  transition-property: visibility, transform, opacity;
+  transition-property: visibility, transform, opacity, -webkit-transform;
 }
 .backtop__icon {
   width: 16px;
@@ -1030,17 +1031,17 @@ a {
 }
 
 .backtop--active {
-  opacity: 1;
   pointer-events: all;
   visibility: visible;
+  opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 @media (width > 768px) {
   .backtop--active {
-    opacity: 0;
     pointer-events: none;
     visibility: hidden;
+    opacity: 0;
     -webkit-transform: translateY(100%);
             transform: translateY(100%);
   }
@@ -1204,8 +1205,8 @@ a {
           align-items: center;
   gap: 20px;
   height: 100%;
-  -webkit-transition-duration: 400ms;
-          transition-duration: 400ms;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
   -webkit-transition-timing-function: var(--transitiion-func);
           transition-timing-function: var(--transitiion-func);
   -webkit-transition-property: -webkit-transform;
@@ -1394,15 +1395,14 @@ a {
   height: 100vh;
   margin: 0;
   padding: 0;
-  -webkit-transition-duration: var(--transition-duration);
-          transition-duration: var(--transition-duration);
+  -webkit-transition-duration: 450ms;
+          transition-duration: 450ms;
   -webkit-transition-timing-function: var(--transitiion-func);
           transition-timing-function: var(--transitiion-func);
-  -webkit-transition-property: opacity, visibility, -webkit-transform;
-  transition-property: opacity, visibility, -webkit-transform;
-  transition-property: transform, opacity, visibility;
-  transition-property: transform, opacity, visibility, -webkit-transform;
-  opacity: 0;
+  -webkit-transition-property: visibility, -webkit-transform;
+  transition-property: visibility, -webkit-transform;
+  transition-property: transform, visibility;
+  transition-property: transform, visibility, -webkit-transform;
   pointer-events: none;
   visibility: hidden;
   background-color: var(--color-static-white);
@@ -1411,7 +1411,6 @@ a {
   overflow: auto;
 }
 .burger-menu--active {
-  opacity: 1;
   pointer-events: all;
   visibility: visible;
   -webkit-transform: translateX(0);
@@ -1454,9 +1453,9 @@ a {
   height: 100vh;
   background-color: var(--color-overlay);
   overflow: scroll;
-  opacity: 0;
   pointer-events: none;
   visibility: hidden;
+  opacity: 0;
   -webkit-transition-duration: var(--transition-duration);
           transition-duration: var(--transition-duration);
   -webkit-transition-timing-function: var(--transitiion-func);
@@ -1465,9 +1464,9 @@ a {
   transition-property: opacity, visibility;
 }
 .backdrop--active {
-  opacity: 1;
   pointer-events: all;
   visibility: visible;
+  opacity: 1;
 }
 
 .backdrop .modal {

@@ -31,11 +31,9 @@
 
 @mixin hidden($flag: true) {
   @if ($flag == true) {
-    opacity: 0;
     pointer-events: none;
     visibility: hidden;
   } @else if ($flag == false) {
-    opacity: 1;
     pointer-events: all;
     visibility: visible;
   }

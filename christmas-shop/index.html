@@ -25,10 +25,7 @@
             <li class="site-nav__item"><a class="site-nav__link" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
-        <button class="burger-btn" type="button" aria-label="Burger menu button">
-          <span class="burger-btn__slice"></span>
-          <span class="burger-btn__slice"></span>
-        </button>
+        <button class="burger-btn" type="button" aria-label="Burger menu button" />
       </div>
     </header>
     <main>
@@ -90,12 +87,12 @@
             </div>
           </div>
           <div class="slider__controls">
-            <button class="slider__btn" type="button" data-slider-left disabled>
+            <button class="slider__btn" type="button" data-left disabled>
               <svg class="slider__btn-icon">
                 <use href="./images/icons.svg#icon-arrow-left"></use>
               </svg>
             </button>
-            <button class="slider__btn" type="button" data-slider-right>
+            <button class="slider__btn" type="button" data-right>
               <svg class="slider__btn-icon">
                 <use href="./images/icons.svg#icon-arrow-right"></use>
               </svg>
@@ -123,19 +120,19 @@
               <div class="timer">
                 <ul class="timer__cells">
                   <li class="timer__cell">
-                    <span class="timer__number timer__number--dd">00</span>
+                    <span class="timer__number" data-days>00</span>
                     <span class="timer__unit">days</span>
                   </li>
                   <li class="timer__cell">
-                    <span class="timer__number timer__number--hh">00</span>
+                    <span class="timer__number" data-hours>00</span>
                     <span class="timer__unit">hours</span>
                   </li>
                   <li class="timer__cell">
-                    <span class="timer__number timer__number--mm">00</span>
+                    <span class="timer__number" data-mins>00</span>
                     <span class="timer__unit">minutes</span>
                   </li>
                   <li class="timer__cell">
-                    <span class="timer__number timer__number--ss">00</span>
+                    <span class="timer__number" data-secs>00</span>
                     <span class="timer__unit">seconds</span>
                   </li>
                 </ul>

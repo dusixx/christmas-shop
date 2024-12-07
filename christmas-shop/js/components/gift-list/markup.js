@@ -1,4 +1,4 @@
-import { makeId, joinClasses, isArray, elementExpected } from "../index.js";
+import { makeId, joinClasses, elementExpected } from "../../utils/helpers.js";
 
 export const cls = {
   giftList: "gift-list",

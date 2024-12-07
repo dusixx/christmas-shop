@@ -1,8 +1,9 @@
-import { Modal, GiftList, makeDetailedGiftCard, Timer, Slider } from "./utils/index.js";
+import { Timer, BurgerMenu, Slider, GiftList, Modal } from "./components/index.js";
+import { makeDetailedGiftCard } from "./components/gift-list/markup.js";
 
 const modal = new Modal();
 
-GiftList.init({
+new GiftList({
   onClick(cardData) {
     modal.show({ content: makeDetailedGiftCard(cardData) });
   },
@@ -10,10 +11,10 @@ GiftList.init({
   .random(4)
   .render();
 
-Slider.init({
+new Slider({
   pollingTimeout: 150,
 });
 
-Timer.init({
-  futureDate: "01-01-2025 UTC+0",
+new Timer({
+  futureDate: "2025 UTC+0",
 }).start();
