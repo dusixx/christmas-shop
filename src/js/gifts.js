@@ -1,6 +1,6 @@
-import { BurgerMenu, Modal, GiftList, makeDetailedGiftCard } from "./common.js";
-import { CategoryTabs } from "./components/category-tabs.js";
+import { GiftList, makeDetailedGiftCard, Modal } from "./common.js";
 import { Backtop } from "./components/backtop.js";
+import { CategoryTabs } from "./components/category-tabs.js";
 
 const modal = new Modal({
   hideOnEscape: true,

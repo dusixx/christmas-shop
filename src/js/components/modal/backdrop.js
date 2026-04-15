@@ -1,13 +1,12 @@
 import { wasKeyDown } from "../../utils/helpers.js";
 import { Scroll } from "../../utils/scroll-lock.js";
-import { refs, cls } from "./refs.js";
+import { cls, refs } from "./refs.js";
 
 export class Backdrop {
   static #instance;
   #ref;
   #onHide;
   #onShow;
-  #opts;
   #hideOnEscape;
 
   constructor({ hideOnEscape, hideOnClick } = {}) {

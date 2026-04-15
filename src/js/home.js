@@ -1,4 +1,4 @@
-import { BurgerMenu, Modal, GiftList, makeDetailedGiftCard } from "./common.js";
+import { GiftList, makeDetailedGiftCard, Modal } from "./common.js";
 import { Slider } from "./components/slider/slider.js";
 import { Timer } from "./components/timer.js";
 

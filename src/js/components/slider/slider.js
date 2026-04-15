@@ -1,4 +1,4 @@
-import { elementExpected, throttle } from "../../utils/helpers.js";
+import { throttle } from "../../utils/helpers.js";
 import { refs, cls } from "./refs.js";
 
 const { track, content, controls, btnLeft, btnRight } = refs;
