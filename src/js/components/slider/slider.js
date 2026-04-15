@@ -1,7 +1,11 @@
 import { throttle } from "../../utils/helpers.js";
-import { refs, cls } from "./refs.js";
+import { cls, refs } from "./refs.js";
 
 const { track, content, controls, btnLeft, btnRight } = refs;
+
+const TABLET_WIDTH = 768;
+const TABLET_PRESSES = 6;
+const DESKTOP_PRESSES = 3;
 
 let stepLength;
 let extremePosition;
@@ -9,7 +13,6 @@ let currentPosition;
 
 export class Slider {
   static #instance;
-  scrollWidth = 1989;
 
   constructor({ pollingTimeout = 250 } = {}) {
     if (Slider.#instance) {
@@ -23,8 +26,9 @@ export class Slider {
 
     controls.addEventListener("click", e => {
       const btn = e.target.closest(`.${cls.sliderBtn}`);
-      if (!btn) return;
-
+      if (!btn) {
+        return;
+      }
       this.#calcParams();
 
       currentPosition += btn === btnRight ? -1 : 1;
@@ -37,9 +41,9 @@ export class Slider {
   #calcParams() {
     const contentIndent = parseFloat(getComputedStyle(content).left);
     const visibleArea = parseFloat(getComputedStyle(track).width);
-    const distance = this.scrollWidth - visibleArea + contentIndent * 2;
+    const distance = content.scrollWidth - visibleArea + contentIndent * 2;
 
-    extremePosition = visibleArea > 768 ? 3 : 6;
+    extremePosition = visibleArea > TABLET_WIDTH ? DESKTOP_PRESSES : TABLET_PRESSES;
     stepLength = distance / extremePosition;
   }
 

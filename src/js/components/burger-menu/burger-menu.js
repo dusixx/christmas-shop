@@ -1,6 +1,6 @@
 import { elementExpected, wasKeyDown } from "../../utils/helpers.js";
 import { Scroll } from "../../utils/scroll-lock.js";
-import { refs, cls } from "./refs.js";
+import { cls, refs } from "./refs.js";
 
 const { header, siteNav, burgerBtn, burgerMenu } = refs;
 const matchMediaTablet = matchMedia(`(width > 768px)`);

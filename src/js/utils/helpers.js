@@ -1,4 +1,3 @@
-const root = document.documentElement;
 const toStr = Object.prototype.toString;
 const lower = v => v?.toLocaleLowerCase?.() ?? v;
 

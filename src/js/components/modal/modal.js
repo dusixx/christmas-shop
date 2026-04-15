@@ -7,7 +7,6 @@ export class Modal {
   static #instance;
   #ref;
   #contentRef;
-  #content;
   #backdrop;
 
   constructor({ hideOnBackdropClick: hideOnClick, hideOnEscape } = {}) {
@@ -32,7 +31,7 @@ export class Modal {
   }
 
   set content(markup) {
-    this.#contentRef.innerHTML = this.#content = markup;
+    this.#contentRef.innerHTML = markup;
 
     // fit modal by height
     this.ref.style.top = refs.root.clientHeight <= this.height ? TOP_OFFSET : null;

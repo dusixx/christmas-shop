@@ -1,5 +1,5 @@
-import { elementExpected, msToDHMS } from "../utils/helpers.js";
 import { Countdown } from "../utils/countdown.js";
+import { msToDHMS } from "../utils/helpers.js";
 
 const cls = {
   timer: "timer",
@@ -9,8 +9,6 @@ const cls = {
 export class Timer {
   static #instance;
   #numRef = {};
-  #timeLeft;
-  #timerId;
   #ref;
 
   constructor(opts) {
