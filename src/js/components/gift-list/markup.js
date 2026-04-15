@@ -1,4 +1,5 @@
-import { makeId, joinClasses, elementExpected } from "../../utils/helpers.js";
+import iconsUrl from "../../../images/icons.svg?url";
+import { elementExpected, joinClasses, makeId } from "../../utils/helpers.js";
 
 export const cls = {
   giftList: "gift-list",
@@ -13,10 +14,10 @@ const makeSuperpowerIcons = points => {
   let activeCount = parseInt(points) / 100;
   const activeStyle = `style="fill: var(--color-primary)"`;
 
-  const markup = Array.from({ length: totalCount }, itm => {
+  const markup = Array.from({ length: totalCount }, _ => {
     return ` 
         <li class="${cls.giftSuperpowers}__icon">
-            <svg><use href="./images/icons.svg#icon-snowflake" ${
+            <svg><use href="${iconsUrl}#icon-snowflake" ${
               --activeCount >= 0 ? activeStyle : ``
             }></use></svg>
         </li>
