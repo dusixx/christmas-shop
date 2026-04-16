@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: "../dist",
     assetsDir: "",
-    minify: false,
+    minify: true,
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, "src/index.html"),
