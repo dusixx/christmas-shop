@@ -8,6 +8,7 @@ export default defineConfig({
     outDir: "../dist",
     assetsDir: "",
     minify: true,
+    sourcemap: true,
     rollupOptions: {
       input: {
         main: resolve(import.meta.dirname, "src/index.html"),
