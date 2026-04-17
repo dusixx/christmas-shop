@@ -1,0 +1,2 @@
+import{a as e,i as t,n,r,t as i}from"./components-DWRKnQF_.js";var a=new r({hideOnEscape:!0,hideOnBackdropClick:!0});new t({onClick(t){a.show({content:e(t)})}}).random(4).render(),new n({pollingTimeout:150}),new i({futureDate:`2025 UTC+0`}).start();
+//# sourceMappingURL=main-BveipFGO.js.map
