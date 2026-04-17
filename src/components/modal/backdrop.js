@@ -1,5 +1,5 @@
-import { wasKeyDown } from "../../utils/helpers.js";
-import { Scroll } from "../../utils/scroll-lock.js";
+import { wasKeyDown } from "../../common/utils.js";
+import { Scroll } from "../scroll-lock.js";
 import { cls, refs } from "./refs.js";
 
 export class Backdrop {

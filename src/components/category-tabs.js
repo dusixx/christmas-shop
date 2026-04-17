@@ -1,4 +1,4 @@
-import { elementExpected } from "../utils/helpers.js";
+import { elementExpected } from "../common/utils.js";
 
 const cls = {
   category: "category",

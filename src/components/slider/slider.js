@@ -1,4 +1,4 @@
-import { throttle } from "../../utils/helpers.js";
+import { throttle } from "../../common/utils.js";
 import { cls, refs } from "./refs.js";
 
 const { track, content, controls, btnLeft, btnRight } = refs;

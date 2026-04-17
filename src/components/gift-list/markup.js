@@ -1,5 +1,5 @@
-import iconsUrl from "../../../images/icons.svg?url";
-import { elementExpected, joinClasses, makeId } from "../../utils/helpers.js";
+import { elementExpected, joinClasses, makeId } from "../../common/utils.js";
+import iconsUrl from "../../images/icons.svg";
 
 export const cls = {
   giftList: "gift-list",

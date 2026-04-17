@@ -1,5 +1,5 @@
-import { Countdown } from "../utils/countdown.js";
-import { msToDHMS } from "../utils/helpers.js";
+import { msToDHMS } from "../common/utils.js";
+import { Countdown } from "./countdown.js";
 
 const cls = {
   timer: "timer",

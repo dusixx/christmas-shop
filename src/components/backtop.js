@@ -1,4 +1,4 @@
-import { throttle } from "../utils/helpers.js";
+import { throttle } from "../common/utils.js";
 
 const cls = {
   backtop: "backtop",

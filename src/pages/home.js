@@ -1,6 +1,6 @@
-import { GiftList, makeDetailedGiftCard, Modal } from "./common.js";
-import { Slider } from "./components/slider/slider.js";
-import { Timer } from "./components/timer.js";
+import { GiftList, makeDetailedGiftCard, Modal, Slider, Timer } from "../components/index.js";
+// import { Slider } from "./components/slider/slider.js";
+// import { Timer } from "./components/timer.js";
 
 const modal = new Modal({
   hideOnEscape: true,

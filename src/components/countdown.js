@@ -1,4 +1,4 @@
-import { elementExpected } from "./helpers.js";
+import { elementExpected } from "../common/utils.js";
 
 const TIMER_PERIOD = 1000;
 
