@@ -1,13 +1,5 @@
-import { elementExpected, joinClasses, makeId } from "../../common/utils.js";
+import { ClassName, elementExpected, joinClasses, makeId } from "../../common/index.js";
 import iconsUrl from "../../images/icons.svg";
-
-export const cls = {
-  giftList: "gift-list",
-  giftCard: "gift-card",
-  giftCardDetailed: "gift-card--detailed",
-  giftCardInteractive: "gift-card--interactive",
-  giftSuperpowers: "gift-superpowers",
-};
 
 const makeSuperpowerIcons = points => {
   const totalCount = 5;
@@ -16,7 +8,7 @@ const makeSuperpowerIcons = points => {
 
   const markup = Array.from({ length: totalCount }, _ => {
     return ` 
-        <li class="${cls.giftSuperpowers}__icon">
+        <li class="${ClassName.GiftSuperpowers}__icon">
             <svg><use href="${iconsUrl}#icon-snowflake" ${
               --activeCount >= 0 ? activeStyle : ``
             }></use></svg>
@@ -24,17 +16,17 @@ const makeSuperpowerIcons = points => {
     `;
   }).join("");
 
-  return `<ul class=${cls.giftSuperpowers}__icons>${markup}</ul>`;
+  return `<ul class=${ClassName.GiftSuperpowers}__icons>${markup}</ul>`;
 };
 
 const makeSuperpowerList = superpowers => {
   const markup = Object.entries(superpowers)
     .map(([name, points]) => {
       return `
-        <li class="${cls.giftSuperpowers}__item">
-            <p class="${cls.giftSuperpowers}__name">${name}</p>
-            <div class="${cls.giftSuperpowers}__value">
-                <p class="${cls.giftSuperpowers}__points">${points}</p>
+        <li class="${ClassName.GiftSuperpowers}__item">
+            <p class="${ClassName.GiftSuperpowers}__name">${name}</p>
+            <div class="${ClassName.GiftSuperpowers}__value">
+                <p class="${ClassName.GiftSuperpowers}__points">${points}</p>
                 ${makeSuperpowerIcons(points)}
             </div>
         </li>
@@ -42,7 +34,7 @@ const makeSuperpowerList = superpowers => {
     })
     .join("");
 
-  return `<ul class=${cls.giftSuperpowers}__list>${markup}</ul>`;
+  return `<ul class=${ClassName.GiftSuperpowers}__list>${markup}</ul>`;
 };
 
 export const makeGiftCard = (
@@ -51,27 +43,29 @@ export const makeGiftCard = (
   extraClasses = "",
 ) => {
   const classList = joinClasses(
-    cls.giftCard,
-    interactive && `${cls.giftCard}--interactive`,
-    category && `${cls.giftCard}--${makeId(category)}`,
+    ClassName.GiftCard,
+    interactive && `${ClassName.GiftCard}--interactive`,
+    category && `${ClassName.GiftCard}--${makeId(category)}`,
     ...extraClasses.split(/\s+/),
   );
-  const desc = description ? `<p class="${cls.giftCard}__description">${description}</p>` : ``;
+  const desc = description
+    ? `<p class="${ClassName.GiftCard}__description">${description}</p>`
+    : ``;
   const superpow = superpowers
     ? `
-        <div class="${cls.giftSuperpowers}">
-            <h4 class=${cls.giftSuperpowers}__title>Adds superpowers to:</h4>
+        <div class="${ClassName.GiftSuperpowers}">
+            <h4 class=${ClassName.GiftSuperpowers}__title>Adds superpowers to:</h4>
             ${makeSuperpowerList(superpowers)}
         </div>`
     : ``;
 
   return `
     <article class="${classList}" id="${makeId(name)}">
-        <div class="${cls.giftCard}__thumb"></div>
-        <div class="${cls.giftCard}__desc">
-            <div class="${cls.giftCard}__heading">
-                <h4 class="${cls.giftCard}__tag">${category}</h4>
-                <h3 class="${cls.giftCard}__title">${name}</h3>
+        <div class="${ClassName.GiftCard}__thumb"></div>
+        <div class="${ClassName.GiftCard}__desc">
+            <div class="${ClassName.GiftCard}__heading">
+                <h4 class="${ClassName.GiftCard}__tag">${category}</h4>
+                <h3 class="${ClassName.GiftCard}__title">${name}</h3>
                 ${desc}
             </div>
             ${superpow}
@@ -80,7 +74,7 @@ export const makeGiftCard = (
 };
 
 export const makeDetailedGiftCard = cardData => {
-  return makeGiftCard(cardData, false, cls.giftCardDetailed);
+  return makeGiftCard(cardData, false, ClassName.GiftCardDetailed);
 };
 
 export const makeGiftList = items => {
@@ -89,9 +83,9 @@ export const makeGiftList = items => {
   const markup = items
     .map(
       ({ name, category }) =>
-        `<li class="${cls.giftList}__item">${makeGiftCard({ name, category })}</li>`,
+        `<li class="${ClassName.GiftList}__item">${makeGiftCard({ name, category })}</li>`,
     )
     .join("");
 
-  return `<ul class="${cls.giftList}">${markup}</ul>`;
+  return `<ul class="${ClassName.GiftList}">${markup}</ul>`;
 };

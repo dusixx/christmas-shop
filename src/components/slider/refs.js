@@ -1,23 +1,12 @@
-export const cls = {
-  slider: "slider",
-  sliderTrack: "slider__track",
-  sliderContent: "slider__content",
-  sliderControls: "slider__controls",
-  sliderBtn: "slider__btn",
-};
+import { ClassName } from "../../common/constants.js";
 
-const slider = document.querySelector(`.${cls.slider}`);
-const btnRight = slider?.querySelector(`.${cls.sliderBtn}[data-right]`);
-const btnLeft = slider?.querySelector(`.${cls.sliderBtn}[data-left]`);
-const content = slider?.querySelector(`.${cls.sliderContent}`);
-const controls = slider?.querySelector(`.${cls.sliderControls}`);
-const track = slider?.querySelector(`.${cls.sliderTrack}`);
+const slider = document.querySelector(`.${ClassName.Slider}`);
 
 export const refs = {
   slider,
-  btnRight,
-  btnLeft,
-  content,
-  controls,
-  track,
+  btnRight: slider?.querySelector(`.${ClassName.SliderBtn}[data-right]`),
+  btnLeft: slider?.querySelector(`.${ClassName.SliderBtn}[data-left]`),
+  content: slider?.querySelector(`.${ClassName.SliderContent}`),
+  controls: slider?.querySelector(`.${ClassName.SliderControls}`),
+  track: slider?.querySelector(`.${ClassName.SliderTrack}`),
 };

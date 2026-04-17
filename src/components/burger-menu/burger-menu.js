@@ -1,6 +1,6 @@
-import { elementExpected, wasKeyDown } from "../../common/utils.js";
+import { ClassName, elementExpected, wasKeyDown } from "../../common/index.js";
 import { Scroll } from "../scroll-lock.js";
-import { cls, refs } from "./refs.js";
+import { refs } from "./refs.js";
 
 const { header, siteNav, burgerBtn, burgerMenu } = refs;
 const matchMediaTablet = matchMedia(`(width > 768px)`);
@@ -18,7 +18,7 @@ export class BurgerMenu {
 
     // grab site-nav markup
     burgerMenu.innerHTML = siteNav.outerHTML;
-    const menuItem = burgerMenu.querySelectorAll(`.${cls.siteNavItem}`);
+    const menuItem = burgerMenu.querySelectorAll(`.${ClassName.SiteNavItem}`);
     elementExpected(menuItem, "NodeList");
 
     // close menu on item click
@@ -51,8 +51,8 @@ export class BurgerMenu {
 
   #toggleMenu = () => {
     this.#calcBurgerMenuIndets();
-    burgerBtn.classList.toggle(cls.burgerBtnActive);
-    return burgerMenu.classList.toggle(cls.burgerMenuActive);
+    burgerBtn.classList.toggle(ClassName.BurgerBtnActive);
+    return burgerMenu.classList.toggle(ClassName.BurgerMenuActive);
   };
 
   toggle() {

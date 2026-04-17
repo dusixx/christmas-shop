@@ -1,5 +1,5 @@
-import { throttle } from "../../common/utils.js";
-import { cls, refs } from "./refs.js";
+import { ClassName, throttle } from "../../common/index.js";
+import { refs } from "./refs.js";
 
 const { track, content, controls, btnLeft, btnRight } = refs;
 
@@ -25,7 +25,7 @@ export class Slider {
     addEventListener("resize", throttle(this.update.bind(this), pollingTimeout));
 
     controls.addEventListener("click", e => {
-      const btn = e.target.closest(`.${cls.sliderBtn}`);
+      const btn = e.target.closest(`.${ClassName.SliderBtn}`);
       if (!btn) {
         return;
       }

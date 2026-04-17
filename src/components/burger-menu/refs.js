@@ -1,17 +1,8 @@
-export const cls = {
-  header: "header",
-  siteNav: "site-nav",
-  siteNavItem: "site-nav__item",
-  siteNavLink: "site-nav__link",
-  burgerMenu: "burger-menu",
-  burgerBtn: "burger-btn",
-  burgerMenuActive: "burger-menu--active",
-  burgerBtnActive: "burger-btn--active",
-};
+import { ClassName } from "../../common/index.js";
 
 export const refs = {
-  header: document.querySelector(`.${cls.header}`),
-  siteNav: document.querySelector(`.${cls.siteNav}`),
-  burgerBtn: document.querySelector(`.${cls.burgerBtn}`),
-  burgerMenu: document.querySelector(`.${cls.burgerMenu}`),
+  header: document.querySelector(`.${ClassName.Header}`),
+  siteNav: document.querySelector(`.${ClassName.SiteNav}`),
+  burgerBtn: document.querySelector(`.${ClassName.BurgerBtn}`),
+  burgerMenu: document.querySelector(`.${ClassName.BurgerMenu}`),
 };

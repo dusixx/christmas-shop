@@ -1,11 +1,6 @@
+import { getRandomElements, isFunc, makeId, ClassName } from "../../common/index.js";
 import { giftsData } from "../../data/gifts-data.js";
-import { cls as classNames, makeGiftList } from "./markup.js";
-import { getRandomElements, makeId, isFunc } from "../../common/utils.js";
-
-const cls = {
-  ...classNames,
-  giftsContainer: "gifts-container",
-};
+import { makeGiftList } from "./markup.js";
 
 export class GiftList {
   static #instance;
@@ -21,14 +16,14 @@ export class GiftList {
     }
     GiftList.#instance = this;
 
-    this.#container = document.querySelector(`.${cls.giftsContainer}`);
+    this.#container = document.querySelector(`.${ClassName.GiftsContainer}`);
     this.onClick = opts?.onClick;
   }
 
   #handleGiftListClick({ target }) {
     if (!isFunc(this.#onClick)) return;
 
-    const targetCard = target.closest(`.${cls.giftCard}`);
+    const targetCard = target.closest(`.${ClassName.GiftCard}`);
     if (!targetCard) return;
 
     const cardData = this.find(targetCard.id);
@@ -59,7 +54,7 @@ export class GiftList {
 
   render() {
     this.#container.innerHTML = makeGiftList(this.#filtered);
-    this.#ref = this.#container.querySelector(`.${cls.giftList}`);
+    this.#ref = this.#container.querySelector(`.${ClassName.GiftList}`);
     this.#ref.addEventListener("click", this.#handleGiftListClick.bind(this));
 
     return this;

@@ -1,6 +1,6 @@
-import { wasKeyDown } from "../../common/utils.js";
+import { ClassName, wasKeyDown } from "../../common/index.js";
 import { Scroll } from "../scroll-lock.js";
-import { cls, refs } from "./refs.js";
+import { refs } from "./refs.js";
 
 export class Backdrop {
   static #instance;
@@ -35,7 +35,7 @@ export class Backdrop {
 
   toggle() {
     Scroll.toggleLock();
-    const wasShown = this.ref.classList.toggle(cls.backdropActive);
+    const wasShown = this.ref.classList.toggle(ClassName.BackdropActive);
 
     if (wasShown) {
       if (this.#hideOnEscape) {

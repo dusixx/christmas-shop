@@ -1,10 +1,5 @@
-import { msToDHMS } from "../common/utils.js";
+import { ClassName, msToDHMS } from "../common/index.js";
 import { Countdown } from "./countdown.js";
-
-const cls = {
-  timer: "timer",
-  timerNumber: "timer__number",
-};
 
 export class Timer {
   static #instance;
@@ -17,10 +12,10 @@ export class Timer {
     }
     Timer.#instance = this;
 
-    this.#ref = document.querySelector(`.${cls.timer}`);
+    this.#ref = document.querySelector(`.${ClassName.Timer}`);
 
     "secs mins hours days".split(" ").forEach(key => {
-      this.numRef[key] = this.ref.querySelector(`.${cls.timerNumber}[data-${key}]`);
+      this.numRef[key] = this.ref.querySelector(`.${ClassName.TimerNumber}[data-${key}]`);
     });
 
     if (opts?.futureDate) {

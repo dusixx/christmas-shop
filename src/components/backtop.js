@@ -1,10 +1,4 @@
-import { throttle } from "../common/utils.js";
-
-const cls = {
-  backtop: "backtop",
-  backtopActive: "backtop--active",
-};
-
+import { ClassName, throttle } from "../common/index.js";
 export class Backtop {
   static #instance;
   #ref;
@@ -18,7 +12,7 @@ export class Backtop {
     }
     Backtop.#instance = this;
 
-    this.#ref = document.querySelector(`.${cls.backtop}`);
+    this.#ref = document.querySelector(`.${ClassName.Backtop}`);
     this.pollingTimeout = opts?.pollingTimeout;
     this.threshold = opts?.threshold;
   }
@@ -29,10 +23,11 @@ export class Backtop {
     document.removeEventListener("scroll", this.#handlePageScroll);
 
     // disable scroll polling and thus the backtop too
-    if (value < 0) return;
-
+    if (value < 0) {
+      return;
+    }
     this.#handlePageScroll = throttle(() => {
-      this.ref.classList.toggle(cls.backtopActive, scrollY >= this.threshold);
+      this.ref.classList.toggle(ClassName.BacktopActive, scrollY >= this.threshold);
     }, value);
 
     document.addEventListener("scroll", this.#handlePageScroll);

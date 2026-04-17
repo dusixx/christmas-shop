@@ -1,10 +1,4 @@
-import { elementExpected } from "../common/utils.js";
-
-const cls = {
-  category: "category",
-  categoryInput: "category__input",
-};
-
+import { ClassName, elementExpected } from "../common/index.js";
 export class CategoryTabs {
   static #instance;
   #ref;
@@ -16,8 +10,8 @@ export class CategoryTabs {
     }
     CategoryTabs.#instance = this;
 
-    this.#ref = document.querySelector(`.${cls.category}`);
-    const radioBtns = this.ref.querySelectorAll(`.${cls.categoryInput}`);
+    this.#ref = document.querySelector(`.${ClassName.Category}`);
+    const radioBtns = this.ref.querySelectorAll(`.${ClassName.CategoryInput}`);
     elementExpected(radioBtns, "NodeList");
 
     radioBtns.forEach(itm =>

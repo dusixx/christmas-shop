@@ -5,8 +5,6 @@ import {
   makeDetailedGiftCard,
   Modal,
 } from "../components/index.js";
-// import { Backtop } from "./components/backtop.js";
-// import { CategoryTabs } from "./components/category-tabs.js";
 
 const modal = new Modal({
   hideOnEscape: true,
