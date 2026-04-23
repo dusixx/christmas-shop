@@ -1,0 +1,57 @@
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 72px;
+  padding: 12px 12px;
+
+  @media (width < $bp-mobile) {
+    padding: 12px 0;
+  }
+
+  background-color: var(--color-static-white-40);
+  border-radius: 20px;
+
+  &__cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__number {
+    @extend %title;
+    line-height: 1;
+    padding: 3px 0 0 3px;
+  }
+
+  &__unit {
+    @extend %subtitle;
+    line-height: 1;
+  }
+}
+
+.timer__cell {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  width: 80px;
+  color: var(--color-static-white);
+
+  &:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    top: 33%;
+
+    width: 1px;
+    height: 33%;
+
+    background-color: var(--color-static-white-40);
+  }
+}

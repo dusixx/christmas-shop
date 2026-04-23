@@ -1,0 +1,7 @@
+.container {
+  max-width: var(--section-max-width);
+  min-width: 310px;
+
+  margin: 0 auto;
+  padding: 0 smooth-out($bp-tablet, 8px, $bp-desktop, 82px);
+}

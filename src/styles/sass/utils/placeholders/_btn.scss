@@ -1,0 +1,38 @@
+%btn {
+  @extend %custom-pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+
+  text-align: center;
+  font-family: inherit;
+  border-style: none;
+}
+
+%btn-base {
+  @extend %btn;
+
+  height: 56px;
+  border-radius: 20px;
+  color: var(--color-static-white);
+
+  @include transition("color, background-color");
+}
+
+%btn-slider-control {
+  @extend %btn-base;
+
+  width: 56px;
+
+  background-color: transparent;
+  color: var(--color-static-white);
+  border: 1px solid currentColor;
+
+  @include focused {
+    color: var(--color-primary);
+    background-color: var(--color-static-white);
+  }
+}

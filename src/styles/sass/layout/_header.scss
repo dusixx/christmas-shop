@@ -1,0 +1,22 @@
+.header {
+  &__container {
+    @extend .container;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // fit content by height
+    align-items: stretch;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    background-color: var(--color-static-white);
+  }
+
+  & .site-nav {
+    @media (width <= $bp-tablet) {
+      display: none;
+    }
+  }
+}

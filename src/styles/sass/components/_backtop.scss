@@ -1,0 +1,49 @@
+.backtop {
+  @extend %link;
+
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 56px;
+  height: 56px;
+
+  color: var(--color-primary);
+  background-color: var(--color-static-white);
+
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+
+  @include hidden(true) {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  @include transition("visibility, transform, opacity");
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    fill: currentColor;
+    transform: rotate(-90deg);
+  }
+}
+
+.backtop--active {
+  @include hidden(false) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (width > $bp-tablet) {
+    @include hidden(true) {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+}

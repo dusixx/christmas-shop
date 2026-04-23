@@ -1,0 +1,36 @@
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --second-family: "Allura", sans-serif;
+  --third-family: "SF Pro", sans-serif;
+
+  --color-primary: #ff4646;
+  --color-primary-10: rgba(255, 70, 70, 0.1);
+  --color-primary-15: rgba(255, 70, 70, 0.15);
+  --color-static-white: #fff;
+  --color-static-white-40: rgba(255, 255, 255, 0.4);
+  --color-static-white-20: rgba(255, 255, 255, 0.2);
+  --color-content-bg: #ecf3f8;
+  --color-dark: #181c29;
+  --color-tag-purple: #4361ff;
+  --color-tag-pink: #ff43f7;
+  --color-tag-green: #06a44f;
+  --color-overlay: rgba(24, 28, 41, 0.8);
+
+  --transition-duration: 250ms;
+  --transitiion-func: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --section-max-width: 1440px;
+  --section-padding-hor: 82px;
+  --section-padding-ver: 60px;
+}
+
+// SASS vars
+
+$smoothScrolling: true;
+
+// breakpoints
+$bp-desktop: 1440px;
+$bp-tablet: 768px;
+$bp-mobile-l: 425px;
+$bp-mobile: 380px;
+$bp-mobile-s: 320px;

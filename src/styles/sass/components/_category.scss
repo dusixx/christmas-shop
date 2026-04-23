@@ -1,0 +1,55 @@
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: smooth-out($bp-mobile, 0px, $bp-tablet, 8px);
+
+  user-select: none;
+
+  &__item {
+    display: flex;
+    // show outline only if input was focused with Tab
+    &:has(:focus-visible) {
+      outline: auto;
+    }
+  }
+
+  &__label {
+    @extend %subtitle;
+    @extend %custom-pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    padding: 0 smooth-out($bp-mobile, 8px, $bp-tablet, 20px);
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: var(--color-static-white);
+    border-radius: 12px;
+
+    @include transition("background-color");
+  }
+
+  &__input {
+    appearance: unset;
+    /* IOS < 15: remove gradient background */
+    background-color: #fff;
+    margin: 0;
+  }
+
+  &__input:checked ~ &__label,
+  &__input:hover ~ &__label,
+  &__input:focus-visible ~ &__label {
+    background-color: var(--color-static-white-20);
+  }
+
+  &__input:checked ~ &__label {
+    @include non-interactive {
+      cursor: default;
+    }
+  }
+}

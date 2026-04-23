@@ -1,0 +1,29 @@
+.site-nav__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.site-nav__link {
+  @extend %link;
+  @extend %subtitle;
+
+  display: block;
+  padding: 12px 20px;
+
+  border-radius: 12px;
+  @include transition("color, background-color");
+
+  @include focused {
+    color: var(--color-primary);
+    background-color: var(--color-primary-10);
+  }
+}
+
+.site-nav__link--current {
+  @include non-interactive {
+    color: var(--color-primary);
+    background-color: var(--color-primary-10);
+  }
+}

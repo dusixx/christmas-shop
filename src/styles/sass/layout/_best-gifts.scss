@@ -1,0 +1,29 @@
+.best-gifts {
+  &__container {
+    @extend .container;
+    @extend %section-bg;
+
+    padding: var(--section-padding-ver) 8px;
+  }
+
+  &__heading {
+    @extend %section-heading;
+  }
+
+  &__caption {
+    @extend %caption-curly;
+  }
+
+  &__title {
+    @extend %title;
+    color: var(--color-static-white);
+  }
+}
+
+.best-gifts .gift-list {
+  margin-top: 20px;
+
+  @media (width <= 1310px) {
+    padding: 0 smooth-out($bp-tablet, 0px, 1310px, 200px);
+  }
+}

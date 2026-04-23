@@ -1,0 +1,54 @@
+.gift-superpowers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-top: 20px;
+
+  &__title {
+    @extend %subtitle;
+  }
+
+  &__item {
+    @extend %paragraph;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-transform: capitalize;
+  }
+
+  &__name {
+    // $bp-mobile -> 148px
+    width: smooth-out($bp-mobile-s, 98px, $bp-mobile-l, 184px);
+  }
+
+  &__points {
+    width: 40px;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    color: var(--color-primary-10);
+  }
+
+  &__icon > svg {
+    fill: currentColor;
+    width: 16px;
+    height: 16px;
+  }
+}

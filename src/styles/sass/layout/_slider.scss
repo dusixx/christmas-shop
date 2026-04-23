@@ -1,0 +1,82 @@
+.slider {
+  &__container {
+    @extend .container;
+    @extend %section-bg;
+
+    height: 488px;
+    padding: var(--section-padding-ver) 0;
+  }
+
+  &__heading {
+    @extend %section-heading;
+  }
+
+  &__caption {
+    @extend %caption-curly;
+  }
+
+  &__title {
+    @extend %title;
+    color: var(--color-static-white);
+  }
+
+  &__track {
+    position: relative;
+    height: 200px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+
+  &__content {
+    position: absolute;
+    left: smooth-out($bp-tablet, 8px, $bp-desktop, 84px);
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    height: 100%;
+
+    @include transition("transform", $dur: 500ms);
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 80px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--color-static-white);
+  }
+
+  &__image {
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+
+    margin-top: 20px;
+    margin-right: smooth-out($bp-tablet, 8px, $bp-desktop, 82px);
+  }
+
+  &__btn {
+    @extend %btn-slider-control;
+  }
+
+  &__btn-icon {
+    width: 13px;
+    height: 12px;
+    fill: currentColor;
+  }
+
+  &__btn:disabled {
+    background-color: transparent;
+    @include non-interactive {
+      color: var(--color-static-white-40);
+    }
+  }
+}

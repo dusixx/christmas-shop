@@ -1,0 +1,40 @@
+.footer {
+  &__container {
+    @extend .container;
+
+    padding-top: var(--section-padding-ver);
+    padding-bottom: var(--section-padding-ver);
+
+    background-color: var(--color-static-white);
+  }
+
+  &__inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  &__copyright {
+    @extend %paragraph;
+    text-align: center;
+  }
+
+  &__made-in {
+    @extend %caption-curly;
+    @extend %link;
+
+    text-align: center;
+    color: var(--color-dark);
+
+    @include transition("color");
+
+    @include focused {
+      color: var(--color-primary);
+    }
+  }
+}

@@ -1,0 +1,45 @@
+%section-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: url("./../../images/bg/bg-snow.png"),
+    $repeat: no-repeat,
+    $pos: center,
+    $sz: cover
+  );
+}
+
+%hero-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: (
+      url("./../../images/bg/bg-snow.png"),
+      url("./../../images/bg/bg-ball.png"),
+    ),
+    $repeat: no-repeat,
+    $pos: center,
+    $sz: cover
+  );
+}
+
+%cta-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: (
+      url("./../../images/bg/bg-snow.png"),
+      url("./../../images/bg/bg-forest.png"),
+    ),
+    $repeat: no-repeat,
+    $pos: top,
+    $sz: cover
+  );
+}
+
+%gifts-bg {
+  @include bg(
+    $color: var(--color-primary),
+    $img: url("./../../images/bg/bg-garland.png"),
+    $repeat: no-repeat,
+    $pos: top,
+    $sz: contain
+  );
+}

@@ -1,0 +1,7 @@
+@include smooth-scrolling($smoothScrolling);
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-static-white);
+}

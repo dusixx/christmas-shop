@@ -1,0 +1,37 @@
+.hero {
+  &__container {
+    @extend .container;
+    @extend %hero-bg;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 120px 0;
+
+    border-radius: 20px 20px 0 0;
+    color: var(--color-static-white);
+  }
+
+  &__inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    width: 430px;
+  }
+
+  &__title {
+    @extend %page-title;
+  }
+
+  &__btn {
+    @extend %link-btn;
+  }
+
+  &__caption {
+    @extend %caption-curly;
+    text-align: center;
+  }
+}

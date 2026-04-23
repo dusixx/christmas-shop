@@ -1,0 +1,11 @@
+.gift-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &__item {
+    width: 310px;
+    flex-shrink: 0;
+  }
+}

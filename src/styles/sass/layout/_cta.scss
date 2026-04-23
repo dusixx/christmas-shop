@@ -1,0 +1,48 @@
+.cta {
+  &__container {
+    @extend .container;
+    @extend %cta-bg;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    padding-top: var(--section-padding-ver);
+    padding-bottom: var(--section-padding-ver);
+
+    border-radius: 0 0 20px 20px;
+  }
+
+  &__inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+
+    max-width: 430px;
+    padding: 120px 0px;
+  }
+
+  &__title {
+    @extend %title;
+    color: var(--color-static-white);
+  }
+
+  &__btn {
+    @extend %link-btn;
+  }
+
+  &__caption {
+    @extend %caption-curly;
+    line-height: 1;
+    text-align: center;
+  }
+
+  &__timer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

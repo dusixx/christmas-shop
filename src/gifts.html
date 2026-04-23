@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+  <script type="module" crossorigin src="./pages/gifts.js"></script>
+  <title>Christmas shop</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="./" class="logo">
+        <svg class="logo__icon">
+          <use href="./images/icons.svg#icon-snowflake"></use>
+        </svg>
+        <span class="logo__text">the gifts</span>
+      </a>
+      <nav class="site-nav">
+        <ul class="site-nav__items">
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--current" tabindex="-1" href="./gifts.html">
+              Gifts
+            </a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="./index.html#about">About</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="./index.html#best-gifts">Best</a>
+          </li>
+          <li class="site-nav__item"><a class="site-nav__link" href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+      <button class="burger-btn" type="button" aria-label="Burger menu button"></button>
+    </div>
+  </header>
+  <main>
+    <section class="gifts">
+      <div class="gifts__container">
+        <h1 class="gifts__title">Achieve health, harmony, and inner strength</h1>
+        <ul class="category" role="group">
+          <li class="category__item">
+            <input class="category__input" type="radio" name="category" value="all" id="radio-all" checked />
+            <label for="radio-all" class="category__label">all</label>
+          </li>
+          <li class="category__item">
+            <input class="category__input" type="radio" name="category" value="for-work" id="radio-for-work" />
+            <label for="radio-for-work" class="category__label">for work</label>
+          </li>
+          <li class="category__item">
+            <input class="category__input" type="radio" name="category" value="for-health" id="radio-for-health" />
+            <label for="radio-for-health" class="category__label">for health</label>
+          </li>
+          <li class="category__item">
+            <input class="category__input" type="radio" name="category" value="for-harmony" id="radio-for-harmony" />
+            <label for="radio-for-harmony" class="category__label">for harmony</label>
+          </li>
+        </ul>
+        <div class="gifts-container"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <address id="contacts">
+        <ul class="contacts">
+          <li class="contacts__item">
+            <a class="contacts__link" href="tel:+375291112233">
+              <img class="contacts__image" src="./images/footer/santa-claus.png" alt="Santa Claus" />
+              <p class="contacts__title">+375 (29) 111-22-33</p>
+              <p class="contacts__caption">Call Us</p>
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link" href="https://maps.app.goo.gl/yBjL6pQ1RNxnEdBUA" target="_blank"
+              rel="noopener noreferrer nofollow">
+              <img class="contacts__image" src="./images/footer/christmas-tree.png" alt="Christmas tree" />
+              <p class="contacts__title">Magic forest</p>
+              <p class="contacts__caption">meet us</p>
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link" href="mailto:gifts@magic.com">
+              <img class="contacts__image" src="./images/footer/snake.png" alt="Snake" />
+              <p class="contacts__title">gifts@magic.com</p>
+              <p class="contacts__caption">write us</p>
+            </a>
+          </li>
+        </ul>
+      </address>
+      <div class="footer__inner-container">
+        <ul class="socials">
+          <li>
+            <a class="socials__link" href="https://t.me/AfishaRSSchool" target="_blank"
+              rel="noopener noreferrer nofollow" aria-label="Telegram link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-telegram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="socials__link" href="https://www.facebook.com/rsschoolEN" target="_blank"
+              rel="noopener noreferrer nofollow" aria-label="Facebook link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="socials__link" href="https://www.instagram.com/rsschool_en/" target="_blank"
+              rel="noopener noreferrer nofollow" aria-label="Instagram link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="socials__link" href="javascript:;" aria-label="X social network link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-twitter-x"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="footer__copyright">© Copyright 2025, All Rights Reserved</p>
+        <a class="footer__made-in" href="https://rs.school/" target="_blank" rel="noopener noreferrer nofollow">
+          Made in Rolling Scopes School
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!--Backtop-->
+  <a class="backtop" href="#">
+    <svg class="backtop__icon">
+      <use href="./images/icons.svg#icon-arrow-right"></use>
+    </svg>
+  </a>
+  <!--Burger menu-->
+  <aside class="burger-menu"></aside>
+  <!--Modal-->
+  <div class="backdrop">
+    <div class="modal">
+      <button class="modal__close-btn" type="button" aria-label="Scroll to top">
+        <svg class="modal__icon">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <div class="modal__content"></div>
+    </div>
+  </div>
+</body>
+
+</html>

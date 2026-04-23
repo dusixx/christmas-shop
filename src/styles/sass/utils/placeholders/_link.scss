@@ -1,0 +1,32 @@
+%link {
+  @extend %custom-pointer;
+  color: var(--color-dark);
+
+  // to avoid selection on dblclick
+  user-select: none;
+}
+
+%link-btn {
+  @extend %link;
+  @extend %subtitle;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 56px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  text-align: center;
+  color: var(--color-static-white);
+  background-color: var(--color-dark);
+  border-radius: 20px;
+
+  @include transition("color, background-color");
+
+  @include focused {
+    color: var(--color-dark);
+    background-color: var(--color-static-white);
+  }
+}

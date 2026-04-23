@@ -1,0 +1,32 @@
+.gift-card--for-work {
+  .gift-card__tag {
+    color: var(--color-tag-purple);
+  }
+  .gift-card__thumb {
+    // prettier-ignore
+    @include bg($img: url("./../../images/gift-card/gift-for-work.png"), 
+      $repeat: no-repeat, $pos: center, $sz: cover);
+  }
+}
+
+.gift-card--for-health {
+  .gift-card__tag {
+    color: var(--color-tag-green);
+  }
+  .gift-card__thumb {
+    // prettier-ignore
+    @include bg($img: url("./../../images/gift-card/gift-for-health.png"), 
+      $repeat: no-repeat, $pos: center, $sz: cover);
+  }
+}
+
+.gift-card--for-harmony {
+  .gift-card__tag {
+    color: var(--color-tag-pink);
+  }
+  .gift-card__thumb {
+    // prettier-ignore
+    @include bg($img: url("./../../images/gift-card/gift-for-harmony.png"), 
+      $repeat: no-repeat, $pos: center, $sz: cover);
+  }
+}

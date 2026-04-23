@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" crossorigin href="./styles/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+  <script type="module" crossorigin src="./pages/home.js"></script>
+  <title>Christmas shop</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <a href="./" class="logo">
+        <svg class="logo__icon">
+          <use href="./images/icons.svg#icon-snowflake"></use>
+        </svg>
+        <p class="logo__text">the gifts</p>
+      </a>
+      <nav class="site-nav">
+        <ul class="site-nav__items">
+          <li class="site-nav__item"><a class="site-nav__link" href="./gifts.html">Gifts</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="#about">About</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="#best-gifts">Best</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+      <button class="burger-btn" type="button" aria-label="Burger menu button"></button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero__container">
+        <div class="hero__inner-container">
+          <h3 class="hero__caption">Merry Christmas</h3>
+          <h1 class="hero__title">Gift yourself the magic of new possibilities</h1>
+          <a class="hero__btn" href="./gifts.html">Explore Magical Gifts</a>
+          <h3 class="hero__caption">and Happy New Year</h3>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="about__container">
+        <div class="about__inner-container">
+          <div class="about__desc">
+            <div class="about__text">
+              <h3 class="about__caption">About</h3>
+              <h2 class="about__title">Unleash your inner superhero!</h2>
+              <p class="about__para">
+                This New Year marks the beginning of your journey to inner harmony and new
+                strengths. We offer unique gifts that will help you improve your life.
+              </p>
+            </div>
+          </div>
+          <div class="about__thumb"></div>
+        </div>
+      </div>
+    </section>
+    <section class="slider">
+      <div class="slider__container">
+        <div class="slider__heading">
+          <h3 class="slider__caption">Become Happier!</h3>
+          <h2 class="slider__title">in the new 2025</h2>
+        </div>
+        <div class="slider__track">
+          <div class="slider__content">
+            <span class="slider__text">Live</span>
+            <img class="slider__image" src="./images/slider/snowman.png" alt="Snowman" />
+            <span class="slider__text">create</span>
+            <img class="slider__image" src="./images/slider/christmas-trees.png" alt="Christmas trees" />
+            <span class="slider__text">Love</span>
+            <img class="slider__image" src="./images//slider/christmas-tree-ball.png" alt="Christmas tree ball" />
+            <span class="slider__text">dream</span>
+            <img class="slider__image" src="./images/slider/fairytale-house.png" alt="Fairytale house" />
+          </div>
+        </div>
+        <div class="slider__controls">
+          <button class="slider__btn" type="button" data-left disabled>
+            <svg class="slider__btn-icon">
+              <use href="./images/icons.svg#icon-arrow-left"></use>
+            </svg>
+          </button>
+          <button class="slider__btn" type="button" data-right>
+            <svg class="slider__btn-icon">
+              <use href="./images/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="best-gifts" id="best-gifts">
+      <div class="best-gifts__container">
+        <div class="best-gifts__heading">
+          <h3 class="best-gifts__caption">Best Gifts</h3>
+          <h2 class="best-gifts__title">especially for you</h2>
+        </div>
+        <div class="gifts-container"></div>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="cta__container">
+        <div class="cta__inner-container">
+          <h2 class="cta__title">Ready to start your journey to a better version of yourself?</h2>
+          <a class="cta__btn" href="./gifts.html">Explore Magical Gifts</a>
+          <div class="cta__timer-container">
+            <h3 class="cta__caption">The New Year is Coming Soon...</h3>
+            <!--Timer-->
+            <div class="timer">
+              <ul class="timer__cells">
+                <li class="timer__cell">
+                  <span class="timer__number" data-days>00</span>
+                  <span class="timer__unit">days</span>
+                </li>
+                <li class="timer__cell">
+                  <span class="timer__number" data-hours>00</span>
+                  <span class="timer__unit">hours</span>
+                </li>
+                <li class="timer__cell">
+                  <span class="timer__number" data-mins>00</span>
+                  <span class="timer__unit">minutes</span>
+                </li>
+                <li class="timer__cell">
+                  <span class="timer__number" data-secs>00</span>
+                  <span class="timer__unit">seconds</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <address id="contacts">
+        <ul class="contacts">
+          <li class="contacts__item">
+            <a class="contacts__link" href="tel:+375291112233">
+              <img class="contacts__image" src="./images/footer/santa-claus.png" alt="Santa Claus" />
+              <p class="contacts__title">+375 (29) 111-22-33</p>
+              <p class="contacts__caption">Call Us</p>
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link" href="https://maps.app.goo.gl/yBjL6pQ1RNxnEdBUA" target="_blank"
+              rel="noopener noreferrer nofollow">
+              <img class="contacts__image" src="./images/footer/christmas-tree.png" alt="Christmas tree" />
+              <p class="contacts__title">Magic forest</p>
+              <p class="contacts__caption">meet us</p>
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link" href="mailto:gifts@magic.com">
+              <img class="contacts__image" src="./images/footer/snake.png" alt="Snake" />
+              <p class="contacts__title">gifts@magic.com</p>
+              <p class="contacts__caption">write us</p>
+            </a>
+          </li>
+        </ul>
+      </address>
+      <div class="footer__inner-container">
+        <ul class="socials">
+          <li>
+            <a class="socials__link" href="https://t.me/AfishaRSSchool" target="_blank"
+              rel="noopener noreferrer nofollow" aria-label="Telegram link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-telegram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="socials__link" href="https://www.facebook.com/rsschoolEN" target="_blank"
+              rel="noopener noreferrer nofollow" aria-label="Facebook link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="socials__link" href="https://www.instagram.com/rsschool_en/" target="_blank"
+              rel="noopener noreferrer nofollow" aria-label="Instagram link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="socials__link" href="javascript:;" aria-label="X social network link">
+              <svg class="socials__icon">
+                <use href="./images/icons.svg#icon-twitter-x"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <p class="footer__copyright">© Copyright 2025, All Rights Reserved</p>
+        <a class="footer__made-in" href="https://rs.school/" target="_blank" rel="noopener noreferrer nofollow">
+          Made in Rolling Scopes School
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!--Burger menu-->
+  <aside class="burger-menu"></aside>
+  <!--Modal-->
+  <div class="backdrop">
+    <div class="modal">
+      <button class="modal__close-btn" type="button">
+        <svg class="modal__icon">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <div class="modal__content"></div>
+    </div>
+  </div>
+</body>
+
+</html>

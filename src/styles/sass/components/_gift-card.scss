@@ -1,0 +1,63 @@
+.gift-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 342px;
+
+  background: var(--color-content-bg);
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__thumb {
+    background-color: transparent;
+    min-height: 230px;
+  }
+
+  &__desc {
+    flex-grow: 1;
+    padding: 20px;
+
+    background-color: var(--color-static-white);
+    border-radius: 20px;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__tag {
+    @extend %subtitle;
+  }
+
+  &__title {
+    @extend %gift-card-title;
+
+    max-height: 50px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include transition("color");
+  }
+
+  &__description {
+    @extend %paragraph;
+  }
+}
+
+.gift-card--interactive {
+  @extend %link;
+
+  @include focused {
+    .gift-card__title {
+      color: var(--color-primary);
+    }
+  }
+}
+
+.gift-card--detailed {
+  min-height: 514px;
+  max-width: 400px;
+}

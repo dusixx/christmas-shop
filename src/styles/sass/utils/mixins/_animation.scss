@@ -1,0 +1,10 @@
+// prettier-ignore
+@mixin transition(
+    $props: "all", 
+    $dur: var(--transition-duration), 
+    $func: var(--transitiion-func)) 
+{
+  transition-duration: $dur;
+  transition-timing-function: $func;
+  transition-property: #{$props};
+}

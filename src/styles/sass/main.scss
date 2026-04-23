@@ -1,0 +1,48 @@
+@import "./vendors/modern-normalize";
+
+@import "./utils/vars";
+@import "./utils/funcs";
+
+// mixins
+@import "./utils/mixins/misc";
+@import "./utils/mixins/animation";
+@import "./utils/mixins/bg";
+
+// placeholders
+@import "./utils/placeholders/misc";
+@import "./utils/placeholders/typography";
+@import "./utils/placeholders/link";
+@import "./utils/placeholders/btn";
+@import "./utils/placeholders/section-bg";
+
+// base
+@import "./base/base";
+@import "./base/reset";
+@import "./base/fonts";
+
+// components
+@import "./components/site-nav";
+@import "./components/logo";
+@import "./components/gift-card";
+@import "./components/gift-card-mods";
+@import "./components/gift-list";
+@import "./components/gift-superpowers";
+@import "./components/timer";
+@import "./components/contacts";
+@import "./components/socials";
+@import "./components/category";
+@import "./components/container";
+@import "./components/burger-btn";
+@import "./components/backtop";
+
+// layout
+@import "./layout/header";
+@import "./layout/hero";
+@import "./layout/about";
+@import "./layout/slider";
+@import "./layout/best-gifts";
+@import "./layout/cta";
+@import "./layout/footer";
+@import "./layout/gifts";
+@import "./layout/burger-menu";
+@import "./layout/backdrop";

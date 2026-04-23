@@ -1,0 +1,48 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--color-overlay);
+  overflow: scroll;
+
+  @include hidden(true) {
+    opacity: 0;
+  }
+  @include transition("opacity, visibility");
+
+  &--active {
+    @include hidden(false) {
+      opacity: 1;
+    }
+  }
+}
+
+.backdrop .modal {
+  position: absolute;
+  margin: 0 8px;
+
+  &__close-btn {
+    @extend %btn;
+
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    color: var(--color-dark);
+    background-color: transparent;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+  }
+}

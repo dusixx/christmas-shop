@@ -1,0 +1,74 @@
+%break-words {
+  @media (width <= $bp-mobile-s) {
+    word-break: break-all;
+  }
+}
+
+%caption-curly {
+  font-weight: 400;
+  font-family: var(--second-family);
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: 0.05em;
+
+  color: var(--color-static-white);
+
+  user-select: none;
+}
+
+%title {
+  //@extend %break-words;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 152%;
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+  text-align: center;
+}
+
+%page-title {
+  //@extend %break-words;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.5;
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-static-white);
+}
+
+%gift-card-title {
+  //@extend %break-words;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+%contacts-caption {
+  @extend %gift-card-title;
+  text-align: center;
+}
+
+%subtitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+%paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 148%;
+}
