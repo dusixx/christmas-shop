@@ -1,4 +1,4 @@
-import { elementExpected } from "../common/utils.js";
+import { elementExpected } from "../common";
 
 const TIMER_PERIOD = 1000;
 

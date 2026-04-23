@@ -1,4 +1,4 @@
-import { ClassName, msToDHMS } from "../common/index.js";
+import { ClassName, msToDHMS } from "../common";
 import { Countdown } from "./countdown.js";
 
 export class Timer {

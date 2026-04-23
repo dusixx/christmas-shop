@@ -1,4 +1,4 @@
-import { ClassName } from "../../common/index.js";
+import { ClassName } from "../../common";
 
 export const refs = {
   header: document.querySelector(`.${ClassName.Header}`),

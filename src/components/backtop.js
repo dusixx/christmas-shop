@@ -1,4 +1,4 @@
-import { ClassName, throttle } from "../common/index.js";
+import { ClassName, throttle } from "../common";
 export class Backtop {
   static #instance;
   #ref;

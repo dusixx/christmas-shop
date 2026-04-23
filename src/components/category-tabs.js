@@ -1,4 +1,4 @@
-import { ClassName, elementExpected } from "../common/index.js";
+import { ClassName, elementExpected } from "../common";
 export class CategoryTabs {
   static #instance;
   #ref;

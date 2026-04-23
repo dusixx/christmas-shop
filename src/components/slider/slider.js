@@ -1,4 +1,4 @@
-import { ClassName, throttle } from "../../common/index.js";
+import { ClassName, throttle } from "../../common";
 import { refs } from "./refs.js";
 
 const { track, content, controls, btnLeft, btnRight } = refs;

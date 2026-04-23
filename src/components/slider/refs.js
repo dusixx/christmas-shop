@@ -1,4 +1,4 @@
-import { ClassName } from "../../common/constants.js";
+import { ClassName } from "../../common";
 
 const slider = document.querySelector(`.${ClassName.Slider}`);
 

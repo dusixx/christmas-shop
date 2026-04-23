@@ -1,4 +1,4 @@
-import { ClassName, elementExpected, joinClasses, makeId } from "../../common/index.js";
+import { ClassName, elementExpected, joinClasses, makeId } from "../../common";
 import iconsUrl from "../../images/icons.svg";
 
 const makeSuperpowerIcons = points => {

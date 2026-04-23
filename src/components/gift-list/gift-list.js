@@ -1,4 +1,4 @@
-import { getRandomElements, isFunc, makeId, ClassName } from "../../common/index.js";
+import { getRandomElements, isFunc, makeId, ClassName } from "../../common";
 import { giftsData } from "../../data/gifts-data.js";
 import { makeGiftList } from "./markup.js";
 

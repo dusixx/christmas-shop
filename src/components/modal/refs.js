@@ -1,4 +1,4 @@
-import { ClassName } from "../../common/constants.js";
+import { ClassName } from "../../common";
 
 const root = document.documentElement;
 const backdrop = document.querySelector(`.${ClassName.Backdrop}`);

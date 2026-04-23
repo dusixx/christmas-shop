@@ -1,4 +1,4 @@
-import { ClassName, elementExpected, wasKeyDown } from "../../common/index.js";
+import { ClassName, elementExpected, wasKeyDown } from "../../common";
 import { Scroll } from "../scroll-lock.js";
 import { refs } from "./refs.js";
 
